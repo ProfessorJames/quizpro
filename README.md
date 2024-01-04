@@ -38,8 +38,26 @@
 ## Design Choices
 
 ### Fonts
+In this project, the user interface has been enriched by incorporating icons sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome"), a widely-used icon library. 
 
 ### Colours
+
+The colour pallette was generated using [Coolors](https://coolors.co/ "Coolors"). 
+
+![Colour Pallete](/assets/docs/readme/colour-pallette.png)
+
+| CSS Variable Name | Hex Code  | Comment                                                                                                                                                 |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| black          | `#020100` | Used as a background colour for website. Also used as a text colour in some sections.|
+| eerie-black    | `#1A1B1D` |                                                                                        |
+| gunmetal       | `#262C35` |                                                                                        |
+| rich-black     | `#0D1321` |                                                                                       |
+| yellow         | `#F1D302` | Used to style h1 text, fontawesome icons, selected answers radio buttons       |
+| dark-green     | `#023020` | Used to style body element when user selects a correct answer. Also used to style text of number of Correct Scores.  |
+| red            | `#C1292E` | Used to style body element when user selects an  incorrect answer. Also used to style text of number of Incorrect Scores.|
+| white          | `#FFF`    |                                                                                                     |
+
+
 
 ### Icons
 
