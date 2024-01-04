@@ -36,3 +36,35 @@
   - [Unfixed-Bugs](#unfixed-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
+
+
+
+
+
+## Design Choices
+
+### Fonts
+
+### Colours
+
+### Icons
+
+### Structure
+This project follows a mobile-first design approach, with a focus on ensuring that the website looks and functions well on smaller screens. The primary reference point for styling is the Iphone SE, with a screen width of 375px.
+
+To create a responsive design that adapts to various screen sizes, we use breakpoints inspired by Bootstrap. These breakpoints help us optimize the layout and styling of our website for different devices and screen widths.
+You can find more information about Bootstrap breakpoints in their official documentation [Bootstrap breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/ "Bootstrap").
+
+| Screen Size | Breakpoint |
+| ----------- | ---------- |
+| x-small     | <576px     |
+| small       | => 576px   |
+| medium      | => 768px   |
+| large       | => 992px   |
+| x-large     | => 1200px  |
+
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
