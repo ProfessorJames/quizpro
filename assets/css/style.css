@@ -1,0 +1,28 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
+:root {
+      /* Colors */
+      --white: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+}
+
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+}
+/* Styles for element tags are in this section*/
