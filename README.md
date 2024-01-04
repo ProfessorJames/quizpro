@@ -69,6 +69,36 @@ You can find more information about Bootstrap breakpoints in their official docu
 \
 &nbsp;
 
+# Technologies used
+
+## Languages
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML")
+
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS")
+
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JS")
+
+## Libraries and Frameworks
+
+- [Google Fonts](https://fonts.google.com/ "Google Fonts")
+- [Font Awesome](https://fontawesome.com/search "Font Awesome")
+
+## Tools
+
+- [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
+- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
+- [WAVE](https://wave.webaim.org/ "WAVE")
+- [Coolors](https://coolors.co/ "Coolors")
+- [AmIResponsive](https://ui.dev/amiresponsive/ "AmIResponsive")
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables "Markdown Tables Generator")
+
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
 
 # Deployment
 
