@@ -1,4 +1,4 @@
-# [QuizPro]( "QuizPro")
+# [QuizPro](https://professorjames.github.io/quizpro/ "QuizPro")
 
 ## Goal for this Project
 
@@ -66,5 +66,22 @@ You can find more information about Bootstrap breakpoints in their official docu
 \
 &nbsp;
 [Back to top](#table-of-contents)
+\
+&nbsp;
+
+
+# Deployment
+
+After writing and committing the code to GitHub, the project was deployed using the following GitHub deployment steps:
+
+- Go to the GitHub repository and click on the 'Settings' tab.
+- In the side navigation menu, choose 'Pages.'
+- Under the 'Source' section, click on the dropdown menu labeled 'None' and select 'main'
+- Click the 'Save' button to confirm your selection.
+- The website is now live at <https://professorjames.github.io/quizpro/>.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
 \
 &nbsp;
