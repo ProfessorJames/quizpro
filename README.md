@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [QuizPro](#south-coast-golf-club)
+- [QuizPro](#QuizPro)
   - [Goal for this Project](#goal-for-this-project)
   - [Table of Contents](#table-of-contents)
 - [UX](#ux)
@@ -15,17 +15,11 @@
     - [Expectations](#expectations)
   - [Design Choices](#design-choices)
     - [Fonts](#fonts)
-  - [Colours](#colours)
+    - [Colours](#colours)
     - [Icons](#icons)
     - [Structure](#structure)
 - [Features](#features)
-  - [Navigation Bar](#navigation-bar)
   - [Landing Page](#landing-page)
-    - [Course Section](#course-section)
-    - [Membership Section](#membership-section)
-    - [Gallery Section](#gallery-section)
-    - [Contact Section](#contact-section)
-    - [Footer Section](#footer-section)
   - [Features to be Implemented](#features-to-be-implemented)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
