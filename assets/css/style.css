@@ -4,6 +4,21 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 :root {
       /* Colors */
+      --black: #020100;
+      --eerie-black: #1A1B1D;
+      --gunmetal: #262c35;
+      --rich-black: #023020;
+      --sbyellow: #f1d302;
+      --dark-green:	#023020;
+      --fe-red:	#C1292E;
+      --white: #fff;
+
+
+
+ 
+
+
+
       --white: #ffffff;
 }
 
