@@ -37,10 +37,12 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 2.5rem 1rem;
     display: flex;
-    font-size: 1.6rem;
-    min-height: 100%;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: auto;
+    font-size: 1.5rem;
     font-weight: 400;
+    text-align: center;
 }
 /* Styles for element tags are in this section*/
 
@@ -74,7 +76,7 @@ i {
 }
 
 button, .difficulty, .topic{
-    background-color: #0D1321;
+    background-color: var(--black);
     border: none;
     color: #fff;
     display: block;
@@ -82,6 +84,12 @@ button, .difficulty, .topic{
     font-size: 1.5rem;
     font-family: inherit;
     padding: 0.5rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .brain-icon {
