@@ -45,6 +45,9 @@ body {
 
 h1 {
     font-weight: 400;
+    padding: 1rem;
+    text-align: center;
+    color: #F1D302;
 }
 
 .quiz-container {
