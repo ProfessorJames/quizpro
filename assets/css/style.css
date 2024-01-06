@@ -46,3 +46,12 @@ body {
 h1 {
     font-weight: 400;
 }
+
+.quiz-container {
+    background-color: #020100;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
+    width: 92.5vw;
+    height: 95vh;
+    min-height: 31rem;
+}
