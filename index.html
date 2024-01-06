@@ -7,7 +7,26 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <h1>Welcome to QuizPro</h1>
+        <div class="quiz-container" id="quiz">
+            <div id="settings" class="settings">
+                <div>
+                    <h1><i class="fa-solid fa-brain brain-icon"></i>Quiz Pro<i class="fa-solid fa-brain brain-icon"></i>
+                    </h1>
+                    <h2>Welcome to Quiz Pro!</h2>
+                </div>
+                <div id="rules">
+                    <button id="rulesBtn" class="btn">Rules</button>
+                </div>
+                <div class="difficulty">
+                    <label class="label" for="difficulty">Select Difficulty Level:</label>
+                    <select name="difficulty" id="difficulty" class="dropdown">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <script type="module" src="assets/js/script.js"></script>
     </body>
 </html>
