@@ -24,7 +24,6 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    scroll-padding-top: 8rem;
 }
 
 html,
@@ -32,6 +31,7 @@ body {
     min-height: 100%;
     height: 100%;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 2.5rem 1rem;
@@ -48,6 +48,7 @@ h1 {
     padding: 1rem;
     text-align: center;
     color: var(--sbyellow);
+    
 }
 
 h2 {
@@ -69,4 +70,19 @@ i {
     width: 92.5vw;
     height: 95vh;
     min-height: 31rem;
+}
+
+button, .difficulty, .topic{
+    background-color: #0D1321;
+    border: none;
+    color: #fff;
+    display: block;
+    width: 50%;
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 0.5rem;
+}
+
+.brain-icon {
+    color: gray;
 }
