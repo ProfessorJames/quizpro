@@ -2,6 +2,10 @@
 
 ## Goal for this Project
 
+Welcome to QuizPro: Your Ultimate Quiz Experience!
+
+The primary goal of QuizPro is to create a user-friendly, feature-rich, and versatile quiz application that provides an engaging and educational experience for both quiz creators and quiz takers. 
+
 ## Table of Contents
 
 - [QuizPro](#QuizPro)
@@ -31,11 +35,26 @@
 - [Deployment](#deployment)
 - [Credits](#credits)
 
+# UX
 
+## User Goals
 
+## User Stories
 
+## Site Owner Goals
 
 ## Design Choices
+
+### Requirements
+
+### Expectations
+
+
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
 
 ### Fonts
 In this project, the user interface has been enriched by incorporating icons sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome"), a widely-used icon library. 
