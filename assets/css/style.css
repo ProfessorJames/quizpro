@@ -109,3 +109,8 @@ button, .difficulty, .topic{
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
  }
+
+
+ .hide{
+    display: none;
+}
