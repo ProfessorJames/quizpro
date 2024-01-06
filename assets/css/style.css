@@ -103,3 +103,8 @@ button, .difficulty, .topic{
 #playgame {
     margin: 2.5rem;
 }
+
+#question{
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+ }
