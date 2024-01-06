@@ -119,6 +119,11 @@ button, .difficulty, .topic{
     align-items: center;
 }
 
+#difficulty, #topic{
+    background-color: #F1D302;
+    color: #111010;
+    width: auto;
+}
 .brain-icon {
     color: var(--light-gray);
 }
@@ -153,6 +158,14 @@ button, .difficulty, .topic{
     align-items: flex-end;
     flex-flow: row wrap;
 
+}
+
+#correct {
+    color: var(--dark-green);
+}
+
+#incorrect {
+    color: var(--fe-red);
 }
 
  .hide{
