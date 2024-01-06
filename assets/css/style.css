@@ -93,8 +93,8 @@ input[type=radio]:checked {
     font-size: 1.5rem;
 }
 .quiz-container {
-    /* background-color: #020100; */
-    background-color: var(--white);
+    background-color: var(--black);
+    /* background-color: var(--white); */
     border-radius: 1rem;
     box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
     width: 92.5vw;
@@ -113,7 +113,8 @@ button, .difficulty, .topic{
     padding: 0.5rem;
 }
 
-.buttons {
+
+.buttons{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,3 +172,11 @@ button, .difficulty, .topic{
  .hide{
     display: none;
 }
+
+.difficulty, .topic {
+    width: auto;
+}
+.difficulty label, .topic label{
+    font-size: 1.5rem;
+}
+
