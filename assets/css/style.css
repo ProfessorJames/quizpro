@@ -94,7 +94,7 @@ input[type=radio]:checked {
 }
 .quiz-container {
     /* background-color: #020100; */
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 1rem;
     box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
     width: 92.5vw;
@@ -105,7 +105,7 @@ input[type=radio]:checked {
 button, .difficulty, .topic{
     background-color: var(--black);
     border: none;
-    color: #fff;
+    color: var(--white);
     display: block;
     width: 50%;
     font-size: 1.5rem;
@@ -120,8 +120,8 @@ button, .difficulty, .topic{
 }
 
 #difficulty, #topic{
-    background-color: #F1D302;
-    color: #111010;
+    background-color: var(--sbyellow);
+    color: var(--black);
     width: auto;
 }
 .brain-icon {
