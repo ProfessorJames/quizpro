@@ -58,6 +58,10 @@ h2 {
     color: var(--sbyellow);
 }
 
+i {
+    padding: 0 0.5rem;
+}
+
 .quiz-container {
     background-color: #020100;
     border-radius: 1rem;
