@@ -140,6 +140,20 @@ button, .difficulty, .topic{
     margin-bottom: 1.5rem;
  }
 
+ .scores {
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    padding: 2rem 0;
+}
+
+.scores h3{
+    /* flex-direction: row; */
+    font-size: 2rem;
+    align-items: flex-end;
+    flex-flow: row wrap;
+
+}
 
  .hide{
     display: none;
