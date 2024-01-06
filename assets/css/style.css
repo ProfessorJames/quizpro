@@ -11,6 +11,7 @@
       --sbyellow: #f1d302;
       --dark-green:	#023020;
       --fe-red:	#C1292E;
+      --light-gray: #9c9a9a;
       --white: #fff;
 }
 
@@ -84,5 +85,9 @@ button, .difficulty, .topic{
 }
 
 .brain-icon {
-    color: gray;
+    color: var(--light-gray);
+}
+
+.playBtn{
+    background-color: var(--dark-green);
 }
