@@ -93,8 +93,8 @@ input[type=radio]:checked {
     font-size: 1.5rem;
 }
 .quiz-container {
-    background-color: #020100;
-    /* background-color: #fff; */
+    /* background-color: #020100; */
+    background-color: #fff;
     border-radius: 1rem;
     box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
     width: 92.5vw;
