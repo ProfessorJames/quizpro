@@ -99,3 +99,7 @@ button, .difficulty, .topic{
 .playBtn{
     background-color: var(--dark-green);
 }
+
+#playgame {
+    margin: 2.5rem;
+}
