@@ -33,7 +33,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: auto;
     font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
@@ -184,8 +183,7 @@ button, .difficulty, .topic{
     padding: 2rem;
     width: auto;
     margin: 2.5rem 1rem;
-    max-height: auto;
-    
+    height: auto;  
 }
 
 .dialog p {
