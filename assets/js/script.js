@@ -2,6 +2,7 @@ const rulesButton = document.getElementById('rulesBtn');
 const dialog = document.getElementById('rules-dialog');
 const closeDialog = document.getElementById('close-rules-dialog');
 const difficultyRef = document.querySelector('select#difficulty');
+const topicRef = document.querySelector('select#topic');
 
 
 rulesButton.addEventListener('click', () => {
@@ -13,7 +14,7 @@ closeDialog.addEventListener('click', () => {
 })
 
 ////Difficulty levels
-const difficultyLevels = ['test', 'easy', 'medium', 'hard']
+const difficultyLevels = ['easy', 'medium', 'hard']
 
 ////topicCategories
 
@@ -55,3 +56,15 @@ const generateDiffDropdownItems = (selectRef, content) => {
 } 
 
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
+
+const generateCatDropdownItems = (selectRef, content) => {
+    selectRef.innerHTML = ""; 
+    content.forEach(item => {
+        const optionRef = document.createElement('option');
+        optionRef.value = item['name'];
+        optionRef.innerHTML = item['name'];
+        selectRef.appendChild(optionRef);
+    })
+} 
+
+generateCatDropdownItems(topicRef, topicCategories);
