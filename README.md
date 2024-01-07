@@ -131,6 +131,15 @@ You can find more information about Bootstrap breakpoints in their official docu
 \
 &nbsp;
 
+# Testing
+
+
+## Bugs
+
+1. Category list of options - when dynamically generating the dropdown list of category options these were too long and going off the page. Fix.
+
+## Unfixed-Bugs
+
 # Deployment
 
 After writing and committing the code to GitHub, the project was deployed using the following GitHub deployment steps:

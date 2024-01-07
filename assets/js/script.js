@@ -1,8 +1,9 @@
+
 const rulesButton = document.getElementById('rulesBtn');
 const dialog = document.getElementById('rules-dialog');
 const closeDialog = document.getElementById('close-rules-dialog');
-const difficultyRef = document.querySelector('select#difficulty');
-const topicRef = document.querySelector('select#topic');
+const difficultyRef = document.querySelector('#difficulty');
+const topicRef = document.querySelector('#topic');
 
 
 rulesButton.addEventListener('click', () => {
