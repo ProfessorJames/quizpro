@@ -18,7 +18,9 @@
                     <h2>Welcome to Quiz Pro!</h2>
                 </div>
                 <div id="rules">
-                    <button id="rulesBtn" class="btn">Rules</button>
+                    <button id="rulesBtn" class="btn">How to Play <br>
+                        <small class="rules-small">Click for instructions</small>
+                    </button>
                 </div>
                 <div class="difficulty">
                     <label class="label" for="difficulty">Select Difficulty Level:</label>
@@ -41,7 +43,7 @@
                     <button id="playBtn" class="btn playBtn">Play</button>
                 </div>
             </div>
-            <div id="quiz-game-area" class="">
+            <div id="quiz-game-area" class="hide">
                 <div class="quiz-header">
                     <h2 id="question">Question text</h2>
                 </div>
@@ -81,11 +83,11 @@
         </div>
         <script type="module" src="assets/js/script.js"></script>
         <dialog id="rules-dialog" class="dialog">
-            <h2>Rules</h2>
+            <h2>How to Play</h2>
             <p>1. Select a difficulty level: Easy, Medium, or Hard</p>
             <p>2. Select a category</p>
             <p>3. Click the Play button to begin the quiz</p>
-            <button id="close-rules-dialog">Close</button>
+            <button id="close-rules-dialog" class="close-btn">Close</button>
         </dialog>
     </body>
 </html>
