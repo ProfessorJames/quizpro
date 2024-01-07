@@ -1,11 +1,11 @@
 /* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap'); */
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 :root {
       /* Colors */
-      --black: #020100;
-      --eerie-black: #1A1B1D;
+      /* --black: #020100; */
+      /* --eerie-black: #1A1B1D; */
       --gunmetal: #262c35;
       --rich-black: #023020;
       --sbyellow: #f1d302;

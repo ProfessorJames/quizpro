@@ -4,6 +4,11 @@ const dialog = document.getElementById('rules-dialog');
 const closeDialog = document.getElementById('close-rules-dialog');
 const difficultyRef = document.querySelector('#difficulty');
 const topicRef = document.querySelector('#topic');
+const answerA = document.getElementById('answer_a');
+const answerB = document.getElementById('answer_b');
+const answerC = document.getElementById('answer_c');
+const answerD = document.getElementById('answer_d');
+
 
 
 rulesButton.addEventListener('click', () => {
@@ -69,3 +74,56 @@ const generateCatDropdownItems = (selectRef, content) => {
 } 
 
 generateCatDropdownItems(topicRef, topicCategories);
+
+//// Get questions section
+
+const API_URL = `https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`;
+
+const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
+
+const convertQuestions = (listOfQuestions) => {
+    return listOfQuestions.map(q => {
+        return {
+            question: q.question,
+            correctAnswer: q.correct_answer,
+            answers: shuffleArray([...q.incorrect_answers, q.correct_answer]),
+            category: q.category,
+            difficulty: q.difficulty,
+        }
+    })
+}
+
+let questionArray =[]
+
+async function getQuestions(URL, arr){
+   
+    const response = await fetch(URL);
+    const data = await response.json();
+    const questions = convertQuestions(data.results);
+    arr.push(questions)
+    // console.log(quizQuestions);
+    return questions
+}
+
+const qAndA = await getQuestions(API_URL, questionArray);
+
+const qAndAStatic = [...qAndA]
+console.log(qAndAStatic[0])
+
+const questionsEl = document.getElementById('question');
+// const answersEls = document.querySelectorAll('.answer');
+
+let currentQuestion = 0;
+
+function loadQuiz(){
+    
+    const currentQuizData = qAndAStatic[currentQuestion];
+
+    questionsEl.innerText = currentQuizData.question;
+    answerA.innerText = currentQuizData.answers[0];
+    answerB.innerText = currentQuizData.answers[1]
+    answerC.innerText = currentQuizData.answers[2];
+    answerD.innerText = currentQuizData.answers[3];
+}
+
+loadQuiz()
