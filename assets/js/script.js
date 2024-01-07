@@ -1,6 +1,7 @@
 const rulesButton = document.getElementById('rulesBtn');
 const dialog = document.getElementById('rules-dialog');
 const closeDialog = document.getElementById('close-rules-dialog');
+const difficultyRef = document.querySelector('select#difficulty');
 
 
 rulesButton.addEventListener('click', () => {
@@ -12,7 +13,7 @@ closeDialog.addEventListener('click', () => {
 })
 
 ////Difficulty levels
-const difficultyLevels = ['easy', 'medium', 'hard']
+const difficultyLevels = ['test', 'easy', 'medium', 'hard']
 
 ////topicCategories
 
@@ -42,3 +43,15 @@ const topicCategories = [
     {"id": 31, "name": "Anime & Manga"},
     {"id": 32, "name": "Cartoon & Animations"}
 ];
+
+const generateDiffDropdownItems = (selectRef, content) => {
+    selectRef.innerHTML = ""; 
+    content.forEach(item => {
+        const optionRef = document.createElement('option');
+        optionRef.value = item;
+        optionRef.innerHTML = item.toUpperCase();
+        selectRef.appendChild(optionRef);
+    })
+} 
+
+generateDiffDropdownItems(difficultyRef, difficultyLevels);
