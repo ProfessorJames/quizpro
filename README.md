@@ -136,7 +136,13 @@ You can find more information about Bootstrap breakpoints in their official docu
 
 ## Bugs
 
-1. Category list of options - when dynamically generating the dropdown list of category options these were too long and going off the page. Fix.
+1. Category list of options - when dynamically generating the dropdown list of category options these were too long and going off the page. 
+
+TODO. FIX
+
+2. Questions and Answers not displaying some characters correctly, such as commas' and appostrophes. 
+
+TODO. FIX.
 
 ## Unfixed-Bugs
 
