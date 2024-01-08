@@ -8,6 +8,9 @@ const answerA = document.getElementById('answer_a');
 const answerB = document.getElementById('answer_b');
 const answerC = document.getElementById('answer_c');
 const answerD = document.getElementById('answer_d');
+const submitBtn =document.getElementById('submit');
+const nextBtn =document.getElementById('next');
+
 
 
 
@@ -108,7 +111,7 @@ async function getQuestions(URL, arr){
 const qAndA = await getQuestions(API_URL, questionArray);
 
 const qAndAStatic = [...qAndA]
-console.log(qAndAStatic[0])
+console.log(qAndAStatic)
 
 const questionsEl = document.getElementById('question');
 // const answersEls = document.querySelectorAll('.answer');
@@ -126,4 +129,16 @@ function loadQuiz(){
     answerD.innerText = currentQuizData.answers[3];
 }
 
-loadQuiz()
+loadQuiz();
+
+const handleNext = (event) =>{
+    event.preventDefault();
+    currentQuestion++;
+
+    if(currentQuestion < qAndAStatic.length){
+        loadQuiz()
+    }
+
+}
+
+nextBtn.addEventListener('click', handleNext)
