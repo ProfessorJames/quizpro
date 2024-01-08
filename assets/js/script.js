@@ -142,19 +142,20 @@ loadQuiz();
 
 // Utility functions
 
-function getSelected (){
-         let answer;
+function getSelectedAnswer (){
+         let selectedAnswer;
     
          document.querySelectorAll('.answer').forEach(answerEl =>{
              if(answerEl.checked){
-                 answer = answerEl.id
+                 const labelText = answerEl.getAttribute('data-label');
+                 selectedAnswer = labelText
              }
          })
     
-         return answer;
+         return selectedAnswer;
     }
     
-// console.log(getSelected())
+console.log(getSelectedAnswer());
 
 const addClass = (el, className) => {
     try{
@@ -203,10 +204,10 @@ const incrementScore = (el, scoreType) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    const answer = getSelected();
+    const answer = getSelectedAnswer();
     
     if(answer){
-        document.querySelectorAll('.answer').forEach(answerEl =>{
+        document.querySelectorAll(".quizAnswer").forEach(answerEl =>{
             disable(answerEl);
         });
 
