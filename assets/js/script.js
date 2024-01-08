@@ -185,8 +185,11 @@ const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     addClass(bodyEl, 'bg-correctnormal');
 }
 
-const incrementScore = 
-// Submit button event handler and event listener
+const incrementScore = (el, scoreType) => {
+    scores[scoreType] = Number(el.textContent) + 1;
+    el.textContent = scores[scoreType].toString();
+}
+ // Submit button event handler and event listener
 
 const handleSubmit = (event) => {
     event.preventDefault();
