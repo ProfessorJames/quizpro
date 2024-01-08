@@ -150,7 +150,19 @@ function getSelected (){
 console.log(getSelected())
 
 const addClass = (el, className) => {
-    el.classList.add(className);
+    try{
+        el.classList.add(className);
+    } catch (error){
+        console.error(`Failed to add class: ${error.message}`)
+    }
+}
+
+const removeClass = (el, className) => {
+    try{
+        el.classList.remove(className)
+    } catch (error){
+        console.error(`Failed to remove class: ${error.message}`)
+    }
 }
 
 
