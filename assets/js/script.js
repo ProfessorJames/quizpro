@@ -140,6 +140,7 @@ const scores = {
 
 
 function loadQuiz(){
+    deselectAnswers();
     
     const currentQuizData = qAndAStatic[currentQuestion];
 
@@ -216,10 +217,10 @@ const incrementScore = (el, scoreType) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    const answer = getSelectedAnswer();
+    const answer = getSelectedAnswer(); // need to update so that ist selects the text in the input label
     
     if(answer){
-        document.querySelectorAll(".quizAnswer").forEach(answerEl =>{
+        document.querySelectorAll(".answer").forEach(answerEl =>{
             disable(answerEl);
         });
 
@@ -268,6 +269,12 @@ const handleNext = (event) =>{
 nextBtn.addEventListener('click', handleNext)
 
 
+// Deselct checked answer
+function deselectAnswers() {
+    answersEls.forEach(answersEl =>{
+        answersEl.checked = false
+    })
+};
 
 
 
