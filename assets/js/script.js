@@ -281,7 +281,7 @@ const handleNext = (event) =>{
     } else {
         quiz.innerHTML = `
         <br>
-        <h2><i class="fa-solid fa-hourglass"></i></h2>
+        <h2><i class="fa-solid fa-hourglass fa-5x"></i></h2>
         <br>
         <h2>Congratulations you finished the Quiz</h2>
         <br>
