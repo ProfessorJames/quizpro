@@ -24,12 +24,12 @@
     </head>
     <body id="body">
         <div class="quiz-container" id="quiz">
+            <div>
+                <h1><i class="fa-solid fa-brain brain-icon"></i>Quiz Pro<i class="fa-solid fa-brain brain-icon"></i>
+                </h1>
+                <p>You're journey to becoming a QuizPro starts here!</p>
+            </div>
             <div id="settings" class="settings">
-                <div>
-                    <h1><i class="fa-solid fa-brain brain-icon"></i>Quiz Pro<i class="fa-solid fa-brain brain-icon"></i>
-                    </h1>
-                    <h2>Welcome to Quiz Pro!</h2>
-                </div>
                 <div id="rules">
                     <button id="rulesBtn" class="btn rulesBtn">How to Play <br>
                         <small class="rules-small">Click for instructions</small>
@@ -56,8 +56,11 @@
                     <button id="playBtn" class="btn playBtn">Play</button>
                 </div>
             </div>
-            <div id="quiz-game-area" class="quiz-game-area">
+            <div id="quiz-game-area" class="quiz-game-area hide">
                 <div class="quiz-header">
+                    <div>
+                        <h3 class="question">Question:</h3>
+                    </div>
                     <h2 id="question">Question text</h2>
                 </div>
                 <div id="answers">

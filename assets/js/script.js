@@ -1,9 +1,13 @@
 
+const body = document.getElementById('body');
 const rulesButton = document.getElementById('rulesBtn');
 const dialog = document.getElementById('rules-dialog');
 const closeDialog = document.getElementById('close-rules-dialog');
 const difficultyRef = document.querySelector('#difficulty');
 const topicRef = document.querySelector('#topic');
+const playBtn = document.getElementById('playBtn');
+const settings = document.getElementById('settings');
+const quizGameArea = document.getElementById('quiz-game-area');
 const answerA = document.getElementById('answer_a');
 const answerB = document.getElementById('answer_b');
 const answerC = document.getElementById('answer_c');
@@ -14,7 +18,6 @@ const questionsEl = document.getElementById('question');
 const answersEls = document.querySelectorAll('.answer');
 const correct_answers = document.getElementById('correct_answers');
 const incorrect_answers = document.getElementById('incorrect_answers');
-const body = document.getElementById('body');
 
 
 rulesButton.addEventListener('click', () => {
@@ -98,6 +101,14 @@ const convertQuestions = (listOfQuestions) => {
         }
     })
 }
+
+const handlePlay = (event) => {
+    event.preventDefault();
+    settings.classList.toggle('hide');
+    quizGameArea.classList.toggle('hide');
+}
+
+playBtn.addEventListener('click', handlePlay)
 
 let questionArray =[]
 
