@@ -18,6 +18,7 @@ const questionsEl = document.getElementById('question');
 const answersEls = document.querySelectorAll('.answer');
 const correct_answers = document.getElementById('correct_answers');
 const incorrect_answers = document.getElementById('incorrect_answers');
+const tagline = document.querySelector('.tagline');
 
 
 rulesButton.addEventListener('click', () => {
@@ -106,6 +107,7 @@ const handlePlay = (event) => {
     event.preventDefault();
     settings.classList.toggle('hide');
     quizGameArea.classList.toggle('hide');
+    tagline.classList.toggle('hide');
 }
 
 playBtn.addEventListener('click', handlePlay)
