@@ -1,5 +1,5 @@
 /* Google fonts import */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 :root {
@@ -266,4 +266,19 @@ button, .difficulty, .topic{
 
 .normal {
     background-color: var(--black);
+}
+
+.modal-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.modal-content p{
+    font-size: 1.75rem;
+    color: var(--white);
+}
+
+.modal-content h3 {
+    font-style: italic;
+
 }
