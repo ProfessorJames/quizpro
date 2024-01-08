@@ -241,7 +241,8 @@ submitBtn.addEventListener('click', handleSubmit)
 // Next button event handler and event listener
 const handleNext = (event) =>{
     event.preventDefault();
-    removeClass(body, 'bg-incorrect' )
+    removeClass(body, 'bg-incorrect' );
+    removeClass(body, 'bg-correct' );
     currentQuestion++;
     
     if(currentQuestion < qAndAStatic.length){
