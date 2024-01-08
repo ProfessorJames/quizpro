@@ -233,7 +233,13 @@ button, .difficulty, .topic{
 }
 
 .dialog p {
-    padding: 2rem;
+    padding: 1rem;
+}
+
+.dialog h3 {
+    padding: 1rem;
+    background-color: var(--black);
+    color: var(--sbyellow);
 }
 
 #rules {

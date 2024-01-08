@@ -1,4 +1,3 @@
-
 const body = document.getElementById('body');
 const rulesButton = document.getElementById('rulesBtn');
 const dialog = document.getElementById('rules-dialog');
