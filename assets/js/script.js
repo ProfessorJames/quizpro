@@ -12,6 +12,8 @@ const submitBtn =document.getElementById('submit');
 const nextBtn =document.getElementById('next');
 const questionsEl = document.getElementById('question');
 const answersEls = document.querySelectorAll('.answer');
+const correct_answers = document.getElementById('correct_answers');
+const body = document.getElementById('body');
 
 
 rulesButton.addEventListener('click', () => {
@@ -142,7 +144,7 @@ loadQuiz();
 function getSelected (){
          let answer;
     
-         answersEls.forEach(answerEl =>{
+         document.querySelectorAll('.answer').forEach(answerEl =>{
              if(answerEl.checked){
                  answer = answerEl.id
              }
@@ -151,7 +153,7 @@ function getSelected (){
          return answer;
     }
     
-console.log(getSelected())
+// console.log(getSelected())
 
 const addClass = (el, className) => {
     try{
@@ -182,8 +184,15 @@ const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     addClass(submitBtnEl, 'hide');
     removeClass(nextBtnEl, 'hide');
     removeClass(bodyEl, 'normal');
-    addClass(bodyEl, 'bg-correctnormal');
+    addClass(bodyEl, 'bg-correct');
 }
+
+const answerIncorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
+    addClass(submitBtnEl, 'hide');
+    removeClass(nextBtnEl, 'hide');
+    removeClass(bodyEl,'normal');
+    addClass(bodyEl,'bg-incorrect');
+} 
 
 const incrementScore = (el, scoreType) => {
     scores[scoreType] = Number(el.textContent) + 1;
@@ -199,9 +208,16 @@ const handleSubmit = (event) => {
         document.querySelectorAll('.answer').forEach(answerEl =>{
             disable(answerEl);
         });
+
+        if(answer === qAndAStatic[currentQuestion].correctAnswer){
+            answerCorrect(submitBtn, nextBtn, body);
+            incrementScore(correct_answers, 'correct');
+        } else {
+            answerIncorrect(submitBtn, nextBtn, body);
+            incrementScore(incorrect_answers,'incorrect');
+        
+        
     }
-    if(answer === qAndAStatic[currentQuestion].correctAnswer){
-        answerCorrect(submitBtn, nextBtn, body);
 
     }
 }
