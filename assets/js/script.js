@@ -14,8 +14,6 @@ const questionsEl = document.getElementById('question');
 const answersEls = document.querySelectorAll('.answer');
 
 
-
-
 rulesButton.addEventListener('click', () => {
     dialog.showModal()
 })
@@ -165,6 +163,13 @@ const removeClass = (el, className) => {
     }
 }
 
+const disable = (el) => {
+    el.setAttribute('disabled', 'true')
+}
+
+const enable = (el) => {
+    el.removeAttribute('disabled')
+}
 
 // Submit button event handler and event listener
 
@@ -173,7 +178,7 @@ const handleSubmit = (event) =>{
     const answer = getSelected();
     
     if(answer){
-        answerEls
+        answerEls.forEach(answer)
     }
 }
 
