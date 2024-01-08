@@ -144,6 +144,10 @@ TODO. FIX
 
 TODO. FIX.
 
+3. When a user submits an question the getElectedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. alos correct counter doesn't increment. 
+
+TODO. FIX.
+
 ## Unfixed-Bugs
 
 # Deployment
