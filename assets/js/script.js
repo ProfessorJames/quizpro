@@ -13,6 +13,7 @@ const nextBtn =document.getElementById('next');
 const questionsEl = document.getElementById('question');
 const answersEls = document.querySelectorAll('.answer');
 const correct_answers = document.getElementById('correct_answers');
+const incorrect_answers = document.getElementById('incorrect_answers');
 const body = document.getElementById('body');
 
 
@@ -215,8 +216,7 @@ const handleSubmit = (event) => {
         } else {
             answerIncorrect(submitBtn, nextBtn, body);
             incrementScore(incorrect_answers,'incorrect');
-        
-        
+      
     }
 
     }

@@ -80,6 +80,7 @@ li::before {
     content: counter(choices, upper-alpha) ".";
     counter-increment: choices;
     padding-right: 0.5rem;
+    color: var(--white);
 }
 
 input[type=radio] {
@@ -108,7 +109,7 @@ input[type=radio]:checked {
     font-size: 1.5rem;
 }
 .quiz-container {
-    /* background-color: var(--black); */
+    background-color: var(--black);
     /* background-color: var(--white); */
     border-radius: 1rem;
     box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
@@ -116,6 +117,13 @@ input[type=radio]:checked {
     max-width: 90rem;
     height: 95vh;
     min-height: 31rem;
+}
+.quiz-game-area {
+    background-color: #262c35;
+}
+
+.quiz-game-area label {
+    color: #fff;
 }
 
 button, .difficulty, .topic{
@@ -178,12 +186,12 @@ button, .difficulty, .topic{
  .scores {
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     padding: 2rem 0;
+    background-color: var(--black);
 }
 
 .scores h3{
-    /* flex-direction: row; */
     font-size: 2rem;
     align-items: flex-end;
     flex-flow: row wrap;
