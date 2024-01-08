@@ -10,6 +10,8 @@ const answerC = document.getElementById('answer_c');
 const answerD = document.getElementById('answer_d');
 const submitBtn =document.getElementById('submit');
 const nextBtn =document.getElementById('next');
+const questionsEl = document.getElementById('question');
+const answersEls = document.querySelectorAll('.answer');
 
 
 
@@ -113,8 +115,8 @@ const qAndA = await getQuestions(API_URL, questionArray);
 const qAndAStatic = [...qAndA]
 console.log(qAndAStatic)
 
-const questionsEl = document.getElementById('question');
-// const answersEls = document.querySelectorAll('.answer');
+// Loading quiz question section
+
 
 let currentQuestion = 0;
 
@@ -131,6 +133,23 @@ function loadQuiz(){
 
 loadQuiz();
 
+//Utility functions
+
+
+
+// 
+submitBtn.addEventListener('click', handleSubmit)
+nextBtn.addEventListener('click', handleNext)
+
+const handleSubmit = (event) =>{
+    event.preventDefault();
+    const answer = getSelected();
+
+    if(answer){
+        answerEls
+    }
+}
+
 const handleNext = (event) =>{
     event.preventDefault();
     currentQuestion++;
@@ -141,4 +160,9 @@ const handleNext = (event) =>{
 
 }
 
-nextBtn.addEventListener('click', handleNext)
+
+
+
+
+
+
