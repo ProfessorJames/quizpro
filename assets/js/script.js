@@ -133,33 +133,51 @@ function loadQuiz(){
 
 loadQuiz();
 
-//Utility functions
+// Utility functions
+
+function getSelected (){
+         let answer;
+    
+         answersEls.forEach(answerEl =>{
+             if(answerEl.checked){
+                 answer = answerEl.id
+             }
+         })
+    
+         return answer;
+    }
+    
+console.log(getSelected())
+
+const addClass = (el, className) => {
+    el.classList.add(className);
+}
 
 
-
-// 
-submitBtn.addEventListener('click', handleSubmit)
-nextBtn.addEventListener('click', handleNext)
+// Submit button event handler and event listener
 
 const handleSubmit = (event) =>{
     event.preventDefault();
     const answer = getSelected();
-
+    
     if(answer){
         answerEls
     }
 }
 
+submitBtn.addEventListener('click', handleSubmit)
+
 const handleNext = (event) =>{
     event.preventDefault();
     currentQuestion++;
-
+    
     if(currentQuestion < qAndAStatic.length){
         loadQuiz()
     }
-
+    
 }
 
+nextBtn.addEventListener('click', handleNext)
 
 
 

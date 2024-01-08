@@ -234,3 +234,11 @@ button, .difficulty, .topic{
     background-color: var(--light-gray);
 }
 
+.bg-correct, li.correct{
+    background-color: var(--dark-green);
+}
+
+.bg-incorrect{
+    background-color: var(--fe-red);
+}
+
