@@ -4,8 +4,8 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 :root {
       /* Colors */
-      /* --black: #020100; */
-      /* --eerie-black: #1A1B1D; */
+      --black: #020100;
+      --eerie-black: #1A1B1D;
       --gunmetal: #262c35;
       --rich-black: #023020;
       --sbyellow: #f1d302;
@@ -97,6 +97,7 @@ input[type=radio]:checked {
     border-radius: 1rem;
     box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
     width: 92.5vw;
+    max-width: 90rem;
     height: 95vh;
     min-height: 31rem;
 }
@@ -130,6 +131,12 @@ button, .difficulty, .topic{
 
 .playBtn{
     background-color: var(--dark-green);
+    width: 50%;
+    left: 50%;
+}
+
+.playBtn:hover, .rulesBtn{
+    cursor: pointer;
 }
 
 .btn {
@@ -143,6 +150,7 @@ button, .difficulty, .topic{
 #question{
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
+    padding: 0.5rem;
  }
 
  .scores {
@@ -202,3 +210,4 @@ button, .difficulty, .topic{
 .close-btn {
     background-color: var(--light-gray);
 }
+
