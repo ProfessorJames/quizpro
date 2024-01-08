@@ -32,6 +32,12 @@ closeDialog.addEventListener('click', () => {
 ////Difficulty levels
 const difficultyLevels = ['easy', 'medium', 'hard']
 
+let diffSelected = 'easy';
+
+diffDropdown.addEventListener('change', () =>{
+    diffSelected = diffDropdown.value.toLowerCase();
+})
+
 ////topicCategories
 
 const topicCategories = [
@@ -87,23 +93,16 @@ generateCatDropdownItems(topicRef, topicCategories);
 
 //// Get questions section
 
-difficultyRef.addEventListener('change', () => {
-    let diffSelection;
-    diffSelection = diffDropdown.value.toLowerCase();
-    return diffSelection
-    console.log('The diff selected was ', diffSelection)
-})
+// const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
 
-// const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=medium&type=multiple`;
-
-const generateApiUrl = (diff = 'hard', cat = 11) => {
+const generateApiUrl = (diff, cat = 11) => {
     let API;
-    API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
+    API = `https://opentdb.com/api.php?amount=1&category=${cat}&difficulty=${diff}&type=multiple`;
     console.log(API);
     return API
 }
 
-const API_URL = generateApiUrl();
+const API_URL = generateApiUrl(diffSelected);
 
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
@@ -122,9 +121,20 @@ const convertQuestions = (listOfQuestions) => {
 
 const handlePlay = (event) => {
     event.preventDefault();
+    //Generate API_URL
+
+    //Get Questions
+
+
+    //Load Quiz Questions
     loadQuiz();
+
+    //Toggle hide class on Settings div
     settings.classList.toggle('hide');
+    
+    //Toggle hide class on quizGameArea div
     quizGameArea.classList.toggle('hide');
+    //Toggle hide class on tagline
     tagline.classList.toggle('hide');
 }
 
@@ -270,14 +280,21 @@ const handleNext = (event) =>{
         loadQuiz()
     } else {
         quiz.innerHTML = `
-                <h2>You answered ${scores.correct} / ${qAndAStatic.length} questions correctly</h2>
-        
-                <button onclick="location.reload()">Play Again</button>
-                `
-            }
-            addClass(nextBtn, 'hide');
-            removeClass(submitBtn, 'hide');
-            removeClass(body, 'hide');
+        <br>
+        <h2><i class="fa-solid fa-hourglass"></i></h2>
+        <br>
+        <h2>Congratulations you finished the Quiz</h2>
+        <br>
+        <h2>You answered ${scores.correct} / ${qAndAStatic.length} questions correctly</h2>
+        <br>
+        <h2>Remember practice makes perfect</h2>
+        <br>
+        <button onclick="location.reload()">Play Again</button>
+        `
+          }
+           addClass(nextBtn, 'hide');
+           removeClass(submitBtn, 'hide');
+           removeClass(body, 'hide');
         
             answersEls.forEach(answerEl => {
                 enable(answerEl);
