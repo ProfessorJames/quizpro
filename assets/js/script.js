@@ -18,6 +18,7 @@ const answersEls = document.querySelectorAll('.answer');
 const correct_answers = document.getElementById('correct_answers');
 const incorrect_answers = document.getElementById('incorrect_answers');
 const tagline = document.querySelector('.tagline');
+const diffDropdown = document.getElementById('difficulty');
 
 
 rulesButton.addEventListener('click', () => {
@@ -86,7 +87,14 @@ generateCatDropdownItems(topicRef, topicCategories);
 
 //// Get questions section
 
-const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=medium&type=multiple`;
+const diffSelected = difficultyRef.addEventListener('change', () => {
+    let diffSelection;
+    diffSelection = diffDropdown.value.toLowerCase();
+    return diffSelection
+    console.log('The diff selected was ', diffSelection)
+})
+
+const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=${diffSelected}&type=multiple`;
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
@@ -104,6 +112,7 @@ const convertQuestions = (listOfQuestions) => {
 
 const handlePlay = (event) => {
     event.preventDefault();
+    loadQuiz();
     settings.classList.toggle('hide');
     quizGameArea.classList.toggle('hide');
     tagline.classList.toggle('hide');
@@ -151,7 +160,7 @@ function loadQuiz(){
     answerD.innerText = currentQuizData.answers[3];
 }
 
-loadQuiz();
+// loadQuiz();
 
 // Utility functions
 
