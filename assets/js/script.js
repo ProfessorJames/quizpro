@@ -171,6 +171,13 @@ const enable = (el) => {
     el.removeAttribute('disabled')
 }
 
+
+const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
+    addClass(submitBtnEl, 'hide');
+    removeClass(nextBtnEl, 'hide');
+    removeClass(bodyEl, 'normal');
+    addClass(bodyEl, 'bg-correctnormal');
+}
 // Submit button event handler and event listener
 
 const handleSubmit = (event) =>{
@@ -178,12 +185,19 @@ const handleSubmit = (event) =>{
     const answer = getSelected();
     
     if(answer){
-        answerEls.forEach(answer)
+        document.querySelectorAll('.answer').forEach(answerEl =>{
+            disable(answerEl);
+        });
+    }
+    if(answer === qAndAStatic[currentQuestion].correctAnswer){
+
     }
 }
 
 submitBtn.addEventListener('click', handleSubmit)
 
+
+// Next button event handler and event listener
 const handleNext = (event) =>{
     event.preventDefault();
     currentQuestion++;
