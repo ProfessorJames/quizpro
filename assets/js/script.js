@@ -118,6 +118,12 @@ console.log(qAndAStatic)
 
 let currentQuestion = 0;
 
+const scores = {
+    correct: 0,
+    incorrect: 0
+};
+
+
 function loadQuiz(){
     
     const currentQuizData = qAndAStatic[currentQuestion];
@@ -178,9 +184,11 @@ const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     removeClass(bodyEl, 'normal');
     addClass(bodyEl, 'bg-correctnormal');
 }
+
+const incrementScore = 
 // Submit button event handler and event listener
 
-const handleSubmit = (event) =>{
+const handleSubmit = (event) => {
     event.preventDefault();
     const answer = getSelected();
     
@@ -190,6 +198,7 @@ const handleSubmit = (event) =>{
         });
     }
     if(answer === qAndAStatic[currentQuestion].correctAnswer){
+        answerCorrect(submitBtn, nextBtn, body);
 
     }
 }
