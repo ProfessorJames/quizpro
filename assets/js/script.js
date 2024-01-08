@@ -86,7 +86,7 @@ generateCatDropdownItems(topicRef, topicCategories);
 
 //// Get questions section
 
-const API_URL = `https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`;
+const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=medium&type=multiple`;
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
@@ -241,11 +241,26 @@ submitBtn.addEventListener('click', handleSubmit)
 // Next button event handler and event listener
 const handleNext = (event) =>{
     event.preventDefault();
+    removeClass(body, 'bg-incorrect' )
     currentQuestion++;
     
     if(currentQuestion < qAndAStatic.length){
         loadQuiz()
-    }
+    } else {
+        quiz.innerHTML = `
+                <h2>You answered ${scores.correct} / ${qAndAStatic.length} questions correctly</h2>
+        
+                <button onclick="location.reload()">Play Again</button>
+                `
+            }
+            addClass(nextBtn, 'hide');
+            removeClass(submitBtn, 'hide');
+            removeClass(body, 'hide');
+        
+            answersEls.forEach(answerEl => {
+                enable(answerEl);
+            });
+        
     
 }
 
