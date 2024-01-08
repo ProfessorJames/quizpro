@@ -65,6 +65,7 @@ ul {
     justify-content: center;
     flex-direction: column;
     list-style: none;
+    counter-reset: choices;
 }
 ul li {
     font-size: 1rem;
@@ -78,7 +79,7 @@ ul li label {
 li::before {
     content: counter(choices, upper-alpha) ".";
     counter-increment: choices;
-    padding-right: 2rem;
+    padding-right: 0.5rem;
 }
 
 input[type=radio] {
@@ -107,7 +108,7 @@ input[type=radio]:checked {
     font-size: 1.5rem;
 }
 .quiz-container {
-    background-color: var(--black);
+    /* background-color: var(--black); */
     /* background-color: var(--white); */
     border-radius: 1rem;
     box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
