@@ -4,7 +4,7 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 :root {
       /* Colors */
-      /* --black: #020100; */
+      --black: #020100;
       --eerie-black: #1A1B1D;
       --gunmetal: #262c35;
       --rich-black: #023020;
@@ -52,7 +52,7 @@ h2 {
     /* text-align: center; */
     font-size: 2.5rem;
     background-color: var(--gunmetal);
-    color: var(--sbyellow);
+    color: var(--white);
 }
 
 i {
@@ -73,6 +73,12 @@ ul li {
 
 ul li label {
     cursor: pointer;
+}
+
+li::before {
+    content: counter(choices, upper-alpha) ".";
+    counter-increment: choices;
+    padding-right: 2rem;
 }
 
 input[type=radio] {
@@ -144,7 +150,13 @@ button, .difficulty, .topic{
     left: 50%;
 }
 
-.playBtn:hover, .rulesBtn{
+
+.rulesBtn {
+    border: 1px solid var(--sbyellow);
+    width: 50%;
+}
+
+.playBtn:hover, .rulesBtn:hover{
     cursor: pointer;
 }
 
@@ -191,6 +203,7 @@ button, .difficulty, .topic{
 
 .difficulty, .topic {
     width: auto;
+    border-bottom: 1px solid var(--sbyellow);
 }
 .difficulty label, .topic label{
     font-size: 1.5rem;
