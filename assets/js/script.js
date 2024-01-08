@@ -87,14 +87,14 @@ generateCatDropdownItems(topicRef, topicCategories);
 
 //// Get questions section
 
-const diffSelected = difficultyRef.addEventListener('change', () => {
+difficultyRef.addEventListener('change', () => {
     let diffSelection;
     diffSelection = diffDropdown.value.toLowerCase();
     return diffSelection
     console.log('The diff selected was ', diffSelection)
 })
 
-const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=${diffSelected}&type=multiple`;
+const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=medium&type=multiple`;
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
