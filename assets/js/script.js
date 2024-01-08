@@ -94,7 +94,17 @@ difficultyRef.addEventListener('change', () => {
     console.log('The diff selected was ', diffSelection)
 })
 
-const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=medium&type=multiple`;
+// const API_URL = `https://opentdb.com/api.php?amount=3&category=9&difficulty=medium&type=multiple`;
+
+const generateApiUrl = (diff = 'hard', cat = 11) => {
+    let API;
+    API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
+    console.log(API);
+    return API
+}
+
+const API_URL = generateApiUrl();
+
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
@@ -133,6 +143,7 @@ async function getQuestions(URL, arr){
 }
 
 const qAndA = await getQuestions(API_URL, questionArray);
+// let qAndA = await getQuestions(API_URL, questionArray);
 
 const qAndAStatic = [...qAndA]
 console.log(qAndAStatic)
