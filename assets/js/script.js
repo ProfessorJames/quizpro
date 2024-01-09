@@ -250,7 +250,7 @@ const handleSubmit = (event) => {
     event.preventDefault();
     const answer = getSelectedAnswer(); // need to update so that ist selects the text in the input label
     
-    if(answer){
+    if(answer){ 
         document.querySelectorAll(".answer").forEach(answerEl =>{
             disable(answerEl);
         });
@@ -260,15 +260,13 @@ const handleSubmit = (event) => {
             incrementScore(correct_answers, 'correct');
         } else {
             answerIncorrect(submitBtn, nextBtn, body);
-            incrementScore(incorrect_answers,'incorrect');
-      
-    }
-
+            incrementScore(incorrect_answers,'incorrect')    
+        }
     }
 }
 
 const handleNext = (event) =>{
-    
+
     event.preventDefault();
     toggleClass(body, 'normal' );
     currentQuestion++;
