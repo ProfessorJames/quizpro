@@ -196,15 +196,15 @@ const enable = (el) => {
     el.removeAttribute('disabled')
 }
 
-// Need to refactor getSelectedAnswer() function to return selectedAnswer
+// Need to refactor getSubmittedAnswer() function to return selectedAnswer
 // Fix: add .answer class to each answer in displayAnswer function
-function getSelectedAnswer (){
+function getSubmittedAnswer (){
     let selectedAnswer;
 
     document.querySelectorAll('.answer').forEach(answerEl =>{
         if(answerEl.checked){
-            const labelText = answerEl.getAttribute('data-label');
-            selectedAnswer = labelText
+            const inputValue = answerEl.value;
+            selectedAnswer = inputValue;
         }
     })
 
@@ -275,8 +275,7 @@ const handlePlay = (event) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    const answer = getSelectedAnswer(); // need to update so that ist selects the text in the input label
-    
+    const answer = getSubmittedAnswer();     
     if(answer){ 
         document.querySelectorAll(".answer").forEach(answerEl =>{
             disable(answerEl);
