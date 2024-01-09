@@ -137,7 +137,7 @@ const qAndAStatic = [...qAndA]
 console.log(qAndAStatic)
 
 function loadQuiz(){
-    deselectAnswers();
+    deselectCheckedAnswer();
     
     const currentQuizData = qAndAStatic[currentQuestion];
 
@@ -211,8 +211,8 @@ const incrementScore = (el, scoreType) => {
     el.textContent = scores[scoreType].toString();
 }
 
-// Deselct checked answer
-function deselectAnswers() {
+// Deselect checked answer
+function deselectCheckedAnswer() {
     answersEls.forEach(answersEl =>{
         answersEl.checked = false
     })
