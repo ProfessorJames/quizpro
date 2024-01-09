@@ -127,7 +127,7 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
             const labelRef = document.createElement('label');
             labelRef.setAttribute('for', 'answer' + (index + 1));
             labelRef.innerHTML = item;
-            labelRef.setAttribute('data-label', 'answer_' + (index + 1));
+            // labelRef.setAttribute('data-label', 'answer_' + (index + 1)); 
 
             listRef.appendChild(radioRef);
             listRef.appendChild(labelRef);
