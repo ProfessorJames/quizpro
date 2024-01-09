@@ -27,11 +27,12 @@ const correct_answers = document.querySelector('#correct_answers');
 const incorrect_answers = document.querySelector('#incorrect_answers');
 const tagline = document.querySelector('.tagline');
 const difficultyDropdown = document.querySelector('#difficulty');
+const numberOfQuestionsDropdown = document.querySelector('#number-of-questions');
 
 //// 2. Variables are declared in this section
 
-const difficultyLevels = ['easy', 'medium', 'hard']
-
+const difficultyLevels = ['easy', 'medium', 'hard'];
+const numberOfQuestionOptions = ['5', '10', '20' , '30', '40', '50']
 let difficultyLevelSelected = '';
 
 let questionArray = [];
@@ -91,6 +92,21 @@ const generateDiffDropdownItems = (selectRef, content) => {
     const firstOption = document.createElement('option');
     firstOption.value = '';
     firstOption.innerHTML = '-- Select Difficulty Level';
+    selectRef.appendChild(firstOption);
+
+    content.forEach(item => {
+        const optionRef = document.createElement('option');
+        optionRef.value = item;
+        optionRef.innerHTML = toTitleCase(item);
+        selectRef.appendChild(optionRef);
+    })
+};
+
+const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
+    
+    const firstOption = document.createElement('option');
+    firstOption.value = '';
+    firstOption.innerHTML = '-- Select Number of Questions';
     selectRef.appendChild(firstOption);
 
     content.forEach(item => {
@@ -331,6 +347,7 @@ const handleNext = (event) =>{
 const API_URL = generateApiUrl(difficultyLevelSelected);
 generateCatDropdownItems(topicRef, topicCategories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
+generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
 
 //// Get questions section
 
