@@ -1,3 +1,6 @@
+//// 1. 
+
+
 const body = document.getElementById('body');
 const rulesButton = document.getElementById('rulesBtn');
 const dialog = document.getElementById('rules-dialog');
@@ -20,14 +23,13 @@ const incorrect_answers = document.getElementById('incorrect_answers');
 const tagline = document.querySelector('.tagline');
 const diffDropdown = document.getElementById('difficulty');
 
-// Variables
+//// 2. Variables
 
-//Difficulty levels
 const difficultyLevels = ['easy', 'medium', 'hard']
 
 let diffSelected = 'easy';
 
-// Loading quiz question section
+let questionArray = [];
 
 let currentQuestion = 0;
 
@@ -35,9 +37,6 @@ const scores = {
     correct: 0,
     incorrect: 0
 };
-
-
-////topicCategories
 
 const topicCategories = [
     {"id": 11, "name": "Film"},
@@ -66,43 +65,7 @@ const topicCategories = [
     {"id": 32, "name": "Cartoon & Animations"}
 ];
 
-const generateDiffDropdownItems = (selectRef, content) => {
-    selectRef.innerHTML = ""; 
-    content.forEach(item => {
-        const optionRef = document.createElement('option');
-        optionRef.value = item;
-        optionRef.innerHTML = item.toUpperCase();
-        selectRef.appendChild(optionRef);
-    })
-} 
-
-generateDiffDropdownItems(difficultyRef, difficultyLevels);
-
-const generateCatDropdownItems = (selectRef, content) => {
-    selectRef.innerHTML = ""; 
-    content.forEach(item => {
-        const optionRef = document.createElement('option');
-        optionRef.value = item['name'];
-        optionRef.innerHTML = item['name'];
-        selectRef.appendChild(optionRef);
-    })
-} 
-
-generateCatDropdownItems(topicRef, topicCategories);
-
-//// Get questions section
-
-// const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
-
-const generateApiUrl = (diff, cat = 11) => {
-    let API;
-    API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
-    console.log(API);
-    return API
-}
-
-const API_URL = generateApiUrl(diffSelected);
-
+//// 3. Functions
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
@@ -116,10 +79,29 @@ const convertQuestions = (listOfQuestions) => {
             difficulty: q.difficulty,
         }
     })
-}
+};
 
-let questionArray =[]
+const generateDiffDropdownItems = (selectRef, content) => {
+    selectRef.innerHTML = ""; 
+    content.forEach(item => {
+        const optionRef = document.createElement('option');
+        optionRef.value = item;
+        optionRef.innerHTML = item.toUpperCase();
+        selectRef.appendChild(optionRef);
+    })
+};
 
+const generateCatDropdownItems = (selectRef, content) => {
+    selectRef.innerHTML = ""; 
+    content.forEach(item => {
+        const optionRef = document.createElement('option');
+        optionRef.value = item['name'];
+        optionRef.innerHTML = item['name'];
+        selectRef.appendChild(optionRef);
+    })
+}; 
+
+//Refactor using .then instead of async await
 async function getQuestions(URL, arr){
    
     const response = await fetch(URL);
@@ -130,11 +112,14 @@ async function getQuestions(URL, arr){
     return questions
 }
 
-const qAndA = await getQuestions(API_URL, questionArray);
-// let qAndA = await getQuestions(API_URL, questionArray);
+// const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
 
-const qAndAStatic = [...qAndA]
-console.log(qAndAStatic)
+const generateApiUrl = (diff, cat = 11) => {
+    let API;
+    API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
+    console.log(API);
+    return API
+}
 
 function loadQuiz(){
     deselectCheckedAnswer();
@@ -146,7 +131,19 @@ function loadQuiz(){
     answerB.innerText = currentQuizData.answers[1]
     answerC.innerText = currentQuizData.answers[2];
     answerD.innerText = currentQuizData.answers[3];
-}
+};
+
+const API_URL = generateApiUrl(diffSelected);
+generateCatDropdownItems(topicRef, topicCategories);
+generateDiffDropdownItems(difficultyRef, difficultyLevels);
+
+//// Get questions section
+
+const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
+// let qAndA = await getQuestions(API_URL, questionArray);
+
+const qAndAStatic = [...qAndA]
+console.log(qAndAStatic)
 
 // loadQuiz();
 
