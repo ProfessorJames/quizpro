@@ -23,8 +23,8 @@ const answerC = document.querySelector('#answer_c');
 const answerD = document.querySelector('#answer_d');
 const submitBtn =document.querySelector('#submit');
 const nextBtn =document.querySelector('#next');
-const questionsEl = document.querySelector('#question');
-const answersEls = document.querySelectorAll('.answer');
+const questionsRef = document.querySelector('#question');
+const answersRef = document.querySelectorAll('.answer');
 const correct_answers = document.querySelector('#correct_answers');
 const incorrect_answers = document.querySelector('#incorrect_answers');
 const tagline = document.querySelector('.tagline');
@@ -133,15 +133,13 @@ function loadQuiz(){
     
     const currentQuizData = qAndAStatic[currentQuestion];
 
-    questionsEl.textContent = currentQuizData.question;
-    answerA.textContent = currentQuizData.answers[0];
-    answerB.textContent = currentQuizData.answers[1]
-    answerC.textContent = currentQuizData.answers[2];
-    answerD.textContent = currentQuizData.answers[3];
-};
-
-
-// comment refactor addClass and removeClass into one function toggleClass
+    questionsRef.innerHTML = currentQuizData.question;
+    answerA.innerHTML = currentQuizData.answers[0];
+    answerB.innerHTML = currentQuizData.answers[1]
+    answerC.innerHTML = currentQuizData.answers[2];
+    answerD.innerHTML = currentQuizData.answers[3];
+    
+};// comment refactor addClass and removeClass into one function toggleClass
 const addClass = (el, className) => {
         el.classList.add(className);
 };
@@ -204,7 +202,7 @@ const incrementScore = (el, scoreType) => {
 };
 
 function deselectCheckedAnswer() {
-    answersEls.forEach(answersEl =>{
+    answersRef.forEach(answersEl =>{
         answersEl.checked = false
     })
 };
@@ -279,7 +277,7 @@ const handleNext = (event) =>{
 
     toggleClass(nextBtn, 'hide');
     toggleClass(submitBtn, 'hide');  
-    answersEls.forEach(answerEl => {
+    answersRef.forEach(answerEl => {
         enable(answerEl);
     });                
 };
