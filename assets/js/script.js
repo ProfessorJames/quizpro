@@ -8,27 +8,27 @@
 ////
 
 //// 1. DOM elements are declared in this section
-const body = document.getElementById('body');
-const rulesButton = document.getElementById('rulesBtn');
-const dialog = document.getElementById('rules-dialog');
-const closeDialog = document.getElementById('close-rules-dialog');
+const body = document.querySelector('body');
+const rulesButton = document.querySelector('#rulesBtn');
+const dialog = document.querySelector('#rules-dialog');
+const closeDialog = document.querySelector('#close-rules-dialog');
 const difficultyRef = document.querySelector('#difficulty');
 const topicRef = document.querySelector('#topic');
-const playBtn = document.getElementById('playBtn');
-const settings = document.getElementById('settings');
-const quizGameArea = document.getElementById('quiz-game-area');
-const answerA = document.getElementById('answer_a');
-const answerB = document.getElementById('answer_b');
-const answerC = document.getElementById('answer_c');
-const answerD = document.getElementById('answer_d');
-const submitBtn =document.getElementById('submit');
-const nextBtn =document.getElementById('next');
-const questionsEl = document.getElementById('question');
+const playBtn = document.querySelector('#playBtn');
+const settings = document.querySelector('#settings');
+const quizGameArea = document.querySelector('#quiz-game-area');
+const answerA = document.querySelector('#answer_a');
+const answerB = document.querySelector('#answer_b');
+const answerC = document.querySelector('#answer_c');
+const answerD = document.querySelector('#answer_d');
+const submitBtn =document.querySelector('#submit');
+const nextBtn =document.querySelector('#next');
+const questionsEl = document.querySelector('#question');
 const answersEls = document.querySelectorAll('.answer');
-const correct_answers = document.getElementById('correct_answers');
-const incorrect_answers = document.getElementById('incorrect_answers');
+const correct_answers = document.querySelector('#correct_answers');
+const incorrect_answers = document.querySelector('#incorrect_answers');
 const tagline = document.querySelector('.tagline');
-const diffDropdown = document.getElementById('difficulty');
+const diffDropdown = document.querySelector('#difficulty');
 
 //// 2. Variables are declared in this section
 
@@ -133,11 +133,11 @@ function loadQuiz(){
     
     const currentQuizData = qAndAStatic[currentQuestion];
 
-    questionsEl.innerHTML = currentQuizData.question;
-    answerA.innerHTML = currentQuizData.answers[0];
-    answerB.innerHTML = currentQuizData.answers[1]
-    answerC.innerHTML = currentQuizData.answers[2];
-    answerD.innerHTML = currentQuizData.answers[3];
+    questionsEl.textContent = currentQuizData.question;
+    answerA.textContent = currentQuizData.answers[0];
+    answerB.textContent = currentQuizData.answers[1]
+    answerC.textContent = currentQuizData.answers[2];
+    answerD.textContent = currentQuizData.answers[3];
 };
 
 
