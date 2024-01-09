@@ -122,10 +122,12 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
             radioRef.name = 'answer';
             radioRef.id =  'answer' + (index + 1);
             radioRef.value = item;
+            radioRef.classList.add('answer');
 
             const labelRef = document.createElement('label');
             labelRef.setAttribute('for', 'answer' + (index + 1));
             labelRef.innerHTML = item;
+            labelRef.setAttribute('data-label', 'answer_' + (index + 1));
 
             listRef.appendChild(radioRef);
             listRef.appendChild(labelRef);
@@ -157,18 +159,14 @@ function loadQuiz(){
     deselectCheckedAnswer();
     
     const currentQuizData = qAndAStatic[currentQuestion];
-    // Create function ti dispayQuestion(currentQuestion);
+    // Create function to dispayQuestion(currentQuestion); is this needed?
     questionsRef.innerHTML = currentQuizData.question;
 
-    // create function to displayAnswers(currentAnswers);
     displayAnswers(answersList, currentQuizData.answers);
 
-    // answerA.innerHTML = currentQuizData.answers[0];
-    // answerB.innerHTML = currentQuizData.answers[1]
-    // answerC.innerHTML = currentQuizData.answers[2];
-    // answerD.innerHTML = currentQuizData.answers[3];
+};
 
-};// comment refactor addClass and removeClass into one function toggleClass
+// comment refactor addClass and removeClass into one function toggleClass
 const addClass = (el, className) => {
         el.classList.add(className);
 };
@@ -198,6 +196,8 @@ const enable = (el) => {
     el.removeAttribute('disabled')
 }
 
+// Need to refactor getSelectedAnswer() function to return selectedAnswer
+// Fix: add .answer class to each answer in displayAnswer function
 function getSelectedAnswer (){
     let selectedAnswer;
 
