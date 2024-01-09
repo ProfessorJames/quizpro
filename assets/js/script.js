@@ -20,23 +20,22 @@ const incorrect_answers = document.getElementById('incorrect_answers');
 const tagline = document.querySelector('.tagline');
 const diffDropdown = document.getElementById('difficulty');
 
+// Variables
 
-rulesButton.addEventListener('click', () => {
-    dialog.showModal()
-})
-
-closeDialog.addEventListener('click', () => {
-    dialog.close();
-})
-
-////Difficulty levels
+//Difficulty levels
 const difficultyLevels = ['easy', 'medium', 'hard']
 
 let diffSelected = 'easy';
 
-diffDropdown.addEventListener('change', () =>{
-    diffSelected = diffDropdown.value.toLowerCase();
-})
+// Loading quiz question section
+
+let currentQuestion = 0;
+
+const scores = {
+    correct: 0,
+    incorrect: 0
+};
+
 
 ////topicCategories
 
@@ -119,27 +118,6 @@ const convertQuestions = (listOfQuestions) => {
     })
 }
 
-const handlePlay = (event) => {
-    event.preventDefault();
-    //Generate API_URL
-
-    //Get Questions
-
-
-    //Load Quiz Questions
-    loadQuiz();
-
-    //Toggle hide class on Settings div
-    settings.classList.toggle('hide');
-    
-    //Toggle hide class on quizGameArea div
-    quizGameArea.classList.toggle('hide');
-    //Toggle hide class on tagline
-    tagline.classList.toggle('hide');
-}
-
-playBtn.addEventListener('click', handlePlay)
-
 let questionArray =[]
 
 async function getQuestions(URL, arr){
@@ -157,17 +135,6 @@ const qAndA = await getQuestions(API_URL, questionArray);
 
 const qAndAStatic = [...qAndA]
 console.log(qAndAStatic)
-
-// Loading quiz question section
-
-
-let currentQuestion = 0;
-
-const scores = {
-    correct: 0,
-    incorrect: 0
-};
-
 
 function loadQuiz(){
     deselectAnswers();
@@ -243,7 +210,37 @@ const incrementScore = (el, scoreType) => {
     scores[scoreType] = Number(el.textContent) + 1;
     el.textContent = scores[scoreType].toString();
 }
- // Submit button event handler and event listener
+
+// Deselct checked answer
+function deselectAnswers() {
+    answersEls.forEach(answersEl =>{
+        answersEl.checked = false
+    })
+};
+
+//// Event Handler functions are defined in this section
+
+const handlePlay = (event) => {
+    event.preventDefault();
+    // Get selected difficulty level and selected Category
+
+
+    //Generate API_URL
+
+    //Get Questions from API and return questions
+
+
+    //Load Quiz Questions
+    loadQuiz();
+
+    //Toggle hide class on Settings div
+    settings.classList.toggle('hide');
+    
+    //Toggle hide class on quizGameArea div
+    quizGameArea.classList.toggle('hide');
+    //Toggle hide class on tagline
+    tagline.classList.toggle('hide');
+}
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -266,10 +263,6 @@ const handleSubmit = (event) => {
     }
 }
 
-submitBtn.addEventListener('click', handleSubmit)
-
-
-// Next button event handler and event listener
 const handleNext = (event) =>{
     event.preventDefault();
     removeClass(body, 'bg-incorrect' );
@@ -298,21 +291,25 @@ const handleNext = (event) =>{
         
             answersEls.forEach(answerEl => {
                 enable(answerEl);
-            });
-        
-    
+            });    
 }
 
-nextBtn.addEventListener('click', handleNext)
+//// Event Listeners are called in this section
 
+rulesButton.addEventListener('click', () => {
+    dialog.showModal()
+})
 
-// Deselct checked answer
-function deselectAnswers() {
-    answersEls.forEach(answersEl =>{
-        answersEl.checked = false
-    })
-};
+closeDialog.addEventListener('click', () => {
+    dialog.close();
+})
 
+diffDropdown.addEventListener('change', () =>{
+    diffSelected = diffDropdown.value.toLowerCase();
+})
 
+playBtn.addEventListener('click', handlePlay)
 
+nextBtn.addEventListener('click', handleNext);
 
+submitBtn.addEventListener('click', handleSubmit)
