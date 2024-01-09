@@ -275,19 +275,7 @@ const handleNext = (event) =>{
     if(currentQuestion < qAndAStatic.length){
         loadQuiz()
     } else {
-        // quiz.innerHTML = `
-        // <br>
-        // <h2><i class="fa-solid fa-hourglass fa-5x"></i></h2>
-        // <br>
-        // <h2>Congratulations you finished the Quiz</h2>
-        // <br>
-        // <h2>You answered ${scores.correct} / ${qAndAStatic.length} questions correctly</h2>
-        // <br>
-        // <h2>Remember practice makes perfect</h2>
-        // <br>
-        // <button onclick="location.reload()">Play Again</button>
-        // `
-
+    
         quizGameArea.innerHTML = displayEndOfGameMessage(scores, qAndAStatic)
         
         }
