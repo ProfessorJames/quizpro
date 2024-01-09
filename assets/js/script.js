@@ -17,6 +17,8 @@ const topicRef = document.querySelector('#topic');
 const playBtn = document.querySelector('#playBtn');
 const settings = document.querySelector('#settings');
 const quizGameArea = document.querySelector('#quiz-game-area');
+const answersList = document.querySelector('#answers-list')
+const answerButtonsRef = document.querySelectorAll('.answer-buttons')
 const answerA = document.querySelector('#answer_a');
 const answerB = document.querySelector('#answer_b');
 const answerC = document.querySelector('#answer_c');
@@ -108,6 +110,29 @@ const generateCatDropdownItems = (selectRef, content) => {
     })
 }; 
 
+const displayAnswers = (unorderedListRef, currentAnswers) => {
+
+        unorderedListRef.innerHTML = '';
+        
+        currentAnswers.forEach( (item, index) => {
+            const listRef = document.createElement('li');
+            
+            const radioRef = document.createElement('input');
+            radioRef.type = 'radio';
+            radioRef.name = 'answer';
+            radioRef.id =  'answer' + (index + 1);
+            radioRef.value = item;
+
+            const labelRef = document.createElement('label');
+            labelRef.setAttribute('for', 'answer' + (index + 1));
+            labelRef.innerHTML = item;
+
+            listRef.appendChild(radioRef);
+            listRef.appendChild(labelRef);
+            unorderedListRef.appendChild(listRef);
+        })
+}
+
 //Refactor using .then instead of async await
 async function getQuestions(URL, arr){
    
@@ -132,13 +157,17 @@ function loadQuiz(){
     deselectCheckedAnswer();
     
     const currentQuizData = qAndAStatic[currentQuestion];
-
+    // Create function ti dispayQuestion(currentQuestion);
     questionsRef.innerHTML = currentQuizData.question;
-    answerA.innerHTML = currentQuizData.answers[0];
-    answerB.innerHTML = currentQuizData.answers[1]
-    answerC.innerHTML = currentQuizData.answers[2];
-    answerD.innerHTML = currentQuizData.answers[3];
-    
+
+    // create function to displayAnswers(currentAnswers);
+    displayAnswers(answersList, currentQuizData.answers);
+
+    // answerA.innerHTML = currentQuizData.answers[0];
+    // answerB.innerHTML = currentQuizData.answers[1]
+    // answerC.innerHTML = currentQuizData.answers[2];
+    // answerD.innerHTML = currentQuizData.answers[3];
+
 };// comment refactor addClass and removeClass into one function toggleClass
 const addClass = (el, className) => {
         el.classList.add(className);
@@ -272,7 +301,7 @@ const handleNext = (event) =>{
     if(currentQuestion < qAndAStatic.length){
         loadQuiz()
     } else{
-        quizGameArea.innerHTML = displayEndOfGameMessage(scores, qAndAStatic)
+        quizGameArea.innerHTML = displayEndOfGameMessage(scores, qAndAStatic);
     }
 
     toggleClass(nextBtn, 'hide');
