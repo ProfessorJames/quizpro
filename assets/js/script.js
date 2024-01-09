@@ -97,7 +97,7 @@ generateCatDropdownItems(topicRef, topicCategories);
 
 const generateApiUrl = (diff, cat = 11) => {
     let API;
-    API = `https://opentdb.com/api.php?amount=1&category=${cat}&difficulty=${diff}&type=multiple`;
+    API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
     console.log(API);
     return API
 }
