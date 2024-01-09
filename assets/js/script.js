@@ -268,24 +268,24 @@ const handleSubmit = (event) => {
 }
 
 const handleNext = (event) =>{
+    
     event.preventDefault();
     toggleClass(body, 'normal' );
     currentQuestion++;
     
     if(currentQuestion < qAndAStatic.length){
         loadQuiz()
-    } else {
-    
+    } else{
         quizGameArea.innerHTML = displayEndOfGameMessage(scores, qAndAStatic)
-        
-        }
-           toggleClass(nextBtn, 'hide');
-           toggleClass(submitBtn, 'hide');
-        
-            answersEls.forEach(answerEl => {
-                enable(answerEl);
-            });    
-}
+    }
+
+    toggleClass(nextBtn, 'hide');
+    toggleClass(submitBtn, 'hide');  
+    answersEls.forEach(answerEl => {
+        enable(answerEl);
+    });                
+};
+
 //// 5. Game Functionality is implemented in this section
 
 const API_URL = generateApiUrl(diffSelected);
