@@ -1,5 +1,13 @@
-//// 1. 
+//// Content
+// 1. DOM elements are declared in this section
+// 2. Variables are declared in this section
+// 3. Functions are defined in this section
+// 4. Event Handler functions are defined in this section
+// 5. Game Functionality is implemented in this section
+// 6. Event Listeners are added in this section
+////
 
+//// 1. DOM elements are declared in this section
 
 const body = document.getElementById('body');
 const rulesButton = document.getElementById('rulesBtn');
@@ -23,7 +31,7 @@ const incorrect_answers = document.getElementById('incorrect_answers');
 const tagline = document.querySelector('.tagline');
 const diffDropdown = document.getElementById('difficulty');
 
-//// 2. Variables
+//// 2. Variables are declared in this section
 
 const difficultyLevels = ['easy', 'medium', 'hard']
 
@@ -65,7 +73,7 @@ const topicCategories = [
     {"id": 32, "name": "Cartoon & Animations"}
 ];
 
-//// 3. Functions
+//// 3. Functions are defined in this section
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
@@ -133,45 +141,6 @@ function loadQuiz(){
     answerD.innerText = currentQuizData.answers[3];
 };
 
-const API_URL = generateApiUrl(diffSelected);
-generateCatDropdownItems(topicRef, topicCategories);
-generateDiffDropdownItems(difficultyRef, difficultyLevels);
-
-//// Get questions section
-
-const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
-// let qAndA = await getQuestions(API_URL, questionArray);
-
-const qAndAStatic = [...qAndA]
-console.log(qAndAStatic)
-
-// loadQuiz();
-
-// Utility functions
-
-function getSelectedAnswer (){
-         let selectedAnswer;
-    
-         document.querySelectorAll('.answer').forEach(answerEl =>{
-             if(answerEl.checked){
-                 const labelText = answerEl.getAttribute('data-label');
-                 selectedAnswer = labelText
-             }
-         })
-    
-         return selectedAnswer;
-    }
-    
-console.log(getSelectedAnswer());
-
-const addClass = (el, className) => {
-    try{
-        el.classList.add(className);
-    } catch (error){
-        console.error(`Failed to add class: ${error.message}`)
-    }
-}
-
 const removeClass = (el, className) => {
     try{
         el.classList.remove(className)
@@ -188,44 +157,61 @@ const enable = (el) => {
     el.removeAttribute('disabled')
 }
 
+function getSelectedAnswer (){
+    let selectedAnswer;
+
+    document.querySelectorAll('.answer').forEach(answerEl =>{
+        if(answerEl.checked){
+            const labelText = answerEl.getAttribute('data-label');
+            selectedAnswer = labelText
+        }
+    })
+
+    return selectedAnswer;
+};
+
+const addClass = (el, className) => {
+    try{
+        el.classList.add(className);
+    } catch (error){
+        console.error(`Failed to add class: ${error.message}`)
+    }
+};
 
 const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     addClass(submitBtnEl, 'hide');
     removeClass(nextBtnEl, 'hide');
     removeClass(bodyEl, 'normal');
     addClass(bodyEl, 'bg-correct');
-}
+};
 
 const answerIncorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     addClass(submitBtnEl, 'hide');
     removeClass(nextBtnEl, 'hide');
     removeClass(bodyEl,'normal');
     addClass(bodyEl,'bg-incorrect');
-} 
+};
 
 const incrementScore = (el, scoreType) => {
     scores[scoreType] = Number(el.textContent) + 1;
     el.textContent = scores[scoreType].toString();
-}
+};
 
-// Deselect checked answer
 function deselectCheckedAnswer() {
     answersEls.forEach(answersEl =>{
         answersEl.checked = false
     })
 };
 
-//// Event Handler functions are defined in this section
+//// 4. Event Handler functions are defined in this section
 
 const handlePlay = (event) => {
     event.preventDefault();
     // Get selected difficulty level and selected Category
 
-
     //Generate API_URL
 
     //Get Questions from API and return questions
-
 
     //Load Quiz Questions
     loadQuiz();
@@ -290,8 +276,21 @@ const handleNext = (event) =>{
                 enable(answerEl);
             });    
 }
+//// 5. Game Functionality is implemented in this section
 
-//// Event Listeners are called in this section
+const API_URL = generateApiUrl(diffSelected);
+generateCatDropdownItems(topicRef, topicCategories);
+generateDiffDropdownItems(difficultyRef, difficultyLevels);
+
+//// Get questions section
+
+const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
+// let qAndA = await getQuestions(API_URL, questionArray);
+
+const qAndAStatic = [...qAndA]
+console.log(qAndAStatic)
+
+//// 6. Event Listeners are called in this section
 
 rulesButton.addEventListener('click', () => {
     dialog.showModal()
