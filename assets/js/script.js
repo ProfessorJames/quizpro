@@ -214,15 +214,15 @@ function getSubmittedAnswer (){
 const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     toggleClass(submitBtnEl, 'hide');
     toggleClass(nextBtnEl, 'hide');
-    toggleClass(bodyEl, 'normal');
-    toggleClass(bodyEl, 'bg-correct');
+    bodyEl.classList.remove('normal');
+    bodyEl.classList.add('bg-correct');
 };
 
 const answerIncorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
     toggleClass(submitBtnEl, 'hide');
     toggleClass(nextBtnEl, 'hide');
-    toggleClass(bodyEl,'normal');
-    toggleClass(bodyEl,'bg-incorrect');
+    bodyEl.classList.remove('normal');
+    bodyEl.classList.add('bg-incorrect');
 };
 
 const incrementScore = (el, scoreType) => {
@@ -294,7 +294,10 @@ const handleSubmit = (event) => {
 const handleNext = (event) =>{
 
     event.preventDefault();
-    toggleClass(body, 'normal' );
+    body.classList.add('normal');
+    body.classList.remove('bg-correct');
+    body.classList.remove('bg-incorrect');
+
     currentQuestion++;
     
     if(currentQuestion < qAndAStatic.length){
