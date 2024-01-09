@@ -133,11 +133,11 @@ function loadQuiz(){
     
     const currentQuizData = qAndAStatic[currentQuestion];
 
-    questionsEl.innerText = currentQuizData.question;
-    answerA.innerText = currentQuizData.answers[0];
-    answerB.innerText = currentQuizData.answers[1]
-    answerC.innerText = currentQuizData.answers[2];
-    answerD.innerText = currentQuizData.answers[3];
+    questionsEl.innerHTML = currentQuizData.question;
+    answerA.innerHTML = currentQuizData.answers[0];
+    answerB.innerHTML = currentQuizData.answers[1]
+    answerC.innerHTML = currentQuizData.answers[2];
+    answerD.innerHTML = currentQuizData.answers[3];
 };
 
 
@@ -261,7 +261,7 @@ const handleSubmit = (event) => {
         } else {
             answerIncorrect(submitBtn, nextBtn, body);
             incrementScore(incorrect_answers,'incorrect')    
-        }
+    }
     }
 }
 
