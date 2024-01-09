@@ -88,18 +88,15 @@ const convertQuestions = (listOfQuestions) => {
 
 const generateDiffDropdownItems = (selectRef, content) => {
     
-    // selectRef.innerHTML = ""; 
-
     const firstOption = document.createElement('option');
     firstOption.value = '';
-    firstOption.innerHTML = '-- Select difficulty level';
-    // firstOption.disabled = true;
+    firstOption.innerHTML = '-- Select Difficulty Level';
     selectRef.appendChild(firstOption);
 
     content.forEach(item => {
         const optionRef = document.createElement('option');
         optionRef.value = item;
-        optionRef.innerHTML = item.toUpperCase();
+        optionRef.innerHTML = toTitleCase(item);
         selectRef.appendChild(optionRef);
     })
 };
@@ -113,6 +110,14 @@ const generateCatDropdownItems = (selectRef, content) => {
         selectRef.appendChild(optionRef);
     })
 }; 
+
+const toTitleCase = (str) => {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
 
 const getSelectedDifficultyLevel = () => { 
     

@@ -133,7 +133,7 @@ input[type=radio]:checked {
     color: #fff;
 }
 
-button, .difficulty, .topic{
+button, .difficulty, .topic, .number-of-questions{
     background-color: var(--dark-green);
     border: none;
     color: var(--white);
@@ -152,7 +152,7 @@ button, .difficulty, .topic{
     align-items: center;
 }
 
-#difficulty, #topic{
+#difficulty, #topic, #number-of-questions{
     background-color: var(--sbyellow);
     color: var(--black);
     width: auto;
@@ -218,11 +218,11 @@ button, .difficulty, .topic{
     display: none;
 }
 
-.difficulty, .topic {
+.difficulty, .topic, .number-of-questions{
     width: auto;
     border-bottom: 1px solid var(--sbyellow);
 }
-.difficulty label, .topic label{
+.difficulty label, .topic label, .number-of-questions label{
     font-size: 1.5rem;
 }
 
