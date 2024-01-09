@@ -125,9 +125,9 @@ input[type=radio]:checked {
     font-size: 1.5rem;
     padding: 1rem;
 }
-.quiz-game-area {
-    background-color: #262c35;
-}
+/* .quiz-game-area {
+    background-color: var(--black);
+} */
 
 .quiz-game-area label {
     color: #fff;
@@ -281,4 +281,8 @@ button, .difficulty, .topic{
 .modal-content h3 {
     font-style: italic;
 
+}
+
+.end-of-game p{
+    padding: 2rem;
 }
