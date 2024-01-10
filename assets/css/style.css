@@ -178,8 +178,11 @@ button, .difficulty, .topic, .number-of-questions{
 }
 
 .btn {
-    width: 100%;
     border-radius: 1px;
+    text-align: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    border-radius: 0.75rem;
 }
 #playgame {
     margin: 2.5rem;
@@ -285,4 +288,8 @@ button, .difficulty, .topic, .number-of-questions{
 
 .end-of-game p{
     padding: 2rem;
+}
+
+.overflow {
+    overflow: auto
 }
