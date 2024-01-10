@@ -171,6 +171,7 @@ button, .difficulty, .topic, .number-of-questions{
 .rulesBtn {
     border: 1px solid var(--sbyellow);
     width: 50%;
+    color: var(--sbyellow);
 }
 
 .playBtn:hover, .rulesBtn:hover, .playAgainBtn:hover{
@@ -178,11 +179,17 @@ button, .difficulty, .topic, .number-of-questions{
 }
 
 .btn {
+    border: 1px solid var(--sbyellow);
     border-radius: 1px;
     text-align: center;
     line-height: 1.5;
     vertical-align: middle;
     border-radius: 0.75rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(0.98);
 }
 #playgame {
     margin: 2.5rem;
