@@ -173,7 +173,7 @@ button, .difficulty, .topic, .number-of-questions{
     width: 50%;
 }
 
-.playBtn:hover, .rulesBtn:hover{
+.playBtn:hover, .rulesBtn:hover, .playAgainBtn:hover{
     cursor: pointer;
 }
 

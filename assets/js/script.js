@@ -268,7 +268,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
         <p>You answered ${scoresObj.correct} / ${questionArray.length} questions correctly.</p>
         <p>Remember practice makes perfect.</p>
         <br>
-        <button onclick="location.reload()">Play Again</button>
+        <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
     `
     return message;
