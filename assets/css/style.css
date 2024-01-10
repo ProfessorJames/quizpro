@@ -301,3 +301,45 @@ button, .difficulty, .topic{
     vertical-align: middle;
     border-radius: 0.75rem;
     }
+
+
+/* Media query: tablets and larger (768px and up */
+@media screen and (min-width: 768px) {
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 4rem;
+    }
+
+    #question {
+        font-size: 3rem;
+    }
+    .quiz-header h3{
+        font-size: 3rem;
+    }
+    ul li {
+        font-size: 3rem;
+    }
+
+    .btn {
+        line-height: 3rem;
+        font-size: 3rem;
+    }
+    .scores {
+        margin-top: 4rem;
+    }
+
+    .end-of-game {
+        font-size: 3rem;
+    }
+    .scores h3 {
+        font-size: 3rem;
+    }
+
+    ul li {
+        font-size: 2.75rem;
+    }
+}
