@@ -335,11 +335,96 @@ button, .difficulty, .topic{
     .end-of-game {
         font-size: 3rem;
     }
+
+    .end-of-game p{
+        padding: 0.5rem;
+    }
     .scores h3 {
         font-size: 3rem;
     }
 
     ul li {
         font-size: 2.75rem;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+    h1 {
+        font-size: 5.5rem;
+    }
+
+    p {
+        font-size: 4.4rem;
+    }
+
+    #question {
+        font-size: 3.3rem;
+    }
+    .quiz-header h3{
+        font-size: 3.3rem;
+    }
+    ul li {
+        font-size: 3.3rem;
+    }
+
+    .btn {
+        line-height: 3.3rem;
+        font-size: 3.3rem;
+    }
+    .scores {
+        margin-top: 4.3rem;
+    }
+
+    .end-of-game {
+        font-size: 3.3rem;
+    }
+    .scores h3 {
+        font-size: 3.3rem;
+    }
+
+    ul li {
+        font-size: 3.02rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    p {
+        font-size: 5rem;
+    }
+
+    #question {
+        font-size: 3.66rem;
+    }
+    .quiz-header h3{
+        font-size: 3.66rem;
+    }
+    ul li {
+        font-size: 3.66rem;
+    }
+
+    .btn {
+        line-height: 3.66rem;
+        font-size: 3.66rem;
+    }
+    .scores {
+        margin-top: 4.83rem;
+    }
+
+    .end-of-game {
+        font-size: 3.66rem;
+    }
+    .scores h3 {
+        font-size: 3.66rem;
+    }
+
+    ul li {
+        font-size: 3.1rem;
     }
 }
