@@ -133,7 +133,7 @@ input[type=radio]:checked {
     color: #fff;
 }
 
-button, .difficulty, .topic, .number-of-questions{
+button, .difficulty, .topic{
     background-color: var(--dark-green);
     border: none;
     color: var(--white);
@@ -155,7 +155,8 @@ button, .difficulty, .topic, .number-of-questions{
 #difficulty, #topic, #number-of-questions{
     background-color: var(--sbyellow);
     color: var(--black);
-    width: auto;
+    width: 21rem;
+    text-align: center;
 }
 .brain-icon {
     color: var(--light-gray);
@@ -163,15 +164,15 @@ button, .difficulty, .topic, .number-of-questions{
 
 .playBtn{
     background-color: var(--dark-green);
-    width: 50%;
+    width: 22rem;
     left: 50%;
 }
 
 
 .rulesBtn {
     border: 1px solid var(--sbyellow);
-    width: 50%;
-    color: var(--sbyellow);
+    width: 22rem;
+    /* color: var(--sbyellow); */
 }
 
 .playBtn:hover, .rulesBtn:hover, .playAgainBtn:hover{
@@ -226,14 +227,6 @@ button, .difficulty, .topic, .number-of-questions{
 
  .hide{
     display: none;
-}
-
-.difficulty, .topic, .number-of-questions{
-    width: auto;
-    border-bottom: 1px solid var(--sbyellow);
-}
-.difficulty label, .topic label, .number-of-questions label{
-    font-size: 1.5rem;
 }
 
 .dialog {
@@ -300,3 +293,11 @@ button, .difficulty, .topic, .number-of-questions{
 .overflow {
     overflow: auto
 }
+
+.dropdown {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    border-radius: 0.75rem;
+    }
