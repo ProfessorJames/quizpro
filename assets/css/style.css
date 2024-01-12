@@ -314,6 +314,15 @@ button, .difficulty, .topic{
         font-size: 4rem;
     }
 
+    .modal-content li {
+        font-size: 2.75rem;
+        margin-top: 0.5rem;
+    }
+
+   .close-btn {
+        font-size: 3.66rem;
+    }
+
     #question {
         font-size: 3rem;
     }
@@ -399,6 +408,14 @@ button, .difficulty, .topic{
         font-size: 5rem;
     }
 
+    .modal-content li {
+        font-size: 3.66rem;
+        margin-top: 3.66rem;
+    }
+
+   .close-btn {
+        font-size: 3.66rem;
+    }
     #question {
         font-size: 3.66rem;
     }
