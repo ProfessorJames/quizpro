@@ -73,6 +73,15 @@ const topicCategories = [
 
 //// 3. Functions are defined in this section
 
+let categories = [];
+
+function getCategories(url, arr){
+    fetch(url).then(response => response.json()).then(data => {
+
+    })
+}
+
+
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
 const convertQuestions = (listOfQuestions) => {
@@ -177,7 +186,6 @@ async function getQuestions(URL, arr){
     // console.log(quizQuestions);
     return questions
 }
-
 // const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
 
 const generateApiUrl = (diff, cat = 11) => {
