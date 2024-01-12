@@ -32,7 +32,7 @@ const numberOfQuestionsDropdown = document.querySelector('#number-of-questions')
 //// 2. Variables are declared in this section
 
 const difficultyLevels = ['easy', 'medium', 'hard'];
-const numberOfQuestionOptions = ['5', '10', '20' , '30', '40', '50']
+const numberOfQuestionOptions = ['5', '10', '15' , '20', '25']
 let difficultyLevelSelected = '';
 
 let questionArray = [];
