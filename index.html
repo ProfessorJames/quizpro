@@ -22,66 +22,70 @@
     </head>
     <body id="body">
         <div class="quiz-container" id="quiz">
-            <div>
-                <h1><i class="fa-solid fa-brain brain-icon"></i>Quiz Pro<i class="fa-solid fa-brain brain-icon"></i>
-                </h1>
-                <p class="tagline">
-                <h2>You're journey to becoming a QuizPro starts here!</h2>
-                </p>
-            </div>
-            <div id="settings" class="settings">
-                <div id="rules">
-                    <button id="rulesBtn" class="btn rulesBtn"><i class="fa-solid fa-list"></i>How to Play <br>
-                    </button>
+            <header>
+                <div>
+                    <h1><i class="fa-solid fa-brain brain-icon"></i>Quiz Pro<i class="fa-solid fa-brain brain-icon"></i>
+                    </h1>
+                    <p class="tagline">
+                    <h2>You're journey to becoming a QuizPro starts here!</h2>
+                    </p>
                 </div>
-                <div class="dropdown">
-                    <div>
-                        <select name="difficulty" id="difficulty">
-                        </select>
+            </header>
+            <main>
+                <div id="settings" class="settings">
+                    <div id="rules">
+                        <button id="rulesBtn" class="btn rulesBtn"><i class="fa-solid fa-list"></i>How to Play <br>
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            <select name="difficulty" id="difficulty">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            <select name="topic" id="topic" class="">
+                                <option value="general knowledge">General Knowledge</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="number-of-questions">
+                            <select name="number-of-questions" id="number-of-questions" class="dropdown">
+                            </select>
+                        </div>
+                    </div>
+                    <div id="playgame">
+                        <button id="playBtn" class="btn playBtn">Start Quiz<i class="fa-solid fa-play"></i></button>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <div>
-                        <select name="topic" id="topic" class="">
-                            <option value="general knowledge">General Knowledge</option>
-                        </select>
+                <div id="quiz-game-area" class="quiz-game-area hide">
+                    <div class="quiz-header">
+                        <div>
+                            <h3 class="question">Question:</h3>
+                        </div>
+                        <h2 id="question">Question text</h2>
+                    </div>
+                    <div id="answers">
+                        <ul id="answers-list">
+                        </ul>
+                    </div>
+                    <div id="buttons" class="buttons">
+                        <button id="submit" class="btn submit">Submit Answer<i
+                                class="fa-solid fa-square-arrow-up-right"></i></button>
+                        <button id="next" class="btn next hide">Next<i class="fa-solid fa-forward"></i></button>
+                    </div>
+                    <div id="scores" class="scores">
+                        <div id="correct">
+                            <h3>Correct: <span id="correct_answers">0</span></h3>
+                        </div>
+                        <div id="incorrect">
+                            <h3>Incorrect: <span id="incorrect_answers">0</span></h3>
+                        </div>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <div class="number-of-questions">
-                        <select name="number-of-questions" id="number-of-questions" class="dropdown">
-                        </select>
-                    </div>
-                </div>
-                <div id="playgame">
-                    <button id="playBtn" class="btn playBtn">Start Quiz<i class="fa-solid fa-play"></i></button>
-                </div>
-            </div>
-            <div id="quiz-game-area" class="quiz-game-area hide">
-                <div class="quiz-header">
-                    <div>
-                        <h3 class="question">Question:</h3>
-                    </div>
-                    <h2 id="question">Question text</h2>
-                </div>
-                <div id="answers">
-                    <ul id="answers-list">
-                    </ul>
-                </div>
-                <div id="buttons" class="buttons">
-                    <button id="submit" class="btn submit">Submit Answer<i
-                            class="fa-solid fa-square-arrow-up-right"></i></button>
-                    <button id="next" class="btn next hide">Next<i class="fa-solid fa-forward"></i></button>
-                </div>
-                <div id="scores" class="scores">
-                    <div id="correct">
-                        <h3>Correct: <span id="correct_answers">0</span></h3>
-                    </div>
-                    <div id="incorrect">
-                        <h3>Incorrect: <span id="incorrect_answers">0</span></h3>
-                    </div>
-                </div>
-            </div>
+            </main>
         </div>
         <dialog id="rules-dialog" class="dialog">
             <h2 class="modal-header">How to Play</h2>
