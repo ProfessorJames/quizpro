@@ -13,7 +13,6 @@ const rulesButton = document.querySelector('#rulesBtn');
 const dialog = document.querySelector('#rules-dialog');
 const closeDialog = document.querySelector('#close-rules-dialog');
 const difficultyRef = document.querySelector('#difficulty');
-const topicRef = document.querySelector('#topic');
 const playBtn = document.querySelector('#playBtn');
 const settings = document.querySelector('#settings');
 const quizGameArea = document.querySelector('#quiz-game-area');
@@ -27,6 +26,7 @@ const correct_answers = document.querySelector('#correct_answers');
 const incorrect_answers = document.querySelector('#incorrect_answers');
 const tagline = document.querySelector('.tagline');
 const difficultyDropdown = document.querySelector('#difficulty');
+const categoryDropdown = document.querySelector('#topic');
 const numberOfQuestionsDropdown = document.querySelector('#number-of-questions');
 const questionNumber = document.querySelector('#question-number')
 
@@ -36,11 +36,9 @@ const difficultyLevels = ['easy', 'medium', 'hard'];
 const numberOfQuestionOptions = ['5', '10', '15' , '20', '25']
 let difficultyLevelSelected = '';
 let numberOfQuestionsSelected = '';
+let categories = [];
 
 let questionArray = [];
-
-const questionAndAnswerData = []
-
 let currentQuestion = 0;
 
 const scores = {
@@ -48,42 +46,49 @@ const scores = {
     incorrect: 0
 };
 
-const topicCategories = [
-    {"id": 11, "name": "Film"},
-    {"id": 9, "name": "General Knowledge"},
-    {"id": 10, "name": "Books"},
-    {"id": 12, "name": "Music"},
-    {"id": 13, "name": "Musicals & Theatres"},
-    {"id": 14, "name": "Television"},
-    {"id": 15, "name": "Video Games"},
-    {"id": 16, "name": "Board Games"},
-    {"id": 17, "name": "Science & Nature"},
-    {"id": 18, "name": "Computers"},
-    {"id": 19, "name": "Mathematics"},
-    {"id": 20, "name": "Mythology"},
-    {"id": 21, "name": "Sports"},
-    {"id": 22, "name": "Geography"},
-    {"id": 23, "name": "History"},
-    {"id": 24, "name": "Politics"},
-    {"id": 25, "name": "Art"},
-    {"id": 26, "name": "Celebrities"},
-    {"id": 27, "name": "Animals"},
-    {"id": 28, "name": "Vehicles"},
-    {"id": 29, "name": "Comics"},
-    {"id": 30, "name": "Gadgets"},
-    {"id": 31, "name": "Anime & Manga"},
-    {"id": 32, "name": "Cartoon & Animations"}
-];
+// const topicCategories = [
+//     {"id": 11, "name": "Film"},
+//     {"id": 9, "name": "General Knowledge"},
+//     {"id": 10, "name": "Books"},
+//     {"id": 12, "name": "Music"},
+//     {"id": 13, "name": "Musicals & Theatres"},
+//     {"id": 14, "name": "Television"},
+//     {"id": 15, "name": "Video Games"},
+//     {"id": 16, "name": "Board Games"},
+//     {"id": 17, "name": "Science & Nature"},
+//     {"id": 18, "name": "Computers"},
+//     {"id": 19, "name": "Mathematics"},
+//     {"id": 20, "name": "Mythology"},
+//     {"id": 21, "name": "Sports"},
+//     {"id": 22, "name": "Geography"},
+//     {"id": 23, "name": "History"},
+//     {"id": 24, "name": "Politics"},
+//     {"id": 25, "name": "Art"},
+//     {"id": 26, "name": "Celebrities"},
+//     {"id": 27, "name": "Animals"},
+//     {"id": 28, "name": "Vehicles"},
+//     {"id": 29, "name": "Comics"},
+//     {"id": 30, "name": "Gadgets"},
+//     {"id": 31, "name": "Anime & Manga"},
+//     {"id": 32, "name": "Cartoon & Animations"}
+// ];
 
 //// 3. Functions are defined in this section
 
-let categories = [];
+function getCategories(url, categoryArray){
+    return fetch(url).then(response => response.json()).then(data => {
+        categoryArray.push(data.trivia_categories)
 
-function getCategories(url, arr){
-    fetch(url).then(response => response.json()).then(data => {
-
-    })
+   })
 }
+
+const categoryObj = getCategories("https://opentdb.com/api_category.php", categories).then(console.log())
+
+// function getCategories(url, arr){
+//     fetch(url).then(response => response.json()).then(data => {
+
+//     })
+// }
 
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
@@ -130,12 +135,29 @@ const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
     })
 };
 
-const generateCatDropdownItems = (selectRef, content) => {
-    selectRef.innerHTML = ""; 
-    content.forEach(item => {
+// const generateCatDropdownItems = (selectRef, content) => {
+//     selectRef.innerHTML = ""; 
+//     content.forEach(item => {
+//         const optionRef = document.createElement('option');
+//         optionRef.value = item['name'];
+//         optionRef.innerHTML = item['name'];
+//         selectRef.appendChild(optionRef);
+//     })
+// }; 
+
+const generateCatDropdownItems = (selectRef) => {
+    const categoriesData = getCategories("https://opentdb.com/api_category.php")
+
+    const firstOption = document.createElement('option');
+    firstOption.value = '';
+    firstOption.innerHTML = '-- Select Category';
+    selectRef.appendChild(firstOption);
+
+    categoriesData.forEach(item => {
         const optionRef = document.createElement('option');
-        optionRef.value = item['name'];
-        optionRef.innerHTML = item['name'];
+        optionRef.innerHTML = item.name;
+        optionRef.value = item.id;
+        optionRef.id = item.id;
         selectRef.appendChild(optionRef);
     })
 }; 
@@ -186,8 +208,11 @@ function getQuizData(url, arr) {
     .then(response => response.json())
     .then(data => {    
             const questions = convertQuestions(data.results)
-            arr.push(questions)
-            return questions
+            const tempArray = [] 
+            tempArray.push(questions)
+            console.log(arr)
+            arr = [...tempArray]
+            return arr
         })
 }
 
@@ -212,16 +237,26 @@ const generateApiUrl = (diff, numOfQuestions, cat = 11) => {
     return API
 }
 
+// function loadQuiz(){
+//     deselectCheckedAnswer();
+//     questionNumber.innerText = currentQuestion +1;
+//     const currentQuizData = questionArray[currentQuestion];
+//     // Create function to dispayQuestion(currentQuestion); is this needed?
+//     questionsRef.innerHTML = currentQuizData.question;
+
+//     displayAnswers(answersList, currentQuizData.answers);
+
+// };
+
+// refactor loadQuiz()
+
 function loadQuiz(){
-    deselectCheckedAnswer();
-    questionNumber.innerText = currentQuestion +1;
+    // deselectCheckedAnswer()
     const currentQuizData = questionArray[currentQuestion];
-    // Create function to dispayQuestion(currentQuestion); is this needed?
     questionsRef.innerHTML = currentQuizData.question;
-
     displayAnswers(answersList, currentQuizData.answers);
+}
 
-};
 
 const toggleClass = (el, className) => {
     el.classList.toggle(className);
@@ -302,7 +337,7 @@ const handlePlay = (event) => {
     //Load first quiz question and answers
     loadQuiz();
 
-    
+
     //Toggle hide class on Settings div
     settings.classList.toggle('hide');
     
@@ -356,13 +391,13 @@ const handleNext = (event) =>{
 
 //// 5. Game Functionality is implemented in this section
 
-generateCatDropdownItems(topicRef, topicCategories);
+// generateCatDropdownItems(topicRef, topicCategories);
+generateCatDropdownItems(categoryDropdown, categories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
 generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
 
 const API_URL = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected);
-console.log(API_URL)
-//// Get questions section
+//// Get question and answer data section
 
 // const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
 // let qAndA = await getQuestions(API_URL, questionArray);
@@ -386,14 +421,17 @@ difficultyDropdown.addEventListener('change', () => {
     
 })
 
+difficultyDropdown.addEventListener('change', () => {
+    difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
+    console.log('The difficulty level was changed to: ' + difficultyLevelSelected)
+    
+})
+
 numberOfQuestionsDropdown.addEventListener('change', () => {
     numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
     console.log('The number of questions selected was changed to: ' + numberOfQuestionsSelected)
     
 })
-
-// Create URL
-
 
 playBtn.addEventListener('click', handlePlay)
 
