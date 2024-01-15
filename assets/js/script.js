@@ -39,6 +39,8 @@ let numberOfQuestionsSelected = '';
 
 let questionArray = [];
 
+const questionAndAnswerData = []
+
 let currentQuestion = 0;
 
 const scores = {
@@ -178,28 +180,42 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
 }
 
 //Refactor using .then instead of async await
-async function getQuestions(URL, arr){
-   
-    const response = await fetch(URL);
-    const data = await response.json();
-    const questions = convertQuestions(data.results);
-    arr.push(questions)
-    // console.log(quizQuestions);
-    return questions
+
+function getQuizData(url, arr) {
+    return fetch(url)
+    .then(response => response.json())
+    .then(data => {    
+            const questions = convertQuestions(data.results)
+            arr.push(questions)
+            return questions
+        })
 }
+
+// getQuizData.then(questions => {
+//     console.log(questions)
+// })
+// async function getQuestions(URL, arr){
+   
+//     const response = await fetch(URL);
+//     const data = await response.json();
+//     const questions = convertQuestions(data.results);
+//     arr.push(questions)
+//     // console.log(quizQuestions);
+//     return questions
+// }
 // const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
 
-const generateApiUrl = (diff, cat = 11, numQuestions) => {
+const generateApiUrl = (diff, numOfQuestions, cat = 11) => {
     let API;
-    API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
+    API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
     console.log(API);
     return API
 }
 
 function loadQuiz(){
     deselectCheckedAnswer();
-    questionNumber.innerText = currentQuestion +1 ;
-    const currentQuizData = qAndAStatic[currentQuestion];
+    questionNumber.innerText = currentQuestion +1;
+    const currentQuizData = questionArray[currentQuestion];
     // Create function to dispayQuestion(currentQuestion); is this needed?
     questionsRef.innerHTML = currentQuizData.question;
 
@@ -276,21 +292,17 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 //// 4. Event Handler functions are defined in this section
 
 const handlePlay = (event) => {
-    event.preventDefault();
-    // Get selected difficulty level 
-    getSelectedDifficultyLevel();
-    
-    // Get Selected Category
-    // getSelectedCategory();
-
-    //Generate API_URL
-    const API_URL = ``
+    event.preventDefault();  
+    const API = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected)
 
     //Fetch Questions from API and return questions in correct format
+    const quizData = getQuizData(API, questionArray)
+    console.log(quizData)
 
     //Load first quiz question and answers
     loadQuiz();
 
+    
     //Toggle hide class on Settings div
     settings.classList.toggle('hide');
     
@@ -348,7 +360,7 @@ generateCatDropdownItems(topicRef, topicCategories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
 generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
 
-const API_URL = generateApiUrl(difficultyLevelSelected);
+const API_URL = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected);
 console.log(API_URL)
 //// Get questions section
 
