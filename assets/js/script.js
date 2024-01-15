@@ -28,12 +28,14 @@ const incorrect_answers = document.querySelector('#incorrect_answers');
 const tagline = document.querySelector('.tagline');
 const difficultyDropdown = document.querySelector('#difficulty');
 const numberOfQuestionsDropdown = document.querySelector('#number-of-questions');
+const questionNumber = document.querySelector('#question-number')
 
 //// 2. Variables are declared in this section
 
 const difficultyLevels = ['easy', 'medium', 'hard'];
 const numberOfQuestionOptions = ['5', '10', '15' , '20', '25']
 let difficultyLevelSelected = '';
+let numberOfQuestionsSelected = '';
 
 let questionArray = [];
 
@@ -168,7 +170,6 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
             const labelRef = document.createElement('label');
             labelRef.setAttribute('for', 'answer' + (index + 1));
             labelRef.innerHTML = item;
-            // labelRef.setAttribute('data-label', 'answer_' + (index + 1)); 
 
             listRef.appendChild(radioRef);
             listRef.appendChild(labelRef);
@@ -188,7 +189,7 @@ async function getQuestions(URL, arr){
 }
 // const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
 
-const generateApiUrl = (diff, cat = 11) => {
+const generateApiUrl = (diff, cat = 11, numQuestions) => {
     let API;
     API = `https://opentdb.com/api.php?amount=3&category=${cat}&difficulty=${diff}&type=multiple`;
     console.log(API);
@@ -197,7 +198,7 @@ const generateApiUrl = (diff, cat = 11) => {
 
 function loadQuiz(){
     deselectCheckedAnswer();
-    
+    questionNumber.innerText = currentQuestion +1 ;
     const currentQuizData = qAndAStatic[currentQuestion];
     // Create function to dispayQuestion(currentQuestion); is this needed?
     questionsRef.innerHTML = currentQuizData.question;
@@ -206,20 +207,10 @@ function loadQuiz(){
 
 };
 
-// comment refactor addClass and removeClass into one function toggleClass
-// const addClass = (el, className) => {
-//         el.classList.add(className);
-// };
-
-// const removeClass = (el, className) => {
-//             el.classList.remove(className)
-// };
-
 const toggleClass = (el, className) => {
     el.classList.toggle(className);
 };
 
-// check to see if better to refactor enable and disable functionality into one function??
 const disable = (el) => {
     el.setAttribute('disabled', 'true')
 }
@@ -297,7 +288,7 @@ const handlePlay = (event) => {
 
     //Fetch Questions from API and return questions in correct format
 
-    //Load Quiz Questions
+    //Load first quiz question and answers
     loadQuiz();
 
     //Toggle hide class on Settings div
@@ -338,6 +329,7 @@ const handleNext = (event) =>{
     
     if(currentQuestion < qAndAStatic.length){
         loadQuiz()
+        questionNumber.innerText = currentQuestion;  
     } else{
         quizGameArea.innerHTML = displayEndOfGameMessage(scores, qAndAStatic);
     }
@@ -346,23 +338,25 @@ const handleNext = (event) =>{
     toggleClass(submitBtn, 'hide');  
     answersRef.forEach(answerEl => {
         enable(answerEl);
-    });                
+    });    
+          
 };
 
 //// 5. Game Functionality is implemented in this section
 
-const API_URL = generateApiUrl(difficultyLevelSelected);
 generateCatDropdownItems(topicRef, topicCategories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
 generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
 
+const API_URL = generateApiUrl(difficultyLevelSelected);
+console.log(API_URL)
 //// Get questions section
 
-const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
+// const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
 // let qAndA = await getQuestions(API_URL, questionArray);
 
-const qAndAStatic = [...qAndA]
-console.log(qAndAStatic)
+// const qAndAStatic = [...qAndA]
+// console.log(qAndAStatic)
 
 //// 6. Event Listeners are called in this section
 
@@ -374,11 +368,20 @@ closeDialog.addEventListener('click', () => {
     dialog.close();
 })
 
-difficultyDropdown.addEventListener('change', () =>{
+difficultyDropdown.addEventListener('change', () => {
     difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
-    console.log(difficultyLevelSelected);
-
+    console.log('The difficulty level was changed to: ' + difficultyLevelSelected)
+    
 })
+
+numberOfQuestionsDropdown.addEventListener('change', () => {
+    numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
+    console.log('The number of questions selected was changed to: ' + numberOfQuestionsSelected)
+    
+})
+
+// Create URL
+
 
 playBtn.addEventListener('click', handlePlay)
 
