@@ -247,7 +247,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
        <div id='end-of-game' class='end-of-game'>
         <h1>🍾 Congratulations 🍾</h1>
         <p><i class="fa-5x">🏆</i></p>
-        <p>You answered ${scoresObj.correct} / ${questionArray.length} questions correctly.</p>
+        <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
         <p>Remember practice makes perfect!</p>
         <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
@@ -306,10 +306,9 @@ async function handleNext(event){
     body.classList.remove('bg-incorrect');
 
     currentQuestion++;
-    console.log('The question array here has length of: ', questionArray[0].length)
     if(currentQuestion < questionArray[0].length){
         loadQuiz()
-        questionNumber.innerText = currentQuestion;  
+        questionNumber.innerText = currentQuestion +1;  
     } else{
         quizGameArea.innerHTML = displayEndOfGameMessage(scores, questionArray);
     }
