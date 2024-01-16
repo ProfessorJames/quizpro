@@ -167,7 +167,7 @@ async function getQuizData(URL, arr){
 }
 
 
-function loadQuiz(data){
+function loadQuiz(){
     deselectCheckedAnswer();
 
     questionNumber.innerText = currentQuestion +1;
@@ -288,7 +288,7 @@ const handleSubmit = (event) => {
             disable(answerEl);
         });
 
-        if(answer === questionArray[currentQuestion].correctAnswer){
+        if(answer === questionArray[0][currentQuestion].correctAnswer){
             answerCorrect(submitBtn, nextBtn, body);
             incrementScore(correct_answers, 'correct');
         } else {
