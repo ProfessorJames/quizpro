@@ -76,18 +76,12 @@ const scores = {
 
 //// 3. Functions are defined in this section
 
-// function getCategoryData(url, categoryArray){
-//     fetch(url).then(response => response.json()).then(data => {
-//         categoryArray.push(data.trivia_categories)
-//     })
-//     return data.trivia_categories
-// }
-
-async function getCategoryData(url, categorArray){
+async function getCategoryData(url, categoryArray){
     const response = await fetch(url);
     const data = await response.json();
     const catData = await data.trivia_categories
-    categorArray.push(catData)
+    console.log(categoryArray)
+    categoryArray.push(catData)
     return catData
 }    
 
@@ -135,16 +129,6 @@ const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
     })
 };
 
-// const generateCatDropdownItems = (selectRef, content) => {
-//     selectRef.innerHTML = ""; 
-//     content.forEach(item => {
-//         const optionRef = document.createElement('option');
-//         optionRef.value = item['name'];
-//         optionRef.innerHTML = item['name'];
-//         selectRef.appendChild(optionRef);
-//     })
-// }; 
-
 const categoryDataArray = await getCategoryData("https://opentdb.com/api_category.php", categories)
 
 const generateCatDropdownItems = (selectRef, categoryArray) => {
@@ -171,12 +155,12 @@ const toTitleCase = (str) => {
       .join(' ');
   };
 
-// const getSelectedDifficultyLevel = () => { 
-    
-//     return difficultyDropdown.addEventListener('change', () => {
-//         this.value;
-//     })
-// };
+ const generateApiUrl = (diff, numOfQuestions, cat) => {
+    let API;
+    API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
+    console.log(API);
+    return API
+}
 
 const displayAnswers = (unorderedListRef, currentAnswers) => {
 
@@ -202,61 +186,36 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
         })
 }
 
-//Refactor using .then instead of async await
-
-function getQuizData(url, arr) {
-    return fetch(url)
-    .then(response => response.json())
-    .then(data => {    
-            const questions = convertQuestions(data.results)
-            const tempArray = [] 
-            tempArray.push(questions)
-            console.log(arr)
-            arr = [...tempArray]
-            return arr
-        })
+async function getQuizData(url, qArray) {
+    const response = await fetch(url);
+    const data = await response.json();
+    const questions = convertQuestions(data.results);
+    const tempArray = [];
+    tempArray.push(questions);
+    qArray = [...tempArray];
+    return qArray
 }
 
-// getQuizData.then(questions => {
-//     console.log(questions)
-// })
-// async function getQuestions(URL, arr){
-   
-//     const response = await fetch(URL);
-//     const data = await response.json();
-//     const questions = convertQuestions(data.results);
-//     arr.push(questions)
-//     // console.log(quizQuestions);
-//     return questions
-// }
-// const API_URL = `https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple`;
 
-const generateApiUrl = (diff, numOfQuestions, cat = 11) => {
-    let API;
-    API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
-    console.log(API);
-    return API
-}
+function loadQuiz(){
+    deselectCheckedAnswer();
+    questionNumber.innerText = currentQuestion +1;
+    const currentQuizData = questionArray[currentQuestion];
+    // Create function to dispayQuestion(currentQuestion); is this needed?
+    questionsRef.innerHTML = currentQuizData.question;
 
-// function loadQuiz(){
-//     deselectCheckedAnswer();
-//     questionNumber.innerText = currentQuestion +1;
-//     const currentQuizData = questionArray[currentQuestion];
-//     // Create function to dispayQuestion(currentQuestion); is this needed?
-//     questionsRef.innerHTML = currentQuizData.question;
+    displayAnswers(answersList, currentQuizData.answers);
 
-//     displayAnswers(answersList, currentQuizData.answers);
-
-// };
+};
 
 // refactor loadQuiz()
 
-function loadQuiz(){
-    // deselectCheckedAnswer()
-    const currentQuizData = questionArray[currentQuestion];
-    questionsRef.innerHTML = currentQuizData.question;
-    displayAnswers(answersList, currentQuizData.answers);
-}
+// function loadQuiz(){
+//     // deselectCheckedAnswer()
+//     const currentQuizData = questionArray[currentQuestion];
+//     questionsRef.innerHTML = currentQuizData.question;
+//     displayAnswers(answersList, currentQuizData.answers);
+// }
 
 
 const toggleClass = (el, className) => {
@@ -332,21 +291,24 @@ const handlePlay = (event) => {
     const API = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
 
     //Fetch Questions from API and return questions in correct format
-    const quizData = getQuizData(API, questionArray)
-    console.log(quizData)
+    const quizData = getQuizData(API, questionArray).then( response => {
 
-    //Load first quiz question and answers
-    loadQuiz();
-
-
-    //Toggle hide class on Settings div
-    settings.classList.toggle('hide');
-    
-    //Toggle hide class on quizGameArea div
-    quizGameArea.classList.toggle('hide');
-    //Toggle hide class on tagline
-    tagline.classList.toggle('hide');
-}
+        
+        
+        //Load first quiz question and answers
+        loadQuiz();
+        
+        
+        //Toggle hide class on Settings div
+        settings.classList.toggle('hide');
+        
+        //Toggle hide class on quizGameArea div
+        quizGameArea.classList.toggle('hide');
+        //Toggle hide class on tagline
+        tagline.classList.toggle('hide');
+    }
+        )
+    }
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -391,21 +353,19 @@ const handleNext = (event) =>{
 };
 
 //// 5. Game Functionality is implemented in this section
-//When page loads get category data
-getCategoryData
-// generateCatDropdownItems(topicRef, topicCategories);
 generateCatDropdownItems(categoryDropdown, categories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
 generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
 
-const API_URL = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected);
+const API_URL = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected);
+
 //// Get question and answer data section
 
-// const qAndA = await getQuestions(API_URL, questionArray); // refactor using .then instead of await
-// let qAndA = await getQuestions(API_URL, questionArray);
+let qAndA = await getQuizData(API_URL, questionArray);
+// var qAndA = await getQuestions(API_URL, questionArray);
 
-// const qAndAStatic = [...qAndA]
-// console.log(qAndAStatic)
+const qAndAStatic = [...qAndA]
+console.log(qAndAStatic)
 
 //// 6. Event Listeners are called in this section
 
