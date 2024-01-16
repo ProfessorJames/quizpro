@@ -47,40 +47,12 @@ const scores = {
     incorrect: 0
 };
 
-// const topicCategories = [
-//     {"id": 11, "name": "Film"},
-//     {"id": 9, "name": "General Knowledge"},
-//     {"id": 10, "name": "Books"},
-//     {"id": 12, "name": "Music"},
-//     {"id": 13, "name": "Musicals & Theatres"},
-//     {"id": 14, "name": "Television"},
-//     {"id": 15, "name": "Video Games"},
-//     {"id": 16, "name": "Board Games"},
-//     {"id": 17, "name": "Science & Nature"},
-//     {"id": 18, "name": "Computers"},
-//     {"id": 19, "name": "Mathematics"},
-//     {"id": 20, "name": "Mythology"},
-//     {"id": 21, "name": "Sports"},
-//     {"id": 22, "name": "Geography"},
-//     {"id": 23, "name": "History"},
-//     {"id": 24, "name": "Politics"},
-//     {"id": 25, "name": "Art"},
-//     {"id": 26, "name": "Celebrities"},
-//     {"id": 27, "name": "Animals"},
-//     {"id": 28, "name": "Vehicles"},
-//     {"id": 29, "name": "Comics"},
-//     {"id": 30, "name": "Gadgets"},
-//     {"id": 31, "name": "Anime & Manga"},
-//     {"id": 32, "name": "Cartoon & Animations"}
-// ];
-
 //// 3. Functions are defined in this section
 
 async function getCategoryData(url, categoryArray){
     const response = await fetch(url);
     const data = await response.json();
     const catData = await data.trivia_categories
-    console.log(categoryArray)
     categoryArray.push(catData)
     return catData
 }    
@@ -155,10 +127,9 @@ const toTitleCase = (str) => {
       .join(' ');
   };
 
- const generateApiUrl = (diff, numOfQuestions, cat) => {
+ const generateQuestionDataUrl = (diff, numOfQuestions, cat) => {
     let API;
     API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
-    console.log(API);
     return API
 }
 
@@ -186,22 +157,23 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
         })
 }
 
-async function getQuizData(url, qArray) {
-    const response = await fetch(url);
+async function getQuizData(URL, arr){
+
+    const response = await fetch(URL);
     const data = await response.json();
     const questions = convertQuestions(data.results);
-    const tempArray = [];
-    tempArray.push(questions);
-    qArray = [...tempArray];
-    return qArray
+    arr.push(questions)
+    return questions
 }
 
 
-function loadQuiz(){
+function loadQuiz(data){
     deselectCheckedAnswer();
+
     questionNumber.innerText = currentQuestion +1;
-    const currentQuizData = questionArray[currentQuestion];
-    // Create function to dispayQuestion(currentQuestion); is this needed?
+    
+    const currentQuizData = data[currentQuestion];
+    console.log(currentQuizData)
     questionsRef.innerHTML = currentQuizData.question;
 
     displayAnswers(answersList, currentQuizData.answers);
@@ -286,29 +258,28 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 
 //// 4. Event Handler functions are defined in this section
 
-const handlePlay = (event) => {
+async function handlePlay(event){
     event.preventDefault();  
-    const API = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
-
-    //Fetch Questions from API and return questions in correct format
-    const quizData = getQuizData(API, questionArray).then( response => {
-
+    const API = generateQuestionDataUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
+    const quizData = await getQuizData(API, questionArray)
+    console.log(quizData[0].question)
+    console.log(questionArray)
+    
+         
+    // //Load first quiz question and answers
+    loadQuiz(quizData);
         
         
-        //Load first quiz question and answers
-        loadQuiz();
+    // //Toggle hide class on Settings div
+    // settings.classList.toggle('hide');
         
-        
-        //Toggle hide class on Settings div
-        settings.classList.toggle('hide');
-        
-        //Toggle hide class on quizGameArea div
-        quizGameArea.classList.toggle('hide');
-        //Toggle hide class on tagline
-        tagline.classList.toggle('hide');
-    }
-        )
-    }
+    // //Toggle hide class on quizGameArea div
+    // quizGameArea.classList.toggle('hide');
+    // //Toggle hide class on tagline
+    // tagline.classList.toggle('hide');
+}
+    
+    
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -357,15 +328,14 @@ generateCatDropdownItems(categoryDropdown, categories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
 generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
 
-const API_URL = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected);
+// const API_URL = generateQuestionDataUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected);
 
 //// Get question and answer data section
 
-let qAndA = await getQuizData(API_URL, questionArray);
-// var qAndA = await getQuestions(API_URL, questionArray);
+// const qAndA = await getQuizData(API_URL, questionArray);
 
-const qAndAStatic = [...qAndA]
-console.log(qAndAStatic)
+// const qAndAStatic = [...qAndA]
+// console.log(qAndAStatic)
 
 //// 6. Event Listeners are called in this section
 
