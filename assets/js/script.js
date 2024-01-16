@@ -35,6 +35,7 @@ const questionNumber = document.querySelector('#question-number')
 const difficultyLevels = ['easy', 'medium', 'hard'];
 const numberOfQuestionOptions = ['5', '10', '15' , '20', '25']
 let difficultyLevelSelected = '';
+let categorySelected = '';
 let numberOfQuestionsSelected = '';
 
 let categories = [];
@@ -170,12 +171,12 @@ const toTitleCase = (str) => {
       .join(' ');
   };
 
-const getSelectedDifficultyLevel = () => { 
+// const getSelectedDifficultyLevel = () => { 
     
-    return difficultyDropdown.addEventListener('change', () => {
-        this.value;
-    })
-};
+//     return difficultyDropdown.addEventListener('change', () => {
+//         this.value;
+//     })
+// };
 
 const displayAnswers = (unorderedListRef, currentAnswers) => {
 
@@ -328,7 +329,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 
 const handlePlay = (event) => {
     event.preventDefault();  
-    const API = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected)
+    const API = generateApiUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
 
     //Fetch Questions from API and return questions in correct format
     const quizData = getQuizData(API, questionArray)
@@ -422,9 +423,9 @@ difficultyDropdown.addEventListener('change', () => {
     
 })
 
-difficultyDropdown.addEventListener('change', () => {
-    difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
-    console.log('The difficulty level was changed to: ' + difficultyLevelSelected)
+categoryDropdown.addEventListener('change', () => {
+    categorySelected = categoryDropdown.value;
+    console.log('The category level id was changed to: ' + categorySelected)
     
 })
 
