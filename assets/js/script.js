@@ -18,8 +18,8 @@ const settings = document.querySelector('#settings');
 const quizGameArea = document.querySelector('#quiz-game-area');
 const answersList = document.querySelector('#answers-list')
 const answerButtonsRef = document.querySelectorAll('.answer-buttons')
-const submitBtn =document.querySelector('#submit');
-const nextBtn =document.querySelector('#next');
+const submitBtn = document.querySelector('#submit');
+const nextBtn = document.querySelector('#next');
 const questionsRef = document.querySelector('#question');
 const answersRef = document.querySelectorAll('.answer');
 const correct_answers = document.querySelector('#correct_answers');
@@ -32,20 +32,21 @@ const questionNumber = document.querySelector('#question-number')
 
 //// 2. Variables are declared in this section
 
-const difficultyLevels = ['easy', 'medium', 'hard'];
-const numberOfQuestionOptions = ['5', '10', '15' , '20', '25']
-let difficultyLevelSelected = '';
-let categorySelected = '';
-let numberOfQuestionsSelected = '';
+const config = {
 
-let categories = [];
-let questionArray = [];
-let currentQuestion = 0;
-
-const scores = {
-    correct: 0,
-    incorrect: 0
-};
+    difficultyLevels: ['easy', 'medium', 'hard'],
+    numberOfQuestionOptions: ['5', '10', '15' , '20', '25'],
+    difficultyLevelSelected: '',
+    categorySelected: '',
+    numberOfQuestionsSelected: '',
+    categories: [],
+    questionArray: [],
+    currentQuestion: 0,
+    scores: {
+        correct: 0,
+        incorrect: 0
+    }
+}
 
 //// 3. Functions are defined in this section
 
@@ -101,7 +102,7 @@ const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
     })
 };
 
-const categoryDataArray = await getCategoryData("https://opentdb.com/api_category.php", categories)
+const categoryDataArray = await getCategoryData("https://opentdb.com/api_category.php", config.categories)
 
 const generateCatDropdownItems = (selectRef, categoryArray) => {
        
@@ -118,6 +119,12 @@ const generateCatDropdownItems = (selectRef, categoryArray) => {
         selectRef.appendChild(optionRef);
     })
 }; 
+
+const checkIfSelected = () => {
+    if(difficultyDropdown.value !== '' && categoryDropdown.value !== '' && numberOfQuestionsDropdown.value !== ''){
+        playBtn.classList.toggle('hide')
+    }
+}
 
 const toTitleCase = (str) => {
     return str
@@ -170,25 +177,15 @@ async function getQuizData(URL, arr){
 function loadQuiz(){
     deselectCheckedAnswer();
 
-    questionNumber.innerText = currentQuestion +1;
+    questionNumber.innerText = config.currentQuestion +1;
     
-    const currentQuizData = questionArray[0][currentQuestion];
+    const currentQuizData = config.questionArray[0][config.currentQuestion];
     console.log(currentQuizData)
     questionsRef.innerHTML = currentQuizData.question;
 
     displayAnswers(answersList, currentQuizData.answers);
 
 };
-
-// refactor loadQuiz()
-
-// function loadQuiz(){
-//     // deselectCheckedAnswer()
-//     const currentQuizData = questionArray[currentQuestion];
-//     questionsRef.innerHTML = currentQuizData.question;
-//     displayAnswers(answersList, currentQuizData.answers);
-// }
-
 
 const toggleClass = (el, className) => {
     el.classList.toggle(className);
@@ -232,8 +229,8 @@ const answerIncorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
 // refactor answerCorrect and answerIncoorect into one function as they do similar things
 
 const incrementScore = (el, scoreType) => {
-    scores[scoreType] = Number(el.textContent) + 1;
-    el.textContent = scores[scoreType].toString();
+    config.scores[scoreType] = Number(el.textContent) + 1;
+    el.textContent = config.scores[scoreType].toString();
 };
 
 function deselectCheckedAnswer() {
@@ -261,10 +258,10 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 async function handlePlay(event){
 
     event.preventDefault();  
-    const API = generateQuestionDataUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
-    const quizData = await getQuizData(API, questionArray)
+    const API = generateQuestionDataUrl(config.difficultyLevelSelected, config.numberOfQuestionsSelected, config.categorySelected)
+    const quizData = await getQuizData(API, config.questionArray)
 
-    console.log('I am the questionArray', questionArray[0][0].question)   
+    console.log('I am the questionArray', config.questionArray[0][0].question)   
      
     loadQuiz(quizData);
                 
@@ -285,7 +282,7 @@ const handleSubmit = (event) => {
             disable(answerEl);
         });
 
-        if(answer === questionArray[0][currentQuestion].correctAnswer){
+        if(answer === config.questionArray[0][config.currentQuestion].correctAnswer){
             answerCorrect(submitBtn, nextBtn, body);
             incrementScore(correct_answers, 'correct');
         } else {
@@ -302,12 +299,13 @@ async function handleNext(event){
     body.classList.remove('bg-correct');
     body.classList.remove('bg-incorrect');
 
-    currentQuestion++;
-    if(currentQuestion < questionArray[0].length){
+    config.currentQuestion++;
+    console.log('The config questionArray length is', config.questionArray[0].length)
+    if(config.currentQuestion < config.questionArray[0].length){
         loadQuiz()
-        questionNumber.innerText = currentQuestion +1;  
+        questionNumber.innerText = config.currentQuestion +1;  
     } else{
-        quizGameArea.innerHTML = displayEndOfGameMessage(scores, questionArray);
+        quizGameArea.innerHTML = displayEndOfGameMessage(config.scores, config.questionArray);
     }
 
     toggleClass(nextBtn, 'hide');
@@ -319,9 +317,9 @@ async function handleNext(event){
 };
 
 //// 5. Game Functionality is implemented in this section
-generateCatDropdownItems(categoryDropdown, categories);
-generateDiffDropdownItems(difficultyRef, difficultyLevels);
-generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
+generateCatDropdownItems(categoryDropdown, config.categories);
+generateDiffDropdownItems(difficultyRef, config.difficultyLevels);
+generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, config.numberOfQuestionOptions);
 
 //// 6. Event Listeners are called in this section
 
@@ -334,22 +332,30 @@ closeDialog.addEventListener('click', () => {
 })
 
 difficultyDropdown.addEventListener('change', () => {
-    difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
-    console.log('The difficulty level was changed to: ' + difficultyLevelSelected)
+    config.difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
+    console.log('The difficulty level was changed to: ' + config.difficultyLevelSelected)
     
 })
+
+
 
 categoryDropdown.addEventListener('change', () => {
-    categorySelected = categoryDropdown.value;
-    console.log('The category level id was changed to: ' + categorySelected)
+    config.categorySelected = categoryDropdown.value;
+    console.log('The category level id was changed to: ' + config.categorySelected)
     
 })
 
+difficultyDropdown.addEventListener('change', checkIfSelected)
+
 numberOfQuestionsDropdown.addEventListener('change', () => {
-    numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
-    console.log('The number of questions selected was changed to: ' + numberOfQuestionsSelected)
+    config.numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
+    console.log('The number of questions selected was changed to: ' + config.numberOfQuestionsSelected)
     
 })
+
+difficultyDropdown.addEventListener('change', checkIfSelected)
+categoryDropdown.addEventListener('change', checkIfSelected)
+numberOfQuestionsDropdown.addEventListener('change', checkIfSelected)
 
 playBtn.addEventListener('click', handlePlay)
 
