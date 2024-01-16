@@ -1,13 +1,14 @@
 let categories = [];
 
-const category_url = `https://opentdb.com/api_category.php`;
+console.log(categories)
+// const category_url = `https://opentdb.com/api_category.php`;
 
-function getCategories(url, categoryArray){
-    return fetch(url).then(response => response.json()).then(data => {
+function getCategoryData(url, categoryArray){
+    fetch(url).then(response => response.json()).then(data => {
         categoryArray.push(data.trivia_categories)
-        // categoryArray.push(data)
+        return data.trivia_categories
 
    })
 }
 
-getCategories("https://opentdb.com/api_category.php", categories)
+getCategoryData("https://opentdb.com/api_category.php", categories)

@@ -36,8 +36,8 @@ const difficultyLevels = ['easy', 'medium', 'hard'];
 const numberOfQuestionOptions = ['5', '10', '15' , '20', '25']
 let difficultyLevelSelected = '';
 let numberOfQuestionsSelected = '';
-let categories = [];
 
+let categories = [];
 let questionArray = [];
 let currentQuestion = 0;
 
@@ -75,21 +75,20 @@ const scores = {
 
 //// 3. Functions are defined in this section
 
-function getCategories(url, categoryArray){
-    return fetch(url).then(response => response.json()).then(data => {
-        categoryArray.push(data.trivia_categories)
-
-   })
-}
-
-const categoryObj = getCategories("https://opentdb.com/api_category.php", categories).then(console.log())
-
-// function getCategories(url, arr){
+// function getCategoryData(url, categoryArray){
 //     fetch(url).then(response => response.json()).then(data => {
-
+//         categoryArray.push(data.trivia_categories)
 //     })
+//     return data.trivia_categories
 // }
 
+async function getCategoryData(url, categorArray){
+    const response = await fetch(url);
+    const data = await response.json();
+    const catData = await data.trivia_categories
+    categorArray.push(catData)
+    return catData
+}    
 
 const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
@@ -145,15 +144,16 @@ const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
 //     })
 // }; 
 
-const generateCatDropdownItems = (selectRef) => {
-    const categoriesData = getCategories("https://opentdb.com/api_category.php")
+const categoryDataArray = await getCategoryData("https://opentdb.com/api_category.php", categories)
 
-    const firstOption = document.createElement('option');
-    firstOption.value = '';
-    firstOption.innerHTML = '-- Select Category';
-    selectRef.appendChild(firstOption);
+const generateCatDropdownItems = (selectRef, categoryArray) => {
+       
+       const firstOption = document.createElement('option');
+       firstOption.value = '';
+       firstOption.innerHTML = '-- Select Category';
+       selectRef.appendChild(firstOption);
 
-    categoriesData.forEach(item => {
+        categoryDataArray.forEach(item => {
         const optionRef = document.createElement('option');
         optionRef.innerHTML = item.name;
         optionRef.value = item.id;
@@ -390,7 +390,8 @@ const handleNext = (event) =>{
 };
 
 //// 5. Game Functionality is implemented in this section
-
+//When page loads get category data
+getCategoryData
 // generateCatDropdownItems(topicRef, topicCategories);
 generateCatDropdownItems(categoryDropdown, categories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
