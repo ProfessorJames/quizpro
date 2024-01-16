@@ -259,22 +259,19 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 //// 4. Event Handler functions are defined in this section
 
 async function handlePlay(event){
+
     event.preventDefault();  
     const API = generateQuestionDataUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
     const quizData = await getQuizData(API, questionArray)
-    // console.log(quizData[0].question)
-    console.log('I am the questionArray', questionArray[0][0].question)
-    
-         
-    // //Load first quiz question and answers
+
+    console.log('I am the questionArray', questionArray[0][0].question)   
+     
     loadQuiz(quizData);
                 
-    //Toggle hide class on Settings div
     settings.classList.toggle('hide');
         
-    //Toggle hide class on quizGameArea div
     quizGameArea.classList.toggle('hide');
-    //Toggle hide class on tagline
+
     tagline.classList.toggle('hide');
 }
     
