@@ -172,7 +172,7 @@ function loadQuiz(data){
 
     questionNumber.innerText = currentQuestion +1;
     
-    const currentQuizData = data[currentQuestion];
+    const currentQuizData = questionArray[0][currentQuestion];
     console.log(currentQuizData)
     questionsRef.innerHTML = currentQuizData.question;
 
@@ -262,21 +262,20 @@ async function handlePlay(event){
     event.preventDefault();  
     const API = generateQuestionDataUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected)
     const quizData = await getQuizData(API, questionArray)
-    console.log(quizData[0].question)
-    console.log(questionArray)
+    // console.log(quizData[0].question)
+    console.log('I am the questionArray', questionArray[0][0].question)
     
          
     // //Load first quiz question and answers
     loadQuiz(quizData);
+                
+    //Toggle hide class on Settings div
+    settings.classList.toggle('hide');
         
-        
-    // //Toggle hide class on Settings div
-    // settings.classList.toggle('hide');
-        
-    // //Toggle hide class on quizGameArea div
-    // quizGameArea.classList.toggle('hide');
-    // //Toggle hide class on tagline
-    // tagline.classList.toggle('hide');
+    //Toggle hide class on quizGameArea div
+    quizGameArea.classList.toggle('hide');
+    //Toggle hide class on tagline
+    tagline.classList.toggle('hide');
 }
     
     
@@ -289,7 +288,7 @@ const handleSubmit = (event) => {
             disable(answerEl);
         });
 
-        if(answer === qAndAStatic[currentQuestion].correctAnswer){
+        if(answer === questionArray[currentQuestion].correctAnswer){
             answerCorrect(submitBtn, nextBtn, body);
             incrementScore(correct_answers, 'correct');
         } else {
@@ -299,7 +298,7 @@ const handleSubmit = (event) => {
     }
 }
 
-const handleNext = (event) =>{
+async function handleNext(event){
 
     event.preventDefault();
     body.classList.add('normal');
@@ -307,12 +306,12 @@ const handleNext = (event) =>{
     body.classList.remove('bg-incorrect');
 
     currentQuestion++;
-    
-    if(currentQuestion < qAndAStatic.length){
+    console.log('The question array here has length of: ', questionArray[0].length)
+    if(currentQuestion < questionArray[0].length){
         loadQuiz()
         questionNumber.innerText = currentQuestion;  
     } else{
-        quizGameArea.innerHTML = displayEndOfGameMessage(scores, qAndAStatic);
+        quizGameArea.innerHTML = displayEndOfGameMessage(scores, questionArray);
     }
 
     toggleClass(nextBtn, 'hide');
@@ -327,15 +326,6 @@ const handleNext = (event) =>{
 generateCatDropdownItems(categoryDropdown, categories);
 generateDiffDropdownItems(difficultyRef, difficultyLevels);
 generateNumberofQuestionsDropdownItems(numberOfQuestionsDropdown, numberOfQuestionOptions);
-
-// const API_URL = generateQuestionDataUrl(difficultyLevelSelected, numberOfQuestionsSelected, categorySelected);
-
-//// Get question and answer data section
-
-// const qAndA = await getQuizData(API_URL, questionArray);
-
-// const qAndAStatic = [...qAndA]
-// console.log(qAndAStatic)
 
 //// 6. Event Listeners are called in this section
 
