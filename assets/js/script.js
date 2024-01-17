@@ -181,7 +181,7 @@ function loadQuiz() {
   questionNumber.innerText = config.currentQuestion + 1;
 
   const currentQuizData = config.questionArray[0][config.currentQuestion];
-  console.log(currentQuizData);
+
   questionsRef.innerHTML = currentQuizData.question;
 
   displayAnswers(answersList, currentQuizData.answers);
@@ -263,8 +263,6 @@ async function handlePlay(event) {
   );
   const quizData = await getQuizData(API, config.questionArray);
 
-  console.log('I am the questionArray', config.questionArray[0][0].question);
-
   loadQuiz(quizData);
 
   settings.classList.toggle('hide');
@@ -301,10 +299,7 @@ async function handleNext(event) {
   body.classList.remove('bg-incorrect');
 
   config.currentQuestion++;
-  console.log(
-    'The config questionArray length is',
-    config.questionArray[0].length,
-  );
+
   if (config.currentQuestion < config.questionArray[0].length) {
     loadQuiz();
     questionNumber.innerText = config.currentQuestion + 1;
@@ -342,26 +337,16 @@ closeDialog.addEventListener('click', () => {
 
 difficultyDropdown.addEventListener('change', () => {
   config.difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
-  console.log(
-    'The difficulty level was changed to: ' + config.difficultyLevelSelected,
-  );
 });
 
 categoryDropdown.addEventListener('change', () => {
   config.categorySelected = categoryDropdown.value;
-  console.log(
-    'The category level id was changed to: ' + config.categorySelected,
-  );
 });
 
 difficultyDropdown.addEventListener('change', checkIfSelected);
 
 numberOfQuestionsDropdown.addEventListener('change', () => {
   config.numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
-  console.log(
-    'The number of questions selected was changed to: ' +
-      config.numberOfQuestionsSelected,
-  );
 });
 
 difficultyDropdown.addEventListener('change', checkIfSelected);
