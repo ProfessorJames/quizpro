@@ -3,446 +3,447 @@
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 :root {
-      /* Colors */
-      --black: #020100;
-      --eerie-black: #1A1B1D;
-      --gunmetal: #262c35;
-      --rich-black: #023020;
-      --sbyellow: #f1d302;
-      --dark-green:	#023020;
-      --fe-red:	#C1292E;
-      --light-gray: #9c9a9a;
-      --white: #fff;
+  /* Colors */
+  --black: #020100;
+  --eerie-black: #1a1b1d;
+  --gunmetal: #262c35;
+  --rich-black: #023020;
+  --sbyellow: #f1d302;
+  --dark-green: #023020;
+  --fe-red: #c1292e;
+  --light-gray: #9c9a9a;
+  --white: #fff;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 2.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 2.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
 }
 /* Styles for element tags are in this section*/
 
 h1 {
-    font-weight: 400;
-    padding: 1rem;
-    text-align: center;
-    color: var(--sbyellow);
-    
+  font-weight: 400;
+  padding: 1rem;
+  text-align: center;
+  color: var(--sbyellow);
 }
 
-h2, p {
-    padding: 0.25rem;
-    /* text-align: center; */
-    font-size: 2.5rem;
-    background-color: var(--black);
-    color: var(--sbyellow);
+h2,
+p {
+  padding: 0.25rem;
+  /* text-align: center; */
+  font-size: 2.5rem;
+  background-color: var(--black);
+  color: var(--sbyellow);
 }
 
 i {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
 }
 
-ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    list-style: none;
-    counter-reset: choices;
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  counter-reset: choices;
 }
 
 ul li {
-    margin: 0.75rem 0;
+  margin: 0.75rem 0;
 }
 
 ul li label {
-    cursor: pointer;
-    font-size: 1.75rem;
-    margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1.75rem;
+  margin-left: 0.5rem;
 }
 
 li::before {
-    content: counter(choices, upper-alpha) ".";
-    counter-increment: choices;
-    padding-right: 0.5rem;
-    color: var(--white);
+  content: counter(choices, upper-alpha) '.';
+  counter-increment: choices;
+  padding-right: 0.5rem;
+  color: var(--white);
 }
 
-input[type=radio] {
-    background-color: var(--gunmetal);
-    border-radius:50%;
+input[type='radio'] {
+  background-color: var(--gunmetal);
+  border-radius: 50%;
 }
 
-input[type=radio]:checked {
-    border-radius:50%;
-    padding: 0.5rem;
-    appearance: none;
-    background-color: var(--sbyellow);
- }
-
+input[type='radio']:checked {
+  border-radius: 50%;
+  padding: 0.5rem;
+  appearance: none;
+  background-color: var(--sbyellow);
+}
 
 #answers-list {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .label {
-    display: block;
-    margin-bottom: 1rem;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 #answer {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 .quiz-container {
-    background-color: var(--black);
-    /* background-color: var(--white); */
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
-    width: 92.5vw;
-    max-width: 90rem;
-    height: 95vh;
-    min-height: 31rem;
+  background-color: var(--black);
+  /* background-color: var(--white); */
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
+  width: 92.5vw;
+  max-width: 90rem;
+  height: 95vh;
+  min-height: 31rem;
 }
 
-.quiz-header h3{
-    color: var(--white);
-    /* margin: 1rem 0; */
-    font-size: 1.5rem;
-    padding: 1rem;
+.quiz-header h3 {
+  color: var(--white);
+  /* margin: 1rem 0; */
+  font-size: 1.5rem;
+  padding: 1rem;
 }
 /* .quiz-game-area {
     background-color: var(--black);
 } */
 
 .quiz-game-area label {
-    color: #fff;
+  color: #fff;
 }
 
-button, .difficulty, .topic{
-    background-color: var(--dark-green);
-    border: none;
-    color: var(--white);
-    /* display: block; */
-    width: 50%;
-    font-size: 1.5rem;
-    font-family: inherit;
-    padding: 0.5rem;
-    margin-top: 2rem;
+button,
+.difficulty,
+.topic {
+  background-color: var(--dark-green);
+  border: none;
+  color: var(--white);
+  /* display: block; */
+  width: 50%;
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 0.5rem;
+  margin-top: 2rem;
 }
 
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#difficulty, #topic, #number-of-questions{
-    background-color: var(--sbyellow);
-    color: var(--black);
-    width: 21rem;
-    text-align: center;
+#difficulty,
+#topic,
+#number-of-questions {
+  background-color: var(--sbyellow);
+  color: var(--black);
+  width: 21rem;
+  text-align: center;
 }
 .brain-icon {
-    color: var(--light-gray);
+  color: var(--light-gray);
 }
 
-.playBtn{
-    background-color: var(--dark-green);
-    width: 22rem;
-    left: 50%;
+.playBtn {
+  background-color: var(--dark-green);
+  width: 22rem;
+  left: 50%;
 }
-
 
 .rulesBtn {
-    border: 1px solid var(--sbyellow);
-    width: 22rem;
-    /* color: var(--sbyellow); */
+  border: 1px solid var(--sbyellow);
+  width: 22rem;
+  /* color: var(--sbyellow); */
 }
 
-.playBtn:hover, .rulesBtn:hover, .playAgainBtn:hover{
-    cursor: pointer;
+.playBtn:hover,
+.rulesBtn:hover,
+.playAgainBtn:hover {
+  cursor: pointer;
 }
 
 .btn {
-    border: 1px solid var(--sbyellow);
-    border-radius: 1px;
-    text-align: center;
-    line-height: 1.5;
-    vertical-align: middle;
-    border-radius: 0.75rem;
+  border: 1px solid var(--sbyellow);
+  border-radius: 1px;
+  text-align: center;
+  line-height: 1.5;
+  vertical-align: middle;
+  border-radius: 0.75rem;
 }
 
 .btn:hover {
-    cursor: pointer;
-    transform: scale(0.98);
+  cursor: pointer;
+  transform: scale(0.98);
 }
 #playgame {
-    margin: 2.5rem;
+  margin: 2.5rem;
 }
 
-#question{
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem;
- }
-
- .scores {
-    display: flex;
-    justify-content: space-evenly;
-    border: 1px solid var(--black);
-    padding: 2rem 0;
-    background-color: var(--black);
+#question {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
 }
 
-.scores h3{
-    font-size: 2rem;
-    align-items: flex-end;
-    flex-flow: row wrap;
+.scores {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid var(--black);
+  padding: 2rem 0;
+  background-color: var(--black);
+}
 
+.scores h3 {
+  font-size: 2rem;
+  align-items: flex-end;
+  flex-flow: row wrap;
 }
 
 #correct {
-    color: var(--dark-green);
+  color: var(--dark-green);
 }
 
 #incorrect {
-    color: var(--fe-red);
+  color: var(--fe-red);
 }
 
- .hide{
-    display: none;
+.hide {
+  display: none;
 }
 
 .dialog {
-    padding: 2rem;
-    width: auto;
-    margin: 2.5rem 1rem;
-    height: auto;  
+  padding: 2rem;
+  width: auto;
+  margin: 2.5rem 1rem;
+  height: auto;
 }
 
 .dialog p {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .dialog h3 {
-    padding: 1rem;
-    background-color: var(--black);
-    color: var(--sbyellow);
+  padding: 1rem;
+  background-color: var(--black);
+  color: var(--sbyellow);
 }
 
 #rules {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 
 .rules-small {
-    font-size: 1rem;
-    color: var(--fe-red);
+  font-size: 1rem;
+  color: var(--fe-red);
 }
 
 .close-btn {
-    background-color: var(--light-gray);
+  background-color: var(--light-gray);
 }
 
-.bg-correct, li.correct{
-    background-color: var(--dark-green);
+.bg-correct,
+li.correct {
+  background-color: var(--dark-green);
 }
 
-.bg-incorrect{
-    background-color: var(--fe-red);
+.bg-incorrect {
+  background-color: var(--fe-red);
 }
 
 .normal {
-    background-color: var(--black);
+  background-color: var(--black);
 }
 
 .modal-header {
-    font-size: 2.5rem;
-    font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .modal-content h2 {
-    font-style: italic;
-
+  font-style: italic;
 }
 
 .modal-content li {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
-.end-of-game p{
-    padding: 2rem;
+.end-of-game p {
+  padding: 2rem;
 }
 
 .overflow {
-    overflow: auto
+  overflow: auto;
 }
 
 .dropdown {
-    margin-top: 1rem;
-    text-align: center;
-    line-height: 1.5;
-    vertical-align: middle;
-    border-radius: 0.75rem;
-    }
-
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  vertical-align: middle;
+  border-radius: 0.75rem;
+}
 
 /* Media query: tablets and larger (768px and up */
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
 
-    h1 {
-        font-size: 5rem;
-    }
+  p {
+    font-size: 4rem;
+  }
 
-    p {
-        font-size: 4rem;
-    }
+  .modal-content li {
+    font-size: 2.75rem;
+    margin-top: 0.5rem;
+  }
 
-    .modal-content li {
-        font-size: 2.75rem;
-        margin-top: 0.5rem;
-    }
+  .close-btn,
+  .submit,
+  .next,
+  #question,
+  .quiz-header h3,
+  ul li label,
+  .end-of-game {
+    font-size: 3rem;
+  }
 
-   .close-btn {
-        font-size: 3.66rem;
-    }
+  .btn {
+    line-height: 3rem;
+    font-size: 3rem;
+  }
 
-    #question {
-        font-size: 3rem;
-    }
-    .quiz-header h3{
-        font-size: 3rem;
-    }
-    ul li {
-        font-size: 3rem;
-    }
+  input[type='radio'] {
+    transform: scale(1.5);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 
-    .btn {
-        line-height: 3rem;
-        font-size: 3rem;
-    }
-    .scores {
-        margin-top: 4rem;
-    }
+  .scores {
+    margin-top: 4rem;
+  }
 
-    .end-of-game {
-        font-size: 3rem;
-    }
+  #difficulty,
+  #topic,
+  #number-of-questions {
+    height: 4rem;
+  }
+  .end-of-game p {
+    padding: 0.5rem;
+  }
+  .scores h3 {
+    font-size: 3rem;
+  }
 
-    .end-of-game p{
-        padding: 0.5rem;
-    }
-    .scores h3 {
-        font-size: 3rem;
-    }
-
-    ul li {
-        font-size: 2.75rem;
-    }
+  ul li {
+    font-size: 2.75rem;
+  }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+  h1 {
+    font-size: 5.5rem;
+  }
 
-    h1 {
-        font-size: 5.5rem;
-    }
+  p {
+    font-size: 4.4rem;
+  }
 
-    p {
-        font-size: 4.4rem;
-    }
+  #question {
+    font-size: 3.3rem;
+  }
+  .quiz-header h3 {
+    font-size: 3.3rem;
+  }
+  ul li {
+    font-size: 3.3rem;
+  }
 
-    #question {
-        font-size: 3.3rem;
-    }
-    .quiz-header h3{
-        font-size: 3.3rem;
-    }
-    ul li {
-        font-size: 3.3rem;
-    }
+  .btn {
+    line-height: 3.3rem;
+    font-size: 3.3rem;
+  }
+  .scores {
+    margin-top: 4.3rem;
+  }
 
-    .btn {
-        line-height: 3.3rem;
-        font-size: 3.3rem;
-    }
-    .scores {
-        margin-top: 4.3rem;
-    }
+  .end-of-game {
+    font-size: 3.3rem;
+  }
+  .scores h3 {
+    font-size: 3.3rem;
+  }
 
-    .end-of-game {
-        font-size: 3.3rem;
-    }
-    .scores h3 {
-        font-size: 3.3rem;
-    }
-
-    ul li {
-        font-size: 3.02rem;
-    }
+  ul li {
+    font-size: 3.02rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 6rem;
+  }
 
-    h1 {
-        font-size: 6rem;
-    }
+  p {
+    font-size: 5rem;
+  }
 
-    p {
-        font-size: 5rem;
-    }
+  .modal-content li {
+    font-size: 3.66rem;
+    margin-top: 3.66rem;
+  }
 
-    .modal-content li {
-        font-size: 3.66rem;
-        margin-top: 3.66rem;
-    }
+  .close-btn {
+    font-size: 3.66rem;
+  }
+  #question {
+    font-size: 3.66rem;
+  }
+  .quiz-header h3 {
+    font-size: 3.66rem;
+  }
+  ul li {
+    font-size: 3.66rem;
+  }
 
-   .close-btn {
-        font-size: 3.66rem;
-    }
-    #question {
-        font-size: 3.66rem;
-    }
-    .quiz-header h3{
-        font-size: 3.66rem;
-    }
-    ul li {
-        font-size: 3.66rem;
-    }
+  .btn {
+    line-height: 3.66rem;
+    font-size: 3.66rem;
+  }
+  .scores {
+    margin-top: 4.83rem;
+  }
 
-    .btn {
-        line-height: 3.66rem;
-        font-size: 3.66rem;
-    }
-    .scores {
-        margin-top: 4.83rem;
-    }
+  .end-of-game {
+    font-size: 3.66rem;
+  }
+  .scores h3 {
+    font-size: 3.66rem;
+  }
 
-    .end-of-game {
-        font-size: 3.66rem;
-    }
-    .scores h3 {
-        font-size: 3.66rem;
-    }
-
-    ul li {
-        font-size: 3.1rem;
-    }
+  ul li {
+    font-size: 3.1rem;
+  }
 }

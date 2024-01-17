@@ -1,10 +1,10 @@
-# [QuizPro](https://professorjames.github.io/quizpro/ "QuizPro")
+# [QuizPro](https://professorjames.github.io/quizpro/ 'QuizPro')
 
 ## Goal for this Project
 
 Welcome to QuizPro: Your Ultimate Quiz Experience!
 
-The primary goal of QuizPro is to create a user-friendly, feature-rich, and versatile quiz application that provides an engaging and educational experience for both quiz creators and quiz takers. 
+The primary goal of QuizPro is to create a user-friendly, feature-rich, and versatile quiz application that provides an engaging and educational experience for both quiz creators and quiz takers.
 
 ## Table of Contents
 
@@ -49,7 +49,6 @@ The primary goal of QuizPro is to create a user-friendly, feature-rich, and vers
 
 ### Expectations
 
-
 \
 &nbsp;
 [Back to top](#table-of-contents)
@@ -57,34 +56,34 @@ The primary goal of QuizPro is to create a user-friendly, feature-rich, and vers
 &nbsp;
 
 ### Fonts
-In this project, the user interface has been enriched by incorporating icons sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome"), a widely-used icon library. 
+
+In this project, the user interface has been enriched by incorporating icons sourced from [Font Awesome](https://fontawesome.com/ 'Font Awesome'), a widely-used icon library.
 
 ### Colours
 
-The colour pallette was generated using [Coolors](https://coolors.co/ "Coolors"). 
+The colour pallette was generated using [Coolors](https://coolors.co/ 'Coolors').
 
 ![Colour Pallete](/assets/docs/readme/colour-pallette.png)
 
-| CSS Variable Name | Hex Code  | Comment                                                                                                                                                 |
-| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| black          | `#020100` | Used as a background colour for website. Also used as a text colour in some sections.|
-| eerie-black    | `#1A1B1D` |                                                                                        |
-| gunmetal       | `#262C35` |                                                                                        |
-| rich-black     | `#0D1321` |                                                                                       |
-| yellow         | `#F1D302` | Used to style h1 text, fontawesome icons, selected answers radio buttons       |
-| dark-green     | `#023020` | Used to style body element when user selects a correct answer. Also used to style text of number of Correct Scores.  |
-| red            | `#C1292E` | Used to style body element when user selects an  incorrect answer. Also used to style text of number of Incorrect Scores.|
-| white          | `#FFF`    |                                                                                                     |
-
-
+| CSS Variable Name | Hex Code  | Comment                                                                                                                  |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------ |
+| black             | `#020100` | Used as a background colour for website. Also used as a text colour in some sections.                                    |
+| eerie-black       | `#1A1B1D` |                                                                                                                          |
+| gunmetal          | `#262C35` |                                                                                                                          |
+| rich-black        | `#0D1321` |                                                                                                                          |
+| yellow            | `#F1D302` | Used to style h1 text, fontawesome icons, selected answers radio buttons                                                 |
+| dark-green        | `#023020` | Used to style body element when user selects a correct answer. Also used to style text of number of Correct Scores.      |
+| red               | `#C1292E` | Used to style body element when user selects an incorrect answer. Also used to style text of number of Incorrect Scores. |
+| white             | `#FFF`    |                                                                                                                          |
 
 ### Icons
 
 ### Structure
+
 This project follows a mobile-first design approach, with a focus on ensuring that the website looks and functions well on smaller screens. The primary reference point for styling is the Iphone SE, with a screen width of 375px.
 
 To create a responsive design that adapts to various screen sizes, we use breakpoints inspired by Bootstrap. These breakpoints help us optimize the layout and styling of our website for different devices and screen widths.
-You can find more information about Bootstrap breakpoints in their official documentation [Bootstrap breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/ "Bootstrap").
+You can find more information about Bootstrap breakpoints in their official documentation [Bootstrap breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/ 'Bootstrap').
 
 | Screen Size | Breakpoint |
 | ----------- | ---------- |
@@ -104,26 +103,26 @@ You can find more information about Bootstrap breakpoints in their official docu
 
 ## Languages
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML")
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML 'HTML')
 
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS")
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS 'CSS')
 
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JS")
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript 'JS')
 
 ## Libraries and Frameworks
 
-- [Google Fonts](https://fonts.google.com/ "Google Fonts")
-- [Font Awesome](https://fontawesome.com/search "Font Awesome")
+- [Google Fonts](https://fonts.google.com/ 'Google Fonts')
+- [Font Awesome](https://fontawesome.com/search 'Font Awesome')
 
 ## Tools
 
-- [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
-- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
-- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
-- [WAVE](https://wave.webaim.org/ "WAVE")
-- [Coolors](https://coolors.co/ "Coolors")
-- [AmIResponsive](https://ui.dev/amiresponsive/ "AmIResponsive")
-- [Tables Generator](https://www.tablesgenerator.com/markdown_tables "Markdown Tables Generator")
+- [Visual Studio Code](https://code.visualstudio.com/ 'Visual Studio Code')
+- [W3C HTML Validation Service](https://validator.w3.org/ 'W3C HTML')
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ 'W3C CSS')
+- [WAVE](https://wave.webaim.org/ 'WAVE')
+- [Coolors](https://coolors.co/ 'Coolors')
+- [AmIResponsive](https://ui.dev/amiresponsive/ 'AmIResponsive')
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables 'Markdown Tables Generator')
 
 \
 &nbsp;
@@ -133,18 +132,38 @@ You can find more information about Bootstrap breakpoints in their official docu
 
 # Testing
 
+Testing was essential to ensure the website functions correctly and meets the desired user experience. The following testing was conducted throughout the development of the website:
+
+2. Content
+
+- Text Content: Reviewed all text content for accuracy, grammar, and spelling.
+
+- Icons: Ensured that icons correctly and display as intended.
+
+3. Functionality
+
+-
+-
+
+4. Responsive Design
+
+- Mobile Devices: Tested the website on various mobile devices (e.g., Iphone SE, smartphones and tablets) to ensure that it is responsive and adapts well to different screen sizes.
+
+- Desktop: Tested the website on large screen sizes to ensure that it is responsive and adapts well to different screen sizes.
+
+- Browser Compatibility: Verified that the website functions correctly on different web browsers (Chrome, Edge & Firefox) to ensure cross-browser compatibility.
 
 ## Bugs
 
-1. Category list of options - when dynamically generating the dropdown list of category options these were too long and going off the page. 
+1. Category list of options - when dynamically generating the dropdown list of category options these were too long and going off the page.
 
 TODO. FIX
 
-2. Questions and Answers not displaying some characters correctly, such as commas' and appostrophes. 
+2. Questions and Answers not displaying some characters correctly, such as commas' and appostrophes.
 
 TODO. FIX.
 
-3. When a user submits an question the getSelectedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. alos correct counter doesn't increment. 
+3. When a user submits an question the getSelectedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. alos correct counter doesn't increment.
 
 TODO. FIX.
 
