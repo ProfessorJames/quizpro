@@ -50,6 +50,12 @@ const config = {
 
 //// 3. Functions are defined in this section
 
+/**
+ * Retrieves trivia category data from a specified URL and adds it to a provided array.
+ * @param {string} url - The URL to fetch the category data from.
+ * @param {Array} categoryArray - The array to which the category data will be added.
+ * @returns {Promise<object>} - A Promise that resolves to the retrieved category data.
+ */
 async function getCategoryData(url, categoryArray) {
   const response = await fetch(url);
   const data = await response.json();
@@ -58,8 +64,25 @@ async function getCategoryData(url, categoryArray) {
   return catData;
 }
 
+/**
+ * Shuffles the elements of an array in a random order.
+ * @param {Array} arr - The array to be shuffled.
+ * @returns {Array} - A new array with elements shuffled randomly.
+ */
+
+/**
+ * Converts a list of questions to a different format with answers shuffled randomly.
+ * @param {Array} listOfQuestions - The array of questions to be converted.
+ * @returns {Array} - A new array of converted questions with answers shuffled randomly.
+ */
 const shuffleArray = (arr) => arr.sort(() => Math.random() - 0.5);
 
+/**
+ * Convert a list of questions into a different format with answers randomly shuffled.
+ *
+ * @param {Array} listOfQuestions - An array of questions to be converted.
+ * @returns {Array} - A new array of questions with shuffled answers.
+ */
 const convertQuestions = (listOfQuestions) => {
   return listOfQuestions.map((q) => {
     return {
@@ -72,6 +95,12 @@ const convertQuestions = (listOfQuestions) => {
   });
 };
 
+/**
+ * Generates and populates a dropdown (select) element with difficulty level options.
+ *
+ * @param {HTMLElement} selectRef - The reference to the dropdown (select) element.
+ * @param {Array} content - An array of difficulty level options to populate the dropdown.
+ */
 const generateDiffDropdownItems = (selectRef, content) => {
   const firstOption = document.createElement('option');
   firstOption.value = '';
@@ -86,6 +115,12 @@ const generateDiffDropdownItems = (selectRef, content) => {
   });
 };
 
+/**
+ * Generates and populates a dropdown (select) element with options for the number of questions.
+ *
+ * @param {HTMLElement} selectRef - The reference to the dropdown (select) element.
+ * @param {Array} content - An array of options for the number of questions to populate the dropdown.
+ */
 const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
   const firstOption = document.createElement('option');
   firstOption.value = '';
@@ -100,12 +135,24 @@ const generateNumberofQuestionsDropdownItems = (selectRef, content) => {
   });
 };
 
+/**
+ * Fetches and stores category data from the Open Trivia Database API.
+ *
+ * @param {string} 'https://opentdb.com/api_category.php' - The URL of the API endpoint for categories.
+ * @param {Array} config.categories - An array of configuration data for categories.
+ * @returns {Array} - An array containing the retrieved category data.
+ */
 const categoryDataArray = await getCategoryData(
   'https://opentdb.com/api_category.php',
   config.categories,
 );
 
-const generateCatDropdownItems = (selectRef, categoryArray) => {
+/**
+ * Generates and populates a dropdown (select) element with category options using data from categoryDataArray.
+ *
+ * @param {HTMLElement} selectRef - The reference to the dropdown (select) element.
+ */
+const generateCatDropdownItems = (selectRef) => {
   const firstOption = document.createElement('option');
   firstOption.value = '';
   firstOption.innerHTML = '-- Select Category';
@@ -316,7 +363,7 @@ async function handleNext(event) {
 }
 
 //// 5. Game Functionality is implemented in this section
-generateCatDropdownItems(categoryDropdown, config.categories);
+generateCatDropdownItems(categoryDropdown);
 generateDiffDropdownItems(difficultyRef, config.difficultyLevels);
 generateNumberofQuestionsDropdownItems(
   numberOfQuestionsDropdown,
