@@ -1,11 +1,11 @@
-//// Content
-// 1. DOM elements are declared in this section
-// 2. Variables are declared in this section
-// 3. Functions are defined in this section
-// 4. Event Handler functions are defined in this section
-// 5. Game Functionality is implemented in this section
-// 6. Event Listeners are added in this section
-////
+/**Content
+ * 1. DOM elements are declared in this section
+ * 2. Variables are declared in this section
+ * 3. Functions are defined in this section
+ * 4. Event Handler functions are defined in this section
+ * 5. Game Functionality is implemented in this section
+ * 6. Event Listeners are added in this section
+ */
 
 //// 1. DOM elements are declared in this section
 
