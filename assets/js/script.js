@@ -8,6 +8,11 @@
 ////
 
 //// 1. DOM elements are declared in this section
+
+/**
+ * Selects and stores references to various HTML elements using document.querySelector.
+ * These elements are used throughout the application for interactions and UI updates.
+ */
 const body = document.querySelector('body');
 const rulesButton = document.querySelector('#rulesBtn');
 const dialog = document.querySelector('#rules-dialog');
@@ -33,6 +38,11 @@ const questionNumber = document.querySelector('#question-number');
 
 //// 2. Variables are declared in this section
 
+/**
+ * Configuration object that stores various settings and data for the quiz application.
+ * It includes difficulty levels, number of question options, selected settings, categories, question data,
+ * current question index, and player scores.
+ */
 const config = {
   difficultyLevels: ['easy', 'medium', 'hard'],
   numberOfQuestionOptions: ['5', '10', '15', '20', '25'],
