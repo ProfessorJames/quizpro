@@ -178,14 +178,27 @@ Testing was essential to ensure the website functions correctly and meets the de
 TODO. FIX
 
 2. Questions and Answers not displaying some characters correctly, such as commas' and appostrophes.
+   Used 'innerHTMl' to display text instead of 'textContent' to solve issue.
+
+3. When a user submits a question the getSubmittedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. Also correct counter doesn't increment.
 
 TODO. FIX.
 
-3. When a user submits an question the getSelectedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. alos correct counter doesn't increment.
+## Improvements / Unfixed-Bugs
 
-TODO. FIX.
+1. Handling of asynchronous requests: Could possibly use thenables instead of async/await functions to retrieve information from API. This should reduce time for First Contentful Paint. Otherwise, performance stats are quite good as per Lighthoue reports so maybe this is not an issue.
 
-## Unfixed-Bugs
+2. Could possibly refactor answerCorrect and answerIncoorect into one function as these functions do similar things.
+
+3. Accessibility stats: Lighthouse and Wave reports are showing that 'Select elements do not have associated label elements.'
+
+![Wave](docs/wave/wave-1.png)
+
+Reading through the Wave alerts information it states that "If visual label text is not present and if the default select option adequately presents the purpose of the select menu, then an associated label is not necessary."
+
+![Wave](docs/wave/wave-2.png)
+
+The default select options adequately present the purpose of the select menus, and their purpose is also covered in the instructions in the 'How to Play' modal, so i believe this the code meest teh requiremenst outlined by Wave above.
 
 # Deployment
 

@@ -226,8 +226,6 @@ const answerIncorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
   bodyEl.classList.add('bg-incorrect');
 };
 
-// refactor answerCorrect and answerIncoorect into one function as they do similar things
-
 const incrementScore = (el, scoreType) => {
   config.scores[scoreType] = Number(el.textContent) + 1;
   el.textContent = config.scores[scoreType].toString();
