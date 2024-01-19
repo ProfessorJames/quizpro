@@ -167,6 +167,9 @@ const generateCatDropdownItems = (selectRef) => {
   });
 };
 
+/**
+ * Checks if all required dropdowns have a selected value, and toggles the visibility of a play button accordingly.
+ */
 const checkIfSelected = () => {
   if (
     difficultyDropdown.value !== '' &&
@@ -177,6 +180,12 @@ const checkIfSelected = () => {
   }
 };
 
+/**
+ * Converts a string to title case (capitalizes the first letter of each word).
+ *
+ * @param {string} str - The input string to be converted.
+ * @returns {string} - The input string converted to title case.
+ */
 const toTitleCase = (str) => {
   return str
     .toLowerCase()
@@ -185,12 +194,26 @@ const toTitleCase = (str) => {
     .join(' ');
 };
 
+/**
+ * Generates a URL for fetching trivia question data based on difficulty, number of questions, and category.
+ *
+ * @param {string} diff - The difficulty level of the questions.
+ * @param {number} numOfQuestions - The number of questions to fetch.
+ * @param {number} cat - The category of the questions.
+ * @returns {string} - The generated URL for fetching question data.
+ */
 const generateQuestionDataUrl = (diff, numOfQuestions, cat) => {
   let API;
   API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
   return API;
 };
 
+/**
+ * Displays a list of answers in an unordered list with radio buttons.
+ *
+ * @param {HTMLElement} unorderedListRef - The reference to the unordered list element.
+ * @param {Array} currentAnswers - An array of answer choices to be displayed.
+ */
 const displayAnswers = (unorderedListRef, currentAnswers) => {
   unorderedListRef.innerHTML = '';
 
@@ -214,6 +237,13 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
   });
 };
 
+/**
+ * Fetches quiz data from a specified URL, converts it into desired format using the convertQuestions function, and adds it to an array.
+ *
+ * @param {string} URL - The URL to fetch the quiz data from.
+ * @param {Array} arr - The array to which the quiz data will be added.
+ * @returns {Promise<Array>} - A Promise that resolves to an array of quiz questions in the desired format.
+ */
 async function getQuizData(URL, arr) {
   const response = await fetch(URL);
   const data = await response.json();
@@ -222,6 +252,10 @@ async function getQuizData(URL, arr) {
   return questions;
 }
 
+/**
+ * Loads and displays a quiz question along with answer choices on the web page.
+ * Updates the question number and clears any previously selected answers.
+ */
 function loadQuiz() {
   deselectCheckedAnswer();
 
@@ -234,6 +268,12 @@ function loadQuiz() {
   displayAnswers(answersList, currentQuizData.answers);
 }
 
+/**
+ * Toggles a specified CSS class on an HTML element.
+ *
+ * @param {HTMLElement} el - The HTML element on which the class will be toggled.
+ * @param {string} className - The name of the CSS class to toggle.
+ */
 const toggleClass = (el, className) => {
   el.classList.toggle(className);
 };
