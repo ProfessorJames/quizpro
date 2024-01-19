@@ -278,14 +278,29 @@ const toggleClass = (el, className) => {
   el.classList.toggle(className);
 };
 
+/**
+ * Disables an HTML element by setting the 'disabled' attribute to 'true'.
+ *
+ * @param {HTMLElement} el - The HTML element to be disabled.
+ */
 const disable = (el) => {
   el.setAttribute('disabled', 'true');
 };
 
+/**
+ * Enables an HTML element by removing the 'disabled' attribute.
+ *
+ * @param {HTMLElement} el - The HTML element to be enabled.
+ */
 const enable = (el) => {
   el.removeAttribute('disabled');
 };
 
+/**
+ * Retrieves the selected answer from a group of radio button elements.
+ *
+ * @returns {string|null} - The selected answer's value or null if no answer is selected.
+ */
 function getSubmittedAnswer() {
   let selectedAnswer;
 
@@ -299,6 +314,13 @@ function getSubmittedAnswer() {
   return selectedAnswer;
 }
 
+/**
+ * Updates the UI to indicate a correct answer by toggling button visibility and modifying the background color.
+ *
+ * @param {HTMLElement} submitBtnEl - The submit button element.
+ * @param {HTMLElement} nextBtnEl - The next button element.
+ * @param {HTMLElement} bodyEl - The body element to modify background color.
+ */
 const answerCorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
   toggleClass(submitBtnEl, 'hide');
   toggleClass(nextBtnEl, 'hide');
@@ -313,17 +335,34 @@ const answerIncorrect = (submitBtnEl, nextBtnEl, bodyEl) => {
   bodyEl.classList.add('bg-incorrect');
 };
 
+/**
+ * Updates the UI to indicate an incorrect answer by toggling button visibility and modifying the background color.
+ *
+ * @param {HTMLElement} submitBtnEl - The submit button element.
+ * @param {HTMLElement} nextBtnEl - The next button element.
+ * @param {HTMLElement} bodyEl - The body element to modify background color.
+ */
 const incrementScore = (el, scoreType) => {
   config.scores[scoreType] = Number(el.textContent) + 1;
   el.textContent = config.scores[scoreType].toString();
 };
 
+/**
+ * Deselects all checked answers by setting their 'checked' property to false.
+ */
 function deselectCheckedAnswer() {
   answersRef.forEach((answersEl) => {
     answersEl.checked = false;
   });
 }
 
+/**
+ * Generates and returns an HTML message to display at the end of the game.
+ *
+ * @param {Object} scoresObj - An object containing the player's scores, including the number of correct answers.
+ * @param {Array} questionArray - An array of quiz questions.
+ * @returns {string} - An HTML message to display at the end of the game.
+ */
 const displayEndOfGameMessage = (scoresObj, questionArray) => {
   let message = `
        <div id='end-of-game' class='end-of-game'>
@@ -339,24 +378,39 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 
 //// 4. Event Handler functions are defined in this section
 
+/**
+ * Handles the "Play" button click event by fetching quiz data, loading the quiz, and toggling visibility of UI elements.
+ *
+ * @param {Event} event - The "Play" button click event.
+ * @returns {Promise<void>} - A Promise that resolves when quiz data is loaded and the UI elements are toggled.
+ */
 async function handlePlay(event) {
   event.preventDefault();
+
+  // Generate the URL for fetching quiz data based on selected settings.
   const API = generateQuestionDataUrl(
     config.difficultyLevelSelected,
     config.numberOfQuestionsSelected,
     config.categorySelected,
   );
+
+  // Fetch quiz data asynchronously and store it in the variable quizData.
   const quizData = await getQuizData(API, config.questionArray);
 
+  // Load the quiz questions and answer options using the fetched quiz data.
   loadQuiz(quizData);
 
+  // Toggle the visibility of settings, quizGameArea, and tagline UI elements.
   settings.classList.toggle('hide');
-
   quizGameArea.classList.toggle('hide');
-
   tagline.classList.toggle('hide');
 }
 
+/**
+ * Handles the button click event, checks the submitted answer, and updates the UI accordingly.
+ *
+ * @param {Event} event - The button click event.
+ */
 const handleSubmit = (event) => {
   event.preventDefault();
   const answer = getSubmittedAnswer();
@@ -377,6 +431,11 @@ const handleSubmit = (event) => {
   }
 };
 
+/**
+ * Handles the "Next" button click event, advances to the next question or displays the end of the game message.
+ *
+ * @param {Event} event - The "Next" button click event.
+ */
 async function handleNext(event) {
   event.preventDefault();
   body.classList.add('normal');
@@ -403,8 +462,11 @@ async function handleNext(event) {
 }
 
 //// 5. Game Functionality is implemented in this section
+
 generateCatDropdownItems(categoryDropdown);
+
 generateDiffDropdownItems(difficultyRef, config.difficultyLevels);
+
 generateNumberofQuestionsDropdownItems(
   numberOfQuestionsDropdown,
   config.numberOfQuestionOptions,
