@@ -63,7 +63,7 @@ In this project, the user interface has been enriched by incorporating icons sou
 
 The colour pallette was generated using [Coolors](https://coolors.co/ 'Coolors').
 
-![Colour Pallete](/assets/docs/readme/colour-pallette.png)
+![Colour Pallete](/docs/colour-pallette/colour-pallette.png)
 
 | CSS Variable Name | Hex Code  | Comment                                                                                                                  |
 | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -151,7 +151,25 @@ Testing was essential to ensure the website functions correctly and meets the de
 
 - Desktop: Tested the website on large screen sizes to ensure that it is responsive and adapts well to different screen sizes.
 
+5. Cross-Device Testing
+
+- Tested the website on various devices and screen sizes to ensure a consistent and user-friendly experience across platforms.
+
 - Browser Compatibility: Verified that the website functions correctly on different web browsers (Chrome, Edge & Firefox) to ensure cross-browser compatibility.
+
+6. Validation
+
+- Each line of code been meticulously reviewed. Below are the results of validation testing completed.
+
+(i) HTML (index.html) validator results
+
+![HTML Validator](docs/validation/w3-html-validator-results.png)
+
+(ii) CSS (style.css) validator results
+
+![CSS Validator](docs/validation/CSS-validate.png)
+
+7. Performance & Accessibility Best Practices
 
 ## Bugs
 
