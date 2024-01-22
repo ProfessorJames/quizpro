@@ -387,18 +387,77 @@ function deselectCheckedAnswer() {
  * @param {Array} questionArray - An array of quiz questions.
  * @returns {string} - An HTML message to display at the end of the game.
  */
+// const displayEndOfGameMessage = (scoresObj, questionArray) => {
+//   let message = `
+//        <div id='end-of-game' class='end-of-game'>
+//         <h1>🍾 Congratulations 🍾</h1>
+//         <p><i class="fa-5x">🏆</i></p>
+//         <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
+//         <p>Remember practice makes perfect!</p>
+//         <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+//         </div>
+//     `;
+//   return message;
+// };
+
 const displayEndOfGameMessage = (scoresObj, questionArray) => {
-  let message = `
-       <div id='end-of-game' class='end-of-game'>
-        <h1>🍾 Congratulations 🍾</h1>
-        <p><i class="fa-5x">🏆</i></p>
-        <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
-        <p>Remember practice makes perfect!</p>
-        <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+  const totalQuestions = questionArray[0].length;
+  const correctPercentage = (scoresObj.correct / totalQuestions) * 100;
+  let message;
+
+  switch (true) {
+    case correctPercentage < 25:
+      message = `
+      <div id='end-of-game' class='end-of-game'>
+          <h1>😞 Better Luck Next Time 😞</h1>
+          <p><i class="fa-5x">🙁</i></p>
+          <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
+          <p>Don't give up, keep learning!</p>
+          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
-    `;
-  return message;
-};
+      `;
+      break;
+
+      case correctPercentage < 50:
+        message = `
+        <div id='end-of-game' class='end-of-game'>
+          <h1>😊 Good Effort 😊</h1>
+          <p><i class="fa-5x">👍</i></p>
+          <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
+          <p>You're making progress!</p>
+          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+        </div>
+      `;
+      break;
+
+      case correctPercentage < 75:
+      message = `
+        <div id='end-of-game' class='end-of-game'>
+          <h1>👏 Well Done! 👏</h1>
+          <p><i class="fa-5x">🏅</i></p>
+          <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
+          <p>Remember practice makes perfect!</p>
+          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+        </div>
+      `;
+      break;
+      
+      default:
+        message = `
+        <div id='end-of-game' class='end-of-game'>
+          <h1>🎉 Excellent! 🎉</h1>
+          <p><i class="fa-5x">🏆</i></p>
+          <p>Congratulations! You answered all questions correctly.</p>
+          <p>You're a true genius!</p>
+          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+        </div>
+      `;
+      break;
+  }
+
+  return message
+
+}
 
 //// 4. Event Handler functions are defined in this section
 
