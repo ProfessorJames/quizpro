@@ -158,7 +158,7 @@ button,
 
 select.dropdown-menu {
   overflow: auto !important; 
-  max-height: 20vh !important;
+  max-height: 50vh !important;
   overflow-y: auto !important;
 }
 
