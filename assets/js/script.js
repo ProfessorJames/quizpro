@@ -406,30 +406,18 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
   let message;
 
   switch (true) {
-    case correctPercentage < 25:
+    case correctPercentage = 100:
       message = `
-      <div id='end-of-game' class='end-of-game'>
-          <h1>😞 Better Luck Next Time 😞</h1>
-          <p><i class="fa-5x">🙁</i></p>
-          <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
-          <p>Don't give up, keep learning!</p>
-          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
-        </div>
-      `;
-      break;
-
-      case correctPercentage < 50:
-        message = `
         <div id='end-of-game' class='end-of-game'>
-          <h1>😊 Good Effort 😊</h1>
-          <p><i class="fa-5x">👍</i></p>
-          <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
-          <p>You're making progress!</p>
+          <h1>🎉 Excellent! 🎉</h1>
+          <p><i class="fa-5x">🏆</i></p>
+          <p>Congratulations! You answered all questions correctly.</p>
+          <p>You're a true genius!</p>
           <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
       `;
       break;
-
+    
       case correctPercentage < 75:
       message = `
         <div id='end-of-game' class='end-of-game'>
@@ -442,17 +430,30 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
       `;
       break;
       
-      default:
+      case correctPercentage < 50:
         message = `
         <div id='end-of-game' class='end-of-game'>
-          <h1>🎉 Excellent! 🎉</h1>
-          <p><i class="fa-5x">🏆</i></p>
-          <p>Congratulations! You answered all questions correctly.</p>
-          <p>You're a true genius!</p>
+          <h1>😊 Good Effort 😊</h1>
+          <p><i class="fa-5x">👍</i></p>
+          <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
+          <p>You're making progress!</p>
           <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
       `;
       break;
+
+      case correctPercentage < 25:
+      message = `
+      <div id='end-of-game' class='end-of-game'>
+          <h1>😞 Better Luck Next Time 😞</h1>
+          <p><i class="fa-5x">🙁</i></p>
+          <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
+          <p>Don't give up, keep learning!</p>
+          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+        </div>
+      `;
+      break;
+               
   }
 
   return message
