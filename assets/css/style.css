@@ -155,6 +155,13 @@ button,
   width: 21rem;
   text-align: center;
 }
+
+select.dropdown-menu {
+  overflow: auto !important; 
+  max-height: 20vh !important;
+  overflow-y: auto !important;
+}
+
 .brain-icon {
   color: var(--light-gray);
 }
