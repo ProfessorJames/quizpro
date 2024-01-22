@@ -11,6 +11,7 @@
   --rich-black: #023020;
   --sbyellow: #f1d302;
   --dark-green: #023020;
+  --light-green: #1EAA38;
   --fe-red: #c1292e;
   --light-gray: #9c9a9a;
   --white: #fff;
@@ -221,7 +222,7 @@ select.dropdown-menu {
 }
 
 #correct {
-  color: var(--dark-green);
+  color: var(--light-green);
 }
 
 #incorrect {
@@ -264,7 +265,7 @@ select.dropdown-menu {
 
 .bg-correct,
 li.correct {
-  background-color: var(--dark-green);
+  background-color: var(--light-green);
 }
 
 .bg-incorrect {
