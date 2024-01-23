@@ -264,7 +264,7 @@ async function getQuizData(URL, arr) {
 function loadQuiz() {
   deselectCheckedAnswer();
 
-  questionNumber.innerText = config.currentQuestion + 1;
+  questionNumber.innerText = `${config.currentQuestion + 1} of ${config.numberOfQuestionsSelected}`;
 
   const currentQuizData = config.questionArray[0][config.currentQuestion];
 
@@ -513,7 +513,7 @@ async function handleNext(event) {
 
   if (config.currentQuestion < config.questionArray[0].length) {
     loadQuiz();
-    questionNumber.innerText = config.currentQuestion + 1;
+    questionNumber.innerText = `${config.currentQuestion + 1} of ${config.numberOfQuestionsSelected}`;
   } else {
     quizGameArea.innerHTML = displayEndOfGameMessage(
       config.scores,
