@@ -12,7 +12,7 @@
   --school-bus-yellow: #f1d302;
   --dark-green: #023020;
   --light-green: #1EAA38;
-  --fe-red: #c1292e;
+  --fire-engine-red: #c1292e;
   --light-gray: #9c9a9a;
   --white: #fff;
 }
@@ -227,7 +227,7 @@ select.dropdown-menu {
 }
 
 #incorrect {
-  color: var(--fe-red);
+  color: var(--fire-engine-red);
 }
 
 .hide {
@@ -257,7 +257,7 @@ select.dropdown-menu {
 
 .rules-small {
   font-size: 1rem;
-  color: var(--fe-red);
+  color: var(--fire-engine-red);
 }
 
 .close-btn {
@@ -270,7 +270,7 @@ li.correct {
 }
 
 .bg-incorrect {
-  background-color: var(--fe-red);
+  background-color: var(--fire-engine-red);
 }
 
 .normal {
