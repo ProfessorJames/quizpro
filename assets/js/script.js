@@ -442,7 +442,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
         </div>
       `;
       break;
-      
+
       case correctPercentage = 100:
       message = `
         <div id='end-of-game' class='end-of-game'>
@@ -454,9 +454,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
         </div>
       `;
       break;
-
-     
-               
+              
   }
 
   return message

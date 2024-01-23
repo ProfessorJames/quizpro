@@ -9,7 +9,7 @@
   --eerie-black: #1a1b1d;
   --gunmetal: #262c35;
   --rich-black: #023020;
-  --sbyellow: #f1d302;
+  --school-bus-yellow: #f1d302;
   --dark-green: #023020;
   --light-green: #1EAA38;
   --fe-red: #c1292e;
@@ -30,6 +30,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--black);
   margin: 2.5rem 1rem;
   display: flex;
   align-items: center;
@@ -44,7 +45,7 @@ h1 {
   font-weight: 400;
   padding: 1rem;
   text-align: center;
-  color: var(--sbyellow);
+  color: var(--school-bus-yellow);
 }
 
 h2,
@@ -52,7 +53,7 @@ p {
   padding: 0.25rem;
   font-size: 2.5rem;
   background-color: var(--black);
-  color: var(--sbyellow);
+  color: var(--school-bus-yellow);
 }
 
 i {
@@ -94,7 +95,7 @@ input[type='radio']:checked {
   border-radius: 50%;
   padding: 0.5rem;
   appearance: none;
-  background-color: var(--sbyellow);
+  background-color: var(--school-bus-yellow);
 }
 
 #answers-list {
@@ -151,7 +152,7 @@ button,
 #difficulty,
 #topic,
 #number-of-questions {
-  background-color: var(--sbyellow);
+  background-color: var(--school-bus-yellow);
   color: var(--black);
   width: 21rem;
   text-align: center;
@@ -174,7 +175,7 @@ select.dropdown-menu {
 }
 
 .rulesBtn {
-  border: 1px solid var(--sbyellow);
+  border: 1px solid var(--school-bus-yellow);
   width: 22rem;
 }
 
@@ -185,7 +186,7 @@ select.dropdown-menu {
 }
 
 .btn {
-  border: 1px solid var(--sbyellow);
+  border: 1px solid var(--school-bus-yellow);
   border-radius: 1px;
   text-align: center;
   line-height: 1.5;
@@ -247,7 +248,7 @@ select.dropdown-menu {
 .dialog h3 {
   padding: 1rem;
   background-color: var(--black);
-  color: var(--sbyellow);
+  color: var(--school-bus-yellow);
 }
 
 #rules {
