@@ -9,10 +9,6 @@
 
 //// 1. DOM elements are declared in this section
 
-/**
- * Selects and stores references to various HTML elements using document.querySelector.
- * These elements are used throughout the application for interactions and UI updates.
- */
 const body = document.querySelector('body');
 const rulesButton = document.querySelector('#rulesBtn');
 const dialog = document.querySelector('#rules-dialog');
@@ -387,19 +383,6 @@ function deselectCheckedAnswer() {
  * @param {Array} questionArray - An array of quiz questions.
  * @returns {string} - An HTML message to display at the end of the game.
  */
-// const displayEndOfGameMessage = (scoresObj, questionArray) => {
-//   let message = `
-//        <div id='end-of-game' class='end-of-game'>
-//         <h1>🍾 Congratulations 🍾</h1>
-//         <p><i class="fa-5x">🏆</i></p>
-//         <p>You answered ${scoresObj.correct} / ${questionArray[0].length} questions correctly.</p>
-//         <p>Remember practice makes perfect!</p>
-//         <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
-//         </div>
-//     `;
-//   return message;
-// };
-
 const displayEndOfGameMessage = (scoresObj, questionArray) => {
   const totalQuestions = questionArray[0].length;
   const correctPercentage = (scoresObj.correct / totalQuestions) * 100;
@@ -559,70 +542,36 @@ generateNumberofQuestionsDropdownItems(
 
 //// 6. Event Listeners are called in this section
 
-//Adds a click event listener to the "rulesButton" element to open a modal dialog when clicked.
 rulesButton.addEventListener('click', () => {
   dialog.showModal();
 });
 
-//Adds a click event listener to the "closeDialog" element to close a modal dialog when clicked.
 closeDialog.addEventListener('click', () => {
   dialog.close();
 });
 
-//Adds a change event listener to the "difficultyDropdown" element to update the selected difficulty level in the configuration when the dropdown selection changes.
 difficultyDropdown.addEventListener('change', () => {
   config.difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
 });
 
-//Adds a change event listener to the "categoryDropdown" element that updates the selected number of questions
-//based on the dropdown selection.
 categoryDropdown.addEventListener('change', () => {
   config.categorySelected = categoryDropdown.value;
 });
 
-//Adds a change event listener to the "difficultyDropdown" element that invokes the "checkIfSelected" function
-//when the dropdown selection changes, to check if all necessary options are selected before enabling further actions.
 difficultyDropdown.addEventListener('change', checkIfSelected);
 
-//Adds a change event listener to the "numberOfQuestionsDropdown" element that updates the selected number of questions
-//based on the dropdown selection.
 numberOfQuestionsDropdown.addEventListener('change', () => {
   config.numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
 });
 
-//Adds a change event listener to the "difficultyDropdown" element.
-//When the dropdown selection changes, it invokes the "checkIfSelected" function
-//to check if the selected difficulty, category, and number of questions are all chosen
-//before enabling further actions in the application.
 difficultyDropdown.addEventListener('change', checkIfSelected);
 
-/**
- * Adds a change event listener to the "categoryDropdown" element.
- * When the dropdown selection changes, it invokes the "checkIfSelected" function
- * to check if the selected difficulty, category, and number of questions are all chosen
- * before enabling further actions in the application.
- */
 categoryDropdown.addEventListener('change', checkIfSelected);
 
-/**
- * Adds a change event listener to the "numberOfQuestionsDropdown" element.
- * When the dropdown selection changes, it invokes the "checkIfSelected" function
- * to check if the selected difficulty, category, and number of questions are all chosen
- * before enabling further actions in the application.
- */
 numberOfQuestionsDropdown.addEventListener('change', checkIfSelected);
 
-/**
- * Adds a click event listener to the "playBtn" element that triggers the "handlePlay" function when clicked.
- */
 playBtn.addEventListener('click', handlePlay);
 
-/**
- * Adds a click event listener to the "nextBtn" element that triggers the "handleNext" function when clicked.
- */
 nextBtn.addEventListener('click', handleNext);
 
-/**
- * Adds a click event listener to the "submitBtn" element that triggers the "handleSubmit" function when clicked.
- */
 submitBtn.addEventListener('click', handleSubmit);

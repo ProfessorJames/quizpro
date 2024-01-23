@@ -5,7 +5,7 @@
 
 :root {
   /* Colors */
-  --black: #020100;
+  --black: #050505;
   --eerie-black: #1a1b1d;
   --gunmetal: #262c35;
   --rich-black: #023020;
@@ -113,7 +113,6 @@ input[type='radio']:checked {
 .quiz-container {
   background-color: var(--black);
   border-radius: 1rem;
-  box-shadow: 0 0 1rem 2px rgba(100, 100, 100, 0.1);
   width: 92.5vw;
   max-width: 90rem;
   height: 95vh;
