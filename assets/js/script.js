@@ -7,12 +7,12 @@
  * 6. Event Listeners are added in this section
  */
 
-//// 1. DOM elements are declared in this section
+// 1. DOM elements are declared in this section
 
-const body = document.querySelector('body');
-const rulesButton = document.querySelector('#rulesBtn');
-const dialog = document.querySelector('#rules-dialog');
-const closeDialog = document.querySelector('#close-rules-dialog');
+const bodyRef = document.querySelector('body');
+const rulesBtn = document.querySelector('#rulesBtn');
+const dialogRef = document.querySelector('#rules-dialog');
+const closeDialogRef = document.querySelector('#close-rules-dialog');
 const difficultyRef = document.querySelector('#difficulty');
 const playBtn = document.querySelector('#playBtn');
 const settings = document.querySelector('#settings');
@@ -25,14 +25,14 @@ const answersRef = document.querySelectorAll('.answer');
 const correct_answers = document.querySelector('#correct_answers');
 const incorrect_answers = document.querySelector('#incorrect_answers');
 const tagline = document.querySelector('.tagline');
-const difficultyDropdown = document.querySelector('#difficulty');
-const categoryDropdown = document.querySelector('#topic');
-const numberOfQuestionsDropdown = document.querySelector(
+const difficultyDropdownRef = document.querySelector('#difficulty');
+const categoryDropdownRef = document.querySelector('#topic');
+const numberOfQuestionsDropdownRef = document.querySelector(
   '#number-of-questions',
 );
 const questionNumber = document.querySelector('#question-number');
 
-//// 2. Variables are declared in this section
+// 2. Variables are declared in this section
 
 /**
  * Configuration object that stores various settings and data for the quiz application.
@@ -54,7 +54,7 @@ const config = {
   },
 };
 
-//// 3. Functions are defined in this section
+// 3. Functions are defined in this section
 
 /**
  * Retrieves trivia category data from a specified URL and adds it to a provided array.
@@ -178,9 +178,9 @@ const generateCatDropdownItems = (selectRef) => {
  */
 const checkIfSelected = () => {
   if (
-    difficultyDropdown.value !== '' &&
-    categoryDropdown.value !== '' &&
-    numberOfQuestionsDropdown.value !== ''
+    difficultyDropdownRef.value !== '' &&
+    categoryDropdownRef.value !== '' &&
+    numberOfQuestionsDropdownRef.value !== ''
   ) {
     playBtn.classList.toggle('hide');
   }
@@ -209,8 +209,7 @@ const toTitleCase = (str) => {
  * @returns {string} - The generated URL for fetching question data.
  */
 const generateQuestionDataUrl = (diff, numOfQuestions, cat) => {
-  let API;
-  API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
+  let API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${cat}&difficulty=${diff}&type=multiple`;
   return API;
 };
 
@@ -432,7 +431,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
           <h1>🎉 Excellent! 🎉</h1>
           <p><i class="fa-5x">🏆</i></p>
           <p>Congratulations! You answered all questions correctly.</p>
-          <p>You're a true genius!</p>
+          <p>You are a true QuizPro!</p>
           <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
       `;
@@ -444,7 +443,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
 
 }
 
-//// 4. Event Handler functions are defined in this section
+// 4. Event Handler functions are defined in this section
 
 /**
  * Handles the "Play" button click event by fetching quiz data, loading the quiz, and toggling visibility of UI elements.
@@ -490,10 +489,10 @@ const handleSubmit = (event) => {
     if (
       answer === config.questionArray[0][config.currentQuestion].correctAnswer
     ) {
-      answerCorrect(submitBtn, nextBtn, body);
+      answerCorrect(submitBtn, nextBtn, bodyRef);
       incrementScore(correct_answers, 'correct');
     } else {
-      answerIncorrect(submitBtn, nextBtn, body);
+      answerIncorrect(submitBtn, nextBtn, bodyRef);
       incrementScore(incorrect_answers, 'incorrect');
     }
   }
@@ -506,9 +505,9 @@ const handleSubmit = (event) => {
  */
 async function handleNext(event) {
   event.preventDefault();
-  body.classList.add('normal');
-  body.classList.remove('bg-correct');
-  body.classList.remove('bg-incorrect');
+  bodyRef.classList.add('normal');
+  bodyRef.classList.remove('bg-correct');
+  bodyRef.classList.remove('bg-incorrect');
 
   config.currentQuestion++;
 
@@ -529,49 +528,51 @@ async function handleNext(event) {
   });
 }
 
-//// 5. Game Functionality is implemented in this section
+// 5. Game Functionality is implemented in this section
 
-generateCatDropdownItems(categoryDropdown);
+generateCatDropdownItems(categoryDropdownRef);
 
 generateDiffDropdownItems(difficultyRef, config.difficultyLevels);
 
 generateNumberofQuestionsDropdownItems(
-  numberOfQuestionsDropdown,
+  numberOfQuestionsDropdownRef,
   config.numberOfQuestionOptions,
 );
 
-//// 6. Event Listeners are called in this section
+// 6. Event Listeners are called in this section
 
-rulesButton.addEventListener('click', () => {
-  dialog.showModal();
+// document.addEventListener("DOMContentLoaded", (event) => {
+
+rulesBtn.addEventListener('click', () => {
+  dialogRef.showModal();
 });
 
-closeDialog.addEventListener('click', () => {
-  dialog.close();
+closeDialogRef.addEventListener('click', () => {
+  dialogRef.close();
 });
 
-difficultyDropdown.addEventListener('change', () => {
-  config.difficultyLevelSelected = difficultyDropdown.value.toLowerCase();
+difficultyDropdownRef.addEventListener('change', () => {
+  config.difficultyLevelSelected = difficultyDropdownRef.value.toLowerCase();
 });
 
-categoryDropdown.addEventListener('change', () => {
-  config.categorySelected = categoryDropdown.value;
+categoryDropdownRef.addEventListener('change', () => {
+  config.categorySelected = categoryDropdownRef.value;
 });
 
-difficultyDropdown.addEventListener('change', checkIfSelected);
-
-numberOfQuestionsDropdown.addEventListener('change', () => {
-  config.numberOfQuestionsSelected = numberOfQuestionsDropdown.value;
+numberOfQuestionsDropdownRef.addEventListener('change', () => {
+  config.numberOfQuestionsSelected = numberOfQuestionsDropdownRef.value;
 });
 
-difficultyDropdown.addEventListener('change', checkIfSelected);
+difficultyDropdownRef.addEventListener('change', checkIfSelected);
 
-categoryDropdown.addEventListener('change', checkIfSelected);
+categoryDropdownRef.addEventListener('change', checkIfSelected);
 
-numberOfQuestionsDropdown.addEventListener('change', checkIfSelected);
+numberOfQuestionsDropdownRef.addEventListener('change', checkIfSelected);
 
 playBtn.addEventListener('click', handlePlay);
 
 nextBtn.addEventListener('click', handleNext);
 
 submitBtn.addEventListener('click', handleSubmit);
+
+// })
