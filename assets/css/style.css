@@ -402,6 +402,10 @@ li.correct {
   .rulesBtn {
     width: auto;
  }
+
+ .modal-header {
+  font-size: 4rem;
+}
 }
 
 @media screen and (min-width: 1200px) {
@@ -453,5 +457,9 @@ li.correct {
 
   ul li {
     font-size: 3.1rem;
+  }
+
+  .modal-header {
+    font-size: 4rem;
   }
 }

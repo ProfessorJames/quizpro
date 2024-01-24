@@ -383,8 +383,8 @@ function deselectCheckedAnswer() {
  * @returns {string} - An HTML message to display at the end of the game.
  */
 const displayEndOfGameMessage = (scoresObj, questionArray) => {
-  const totalQuestions = questionArray[0].length;
-  const correctPercentage = (scoresObj.correct / totalQuestions) * 100;
+  let totalQuestions = questionArray[0].length;
+  let correctPercentage = (scoresObj.correct / totalQuestions) * 100;
   let message;
 
   switch (true) {
@@ -424,11 +424,23 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
         </div>
       `;
       break;
-
-      case correctPercentage = 100:
+     
+      case correctPercentage >= 75:
       message = `
         <div id='end-of-game' class='end-of-game'>
-          <h1>🎉 Excellent! 🎉</h1>
+          <h1>👏👏 Awesome! 👏👏</h1>
+          <p><i class="fa-5x">🏅</i></p>
+          <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
+          <p> Keep trying for a perfect score!</p>
+          <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
+        </div>
+      `;
+      break;
+
+      case correctPercentage > 99:
+      message = `
+        <div id='end-of-game' class='end-of-game'>
+          <h1>🎉 Perfect Score 🎉</h1>
           <p><i class="fa-5x">🏆</i></p>
           <p>Congratulations! You answered all questions correctly.</p>
           <p>You are a true QuizPro!</p>
