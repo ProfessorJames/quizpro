@@ -202,6 +202,7 @@ The default select options adequately present the purpose of the select menus, a
 
 # Deployment
 
+## Deploying Project 
 After writing and committing the code to GitHub, the project was deployed using the following GitHub deployment steps:
 
 - Go to the GitHub repository and click on the 'Settings' tab.
@@ -209,6 +210,29 @@ After writing and committing the code to GitHub, the project was deployed using 
 - Under the 'Source' section, click on the dropdown menu labeled 'None' and select 'main'
 - Click the 'Save' button to confirm your selection.
 - The website is now live at <https://professorjames.github.io/quizpro/>.
+
+## Forking Project
+Forking a GitHub repository allows you to create your own copy of a repository in your GitHub account. This copy can be modified independently without affecting the original repository.
+
+- To fork a project, follow these steps:
+- Sign in to your GitHub account.
+- Locate the repository you wish to duplicate.
+- Click to access the repository.
+- On the right hand side of the repository's menu, you'll see the 'Fork' button.
+- Simply click the 'Fork' button to create a copy of the repository within your GitHub account."
+
+## Cloning Project
+Follow the below steps to clone the repository to your local machine.
+
+- Log in to your GitHub account if you're not already logged in.
+- Go to the main page of the repository you want to clone.
+- Click on the "Code" button. 
+- Click the clipboard icon next to the repository URL to copy it.
+- Launch your system's IDE, terminal or command prompt.
+- Use the 'cd' command to navigate to the directory where you want to store the cloned repository.
+ `cd /path/to/your/desired/directory`
+- Type the following command, replacing `<repository-url>` with the URL you copied earlier:
+ `git clone <repository-url>`
 
 \
 &nbsp;
