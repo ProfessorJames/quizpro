@@ -425,11 +425,11 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
       `;
       break;
      
-      case correctPercentage >= 75:
+      case correctPercentage < 90:
       message = `
         <div id='end-of-game' class='end-of-game'>
           <h1>👏👏 Awesome! 👏👏</h1>
-          <p><i class="fa-5x">🏅</i></p>
+          <p><i class="fa-5x">⭐</i></p>
           <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
           <p> Keep trying for a perfect score!</p>
           <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
@@ -437,7 +437,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
       `;
       break;
 
-      case correctPercentage > 99:
+      case correctPercentage == 100:
       message = `
         <div id='end-of-game' class='end-of-game'>
           <h1>🎉 Perfect Score 🎉</h1>
