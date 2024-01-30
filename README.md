@@ -18,8 +18,8 @@ Users are able to generate quizzes with different difficult levels, topics and  
 - [Design Choices](#design-choices)
     - [Fonts](#fonts)
     - [Colours](#colours)
-    - [Icons](#icons)
     - [Structure](#structure)
+    - [Wireframes](#wireframes)
 - [Features](#features)
   - [Landing Page](#landing-page)
   - [Features to be Implemented](#features-to-be-implemented)
@@ -76,8 +76,6 @@ The colour pallette was generated using [Coolors](https://coolors.co/ 'Coolors')
 | light-gray               | `#9c9a9a` | Used to style question text and as a background color for 'Close' button in modal |
 | white             | `#FFF`    |      Used to style some text |
 
-### Icons
-
 ### Structure
 
 This project follows a mobile-first design approach, with a focus on ensuring that the website looks and functions well on smaller screens. The primary reference point for styling is the Iphone SE, with a screen width of 375px.
@@ -92,6 +90,46 @@ You can find more information about Bootstrap breakpoints in their official docu
 | medium      | => 768px   |
 | large       | => 992px   |
 | x-large     | => 1200px  |
+
+### Wireframes
+The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-365/powerpoint)
+
+<details>
+ <summary>Desktop</summary>
+
+ Landing Page
+![Landing Page](docs/wireframes/desktop-landing-page.png)
+  
+  How to Play Modal 
+![Modal](docs/wireframes/desktop-modal.png)
+
+  Start Quiz
+![Start Quiz](docs/wireframes/desktop-start-button.png)
+
+  Select Answer
+![Select Answer](docs/wireframes/desktop-select-answer.png)
+  Answer Selected
+![Select Answer](docs/wireframes/desktop-answer-selected.png)
+
+  Incorrect Answer
+![Select Answer](docs/wireframes/desktop-answer-incorrect.png)
+
+  Correct Answer
+![Select Answer](docs/wireframes/desktop-answer-correct.png)
+
+  End of Game messages
+![End of Game Message 1](docs/wireframes/desktop-end-of-game-message-1.png)
+![End of Game Messages 2](docs/wireframes/desktop-end-of-game-message-2.png)
+![End of Game Messages 3](docs/wireframes/desktop-end-of-game-message-3.png)
+![End of Game Messages 4](docs/wireframes/desktop-end-of-game-message-4.png)
+![End of Game Messages 5](docs/wireframes/desktop-end-of-game-message-5.png)
+
+</details>
+
+<details>
+ <summary>Mobile</summary>
+</details>
+
 
 \
 &nbsp;
