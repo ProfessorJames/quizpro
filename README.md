@@ -229,7 +229,9 @@ End of Game:
 
 ## Features Video
 
-[![Watch the video](docs/features/features-thumbnail.gif)](docs/features/features-video.mp4 'Features Video')
+Download the features video and watch for site walkthrough
+
+[![Download the video](docs/features/features-thumbnail.gif)](docs/features/features-video.mp4 'Features Video')
 
 ## Features to be Implemented
 
