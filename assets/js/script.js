@@ -7,6 +7,7 @@
  * 6. Event Listeners are added in this section
  */
 
+document.addEventListener("DOMContentLoaded", async () => {
 // 1. DOM elements are declared in this section
 
 const bodyRef = document.querySelector('body');
@@ -409,7 +410,7 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
           <h1>😊 Good Effort 😊</h1>
           <p><i class="fa-5x">👍</i></p>
           <p>You answered ${scoresObj.correct} / ${totalQuestions} questions correctly.</p>
-          <p>You're making progress!</p>
+          <p>Keep making progress!</p>
           <button class="btn playAgainBtn" onclick="location.reload()">Play Again</button>
         </div>
       `;
@@ -555,8 +556,6 @@ generateNumberofQuestionsDropdownItems(
 
 // 6. Event Listeners are called in this section
 
-// document.addEventListener("DOMContentLoaded", (event) => {
-
 rulesBtn.addEventListener('click', () => {
   dialogRef.showModal();
 });
@@ -589,4 +588,4 @@ nextBtn.addEventListener('click', handleNext);
 
 submitBtn.addEventListener('click', handleSubmit);
 
-// })
+})
