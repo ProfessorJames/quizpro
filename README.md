@@ -132,6 +132,9 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 
 <details>
  <summary>Mobile</summary>
+ 
+ Mobile Wireframes
+![Mobile Wireframes](docs/wireframes/mobile-wireframes.png)
 </details>
 
 
