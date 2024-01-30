@@ -28,8 +28,8 @@ const tagline = document.querySelector('.tagline');
 const difficultyDropdownRef = document.querySelector('#difficulty');
 const categoryDropdownRef = document.querySelector('#topic');
 const numberOfQuestionsDropdownRef = document.querySelector(
-  '#number-of-questions',
-);
+  '#number-of-questions');
+
 const questionNumber = document.querySelector('#question-number');
 
 // 2. Variables are declared in this section
@@ -182,7 +182,9 @@ const checkIfSelected = () => {
     categoryDropdownRef.value !== '' &&
     numberOfQuestionsDropdownRef.value !== ''
   ) {
-    playBtn.classList.toggle('hide');
+    playBtn.classList.remove('hide');
+  } else {
+    playBtn.classList.add('hide');
   }
 };
 
