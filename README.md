@@ -1,23 +1,21 @@
-# [QuizPro](https://professorjames.github.io/quizpro/ 'QuizPro')
+# QuizPro
+
+### Deployed website [QuizPro](https://professorjames.github.io/quizpro/ 'QuizPro')
+
+![Am I Responsive](docs/validation/am-i-responsive.png)
 
 ## Goal for this Project
-
 Welcome to QuizPro: Your Ultimate Quiz Experience!
 
 The primary goal of QuizPro is to create a user-friendly, feature-rich, and versatile quiz application that provides an engaging and educational experience for both quiz creators and quiz takers.
 
+Users are able to generate quizzes with different difficult levels, topics and  number of questions. 
+
 ## Table of Contents
 
-- [QuizPro](#QuizPro)
-  - [Goal for this Project](#goal-for-this-project)
-  - [Table of Contents](#table-of-contents)
 - [UX](#ux)
-  - [User Goals](#user-goals)
   - [User Stories](#user-stories)
-  - [Site Owner Goals](#site-owner-goals)
-    - [Requirements](#requirements)
-    - [Expectations](#expectations)
-  - [Design Choices](#design-choices)
+- [Design Choices](#design-choices)
     - [Fonts](#fonts)
     - [Colours](#colours)
     - [Icons](#icons)
@@ -37,23 +35,26 @@ The primary goal of QuizPro is to create a user-friendly, feature-rich, and vers
 
 # UX
 
-## User Goals
-
 ## User Stories
 
-## Site Owner Goals
-
-## Design Choices
-
-### Requirements
-
-### Expectations
+-	As a user, I want the website to be fully responsive and adapt to my device for a seamless experience.
+-	As a user, I want easy navigation while using this website.
+-	As a user, I want easy access to information on how to play the quiz.
+-	As a user, I want the ability to choose various difficulty levels.
+-	As a user, I want the ability to choose from various question categories. 
+-	As a user, I want the ability to choose various amounts of questions.
+-	As a user, I want immediate feedback to confirm whether my answer was correct or not.
+-	As a user, I want to keep track of the number of questions I answered correctly and incorrectly.
+-	As a user, I want to know my score at the end of the quiz
+-	As a user, I want to receive feedback at the end of the quiz
 
 \
 &nbsp;
 [Back to top](#table-of-contents)
 \
 &nbsp;
+
+## Design Choices
 
 ### Fonts
 
@@ -67,14 +68,13 @@ The colour pallette was generated using [Coolors](https://coolors.co/ 'Coolors')
 
 | CSS Variable Name | Hex Code  | Comment                                                                                                                  |
 | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------ |
-| black             | `#020100` | Used as a background colour for website. Also used as a text colour in some sections.                                    |
-| eerie-black       | `#1A1B1D` |                                                                                                                          |
-| gunmetal          | `#262C35` |                                                                                                                          |
-| rich-black        | `#0D1321` |                                                                                                                          |
-| yellow            | `#F1D302` | Used to style h1 text, fontawesome icons, selected answers radio buttons                                                 |
-| dark-green        | `#023020` | Used to style body element when user selects a correct answer. Also used to style text of number of Correct Scores.      |
-| red               | `#C1292E` | Used to style body element when user selects an incorrect answer. Also used to style text of number of Incorrect Scores. |
-| white             | `#FFF`    |                                                                                                                          |
+| black             | `#050505` | Used as a background colour for website. Also used as a text colour in some sections.                                    |
+| school-bus-yellow            | `#F1D302` | Used to style h1 text, radio buttons when checked, answers when hovered, fontawesome icons, selected answers radio buttons                                                 |
+| dark-green        | `#023020` | Used as background color for 'How to Play', 'Start Quiz', 'Submit Answer' and 'Play Again' buttons. Also used for backgroundcolor of modal header text.      |
+| light-green        | `#1EAA38` | Used to style body element when user selects a correct answer. Also used to style text of number of Correct Scores.      |
+| fire-engine-red               | `#C1292E` | Used to style body element when user selects an incorrect answer. Also used to style text of number of Incorrect Scores. |
+| light-gray               | `#9c9a9a` | Used to style question text and as a background color for 'Close' button in modal |
+| white             | `#FFF`    |      Used to style some text |
 
 ### Icons
 

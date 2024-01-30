@@ -6,9 +6,6 @@
 :root {
   /* Colors */
   --black: #050505;
-  --eerie-black: #1a1b1d;
-  --gunmetal: #262c35;
-  --rich-black: #023020;
   --school-bus-yellow: #f1d302;
   --dark-green: #023020;
   --light-green: #1EAA38;
@@ -79,8 +76,8 @@ ul li label {
 }
 
 input[type='radio'] {
-  background-color: var(--gunmetal);
   border-radius: 50%;
+  border: 2px solid var(--black)
 }
 
 input[type='radio']:checked {
@@ -162,7 +159,6 @@ select.dropdown-menu {
 }
 
 .brain-icon {
-  color: var(--light-gray);
   color: var(--school-bus-yellow);
 }
 
