@@ -187,13 +187,35 @@ Select Game Options:
 
 Start game:
 
-- When all options have been select the Start Game button appears
+- When all options have been select the 'Start Quiz' button appears
 
 ![Start Quiz Button](docs/features/start-quiz.png)
 
 
+Playing the Game:
 
 
+End of Game:
+
+- The game finishes when the user has answered all questions.
+- The end of game mesaage displayed depends on the score the user gets
+
+1. Score < 25%
+![Score than 25%](docs/features/end-of-game-message-1.png)
+
+2. Score between 25% and 50% 
+![Score between 25% and 50%](docs/features/end-of-game-message-2.png)
+
+3. Score between 50% and 75% 
+![Score between 50% and 75%](docs/features/end-of-game-message-3.png)
+4. Score between 75% and 90%
+![Score between 75% and 90%](docs/features/end-of-game-message-4.png)
+
+5. All question answered correctly 
+![Perfect Score](docs/features/end-of-game-message-5.png)
+
+
+![Start Quiz Button](docs/features/start-quiz.png)
 
 ## Features to be Implemented
 
