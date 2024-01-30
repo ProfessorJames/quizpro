@@ -260,6 +260,7 @@ Download the features video and watch for site walkthrough
 - [AmIResponsive](https://ui.dev/amiresponsive/ 'AmIResponsive')
 - [Tables Generator](https://www.tablesgenerator.com/markdown_tables 'Markdown Tables Generator')
 - [Zamzar](https://www.zamzar.com/ 'ZAMZAR')
+- [Compress2Go](https://www.compress2go.com/ 'Compress2Go')
 
 \
 &nbsp;
@@ -270,6 +271,22 @@ Download the features video and watch for site walkthrough
 # Testing
 
 Testing was essential to ensure the website functions correctly and meets the desired user experience. The following testing was conducted throughout the development of the website:
+
+1. Testing User Stories
+
+| User Stories                                                                                           | Achieved By                                                                                                                                                           | Test Status |
+|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| As a user, I want the website to be fully responsive and adapt to my device for a seamless experience. | The website was developed to be fully responsive and using a mobile first approach. This ensures the website renders correctly for desktop, tablet and mobile devices | Pass        |
+| As a user, I want easy navigation while using this website.                                            | The website was developed as a Single Page Application. All buttons were tested and functioning correctly                                                            | Pass        |
+| As a user, I want easy access to information on how to play the quiz.                                  | The website includes a 'How to Play' button that when clicked opens a modal with clear instructions on how to play the game.                                           | Pass        |
+| As a user, I want the ability to choose various difficulty levels.                                     | The user can select from three different difficulty levels of questions: 'Easy', 'Medium' or 'Hard', using a dropdown menu.                                                | Pass        |
+| As a user, I want the ability to choose from various question categories.                              | The user can select from various categories of questions using a dropdown menu.                                                                                            | Pass        |
+| As a user, I want the ability to choose various amounts of questions.                                  | The user can select various numbers of questions using a dropdown menu.                                                                                               | Pass        |
+| As a user, I want immediate feedback to confirm whether my answer was correct or not.                  | The body background colour changes colour depending on whether the user answers a question correctly ('light-green') or incorrectly ('fire-engine-red').              | Pass        |
+| As a user, I want to keep track of the number of questions I answered correctly and incorrectly.       | There are counters that tell the user how many questions they have answered correctly and incorrectly.                                                                | Pass        |
+| As a user, I want to know my score at the end of the quiz                                              | The end of game message tells the user how many questions they answered correctly.                                                                                     | Pass        |
+| As a user, I want to receive feedback at the end of the quiz                                           | The end of game message tells the user how they did overall and offers encoutragement depending on their score.                                                       | Pass        |
+
 
 2. Content
 
