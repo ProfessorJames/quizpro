@@ -17,6 +17,7 @@ Users are able to generate quizzes with different difficult levels, topics and  
   - [User Stories](#user-stories)
 - [Design Choices](#design-choices)
     - [Fonts](#fonts)
+    - [Icons](#icons)
     - [Colours](#colours)
     - [Structure](#structure)
     - [Wireframes](#wireframes)
@@ -57,6 +58,10 @@ Users are able to generate quizzes with different difficult levels, topics and  
 ## Design Choices
 
 ### Fonts
+To enhance typography, [Google Fonts](https://fonts.google.com/ "Google Fonts") were employed.
+[Roboto](https://fonts.google.com/specimen/Roboto?query=robo "Roboto") was selected for text throughout the site.
+
+### Icons
 
 In this project, the user interface has been enriched by incorporating icons sourced from [Font Awesome](https://fontawesome.com/ 'Font Awesome'), a widely-used icon library.
 
@@ -93,6 +98,7 @@ You can find more information about Bootstrap breakpoints in their official docu
 
 ### Wireframes
 The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-365/powerpoint)
+The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-3Iconswericons)
 
 <details>
  <summary>Desktop</summary>
@@ -132,7 +138,7 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 
 <details>
  <summary>Mobile</summary>
- 
+
  Mobile Wireframes
 ![Mobile Wireframes](docs/wireframes/mobile-wireframes.png)
 </details>
