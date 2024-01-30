@@ -229,7 +229,7 @@ End of Game:
 
 ## Features Video
 
-[![Watch the video](docs/features/features-thumbnail.gif)](docs/features/features-video.mp4 'Video')
+[![Watch the video](docs/features/features-thumbnail.gif)](docs/features/features-video.mp4 'Features Video')
 
 ## Features to be Implemented
 
@@ -257,6 +257,7 @@ End of Game:
 - [Coolors](https://coolors.co/ 'Coolors')
 - [AmIResponsive](https://ui.dev/amiresponsive/ 'AmIResponsive')
 - [Tables Generator](https://www.tablesgenerator.com/markdown_tables 'Markdown Tables Generator')
+- [Zamzar](https://www.zamzar.com/ 'ZAMZAR')
 
 \
 &nbsp;
