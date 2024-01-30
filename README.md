@@ -22,7 +22,7 @@ Users are able to generate quizzes with different difficult levels, topics and  
     - [Structure](#structure)
     - [Wireframes](#wireframes)
 - [Features](#features)
-  - [Landing Page](#landing-page)
+  - [General Feature](#general-features)
   - [Features to be Implemented](#features-to-be-implemented)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
@@ -103,8 +103,8 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 <details>
  <summary>Desktop</summary>
 
- Landing Page
-![Landing Page](docs/wireframes/desktop-landing-page.png)
+ Home Page
+![Home Page](docs/wireframes/desktop-landing-page.png)
   
   How to Play Modal 
 ![Modal](docs/wireframes/desktop-modal.png)
@@ -149,6 +149,53 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 [Back to top](#table-of-contents)
 \
 &nbsp;
+
+# Features
+
+## General Features
+- The site is designed as a sinlge page application.
+
+- The site is fully responsive and has been tested using a number of screen sizes.
+
+Favicon: 
+- The site has a favicon
+
+![Favicon](docs/features/favicon.png)
+
+  Home Page: 
+
+  - When the user first visits the site this is the view they see.
+
+  ![Home Page](docs/features/home-page.png)
+  
+  How to Play Modal:
+  - When the user clicks on the 'How to Play' button a modal appears. 
+  - The modal has details of how to play the quiz. 
+
+    ![Home Page](docs/features/how-to-play-modal.png)
+
+Select Game Options:
+
+- The user can select a difficulty level, category and number of questions using the dropdown menus.
+
+    
+    ![Difficulty Level Dropdown](docs/features/select-difficulty-dropdown.png)
+
+    ![Category Dropdown](docs/features/select-category-dropdown.png)
+
+    ![Number Of Questions Dropdown](docs/features/select-number-of-questions-dropdown.png)
+
+Start game:
+
+- When all options have been select the Start Game button appears
+
+![Start Quiz Button](docs/features/start-quiz.png)
+
+
+
+
+
+## Features to be Implemented
 
 # Technologies used
 
