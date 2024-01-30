@@ -229,7 +229,7 @@ End of Game:
 
 ## Features Video
 
-[![Watch the video](docs/features/features-thumbnail.jpg)](docs/features/features-video.mp4 'Video')
+[![Watch the video](docs/features/features-thumbnail.gif)](docs/features/features-video.mp4 'Video')
 
 ## Features to be Implemented
 
