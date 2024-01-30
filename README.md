@@ -111,10 +111,8 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 ![Select Answer](docs/wireframes/desktop-select-answer.png)
   Answer Selected
 ![Select Answer](docs/wireframes/desktop-answer-selected.png)
-
   Incorrect Answer
 ![Select Answer](docs/wireframes/desktop-answer-incorrect.png)
-
   Correct Answer
 ![Select Answer](docs/wireframes/desktop-answer-correct.png)
 
