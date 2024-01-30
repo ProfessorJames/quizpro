@@ -106,6 +106,7 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
   Start Quiz
 ![Start Quiz](docs/wireframes/desktop-start-button.png)
 
+## Answers
   Select Answer
 ![Select Answer](docs/wireframes/desktop-select-answer.png)
   Answer Selected
@@ -117,11 +118,16 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
   Correct Answer
 ![Select Answer](docs/wireframes/desktop-answer-correct.png)
 
-  End of Game messages
+  ## End of Game Messages
+  End of Game Message 1
 ![End of Game Message 1](docs/wireframes/desktop-end-of-game-message-1.png)
+  End of Game Message 2
 ![End of Game Messages 2](docs/wireframes/desktop-end-of-game-message-2.png)
+  End of Game Message 3
 ![End of Game Messages 3](docs/wireframes/desktop-end-of-game-message-3.png)
+  End of Game Message 4
 ![End of Game Messages 4](docs/wireframes/desktop-end-of-game-message-4.png)
+  End of Game Message 5
 ![End of Game Messages 5](docs/wireframes/desktop-end-of-game-message-5.png)
 
 </details>
