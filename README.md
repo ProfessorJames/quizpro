@@ -194,11 +194,24 @@ Start game:
 
 Playing the Game:
 
+- Question and Answers
+![Question and Answers](docs/features/question-and-answers.png)
+
+- Select Answer
+![Selected Answer](docs/features/selected-answer.png)
+
+- Correct Answer
+![Correct Answer](docs/features/correct-answer.png)
+
+- Incorrect Answer
+![Incorrect Answer](docs/features/incorrect-answer.png)
+
 
 End of Game:
 
 - The game finishes when the user has answered all questions.
 - The end of game mesaage displayed depends on the score the user gets
+- The user has the ability to start another quiz when the gane is over by clicking the 'Play Again' button
 
 1. Score < 25%
 ![Score than 25%](docs/features/end-of-game-message-1.png)
@@ -214,8 +227,9 @@ End of Game:
 5. All question answered correctly 
 ![Perfect Score](docs/features/end-of-game-message-5.png)
 
+## Features Video
 
-![Start Quiz Button](docs/features/start-quiz.png)
+[![Watch the video](docs/features/features-thumbnail.jpg)](docs/features/features-video.mp4 'Video')
 
 ## Features to be Implemented
 
