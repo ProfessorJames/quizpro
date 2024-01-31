@@ -65,13 +65,6 @@ const config = {
  * @param {Array} categoryArray - The array to which the category data will be added.
  * @returns {Promise<object>} - A Promise that resolves to the retrieved category data.
  */
-// async function getCategoryData(url, categoryArray) {
-//   const response = await fetch(url);
-//   const data = await response.json();
-//   const catData = await data.trivia_categories;
-//   categoryArray.push(catData);
-//   return catData;
-// }
 async function getCategoryData(url, categoryArray) {
   try {
     const response = await fetch(url);
@@ -84,7 +77,7 @@ async function getCategoryData(url, categoryArray) {
     return catData;
   } catch (error) {
     alert('Something went wrong fetching the category data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
-    console.error('An error occurred retireving teh category data from the API:', error)
+    console.error('An error occurred retireving the category data from the API:', error)
   }
 }
 
@@ -287,15 +280,23 @@ async function getQuizData(URL, arr) {
  * Updates the question number and clears any previously selected answers.
  */
 function loadQuiz() {
-  deselectCheckedAnswer();
+  try {
+    
+    deselectCheckedAnswer();
 
-  questionNumber.innerText = `${config.currentQuestion + 1} of ${config.numberOfQuestionsSelected}`;
+    questionNumber.innerText = `${config.currentQuestion + 1} of ${config.numberOfQuestionsSelected}`;
 
-  const currentQuizData = config.questionArray[0][config.currentQuestion];
+    const currentQuizData = config.questionArray[0][config.currentQuestion];
 
-  questionsRef.innerHTML = currentQuizData.question;
+    questionsRef.innerHTML = currentQuizData.question;
 
-  displayAnswers(answersList, currentQuizData.answers);
+   displayAnswers(answersList, currentQuizData.answers);
+  } catch (error) {
+      alert('It seems the quiz you selected is unavailable. Please try again using a different combination of difficulty level, category and number of questions. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
+      console.error('An error occurred retrieving the category data from the API:', error)
+      window.location.reload();
+    
+  }
 }
 
 /**
