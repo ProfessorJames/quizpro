@@ -1,5 +1,3 @@
-/* jshint esversion: 11 */
-
 /**Content
  * 1. DOM elements are declared in this section
  * 2. Variables are declared in this section
@@ -292,7 +290,7 @@ function loadQuiz() {
 
    displayAnswers(answersList, currentQuizData.answers);
   } catch (error) {
-      alert('It seems the quiz you selected is unavailable. Please try again using a different combination of difficulty level, category and number of questions. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
+      alert('It seems the quiz you selected is currently unavailable. Please try again using a different combination of difficulty level, category and number of questions. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
       console.error('An error occurred retrieving the category data from the API:', error)
       window.location.reload();
     
