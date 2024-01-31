@@ -152,66 +152,79 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 
 # Features
 
-## General Features
-- The site is designed as a sinlge page application.
+### General Features
+- The site is designed as a single page application.
 
 - The site is fully responsive and has been tested using a number of screen sizes.
 
-Favicon: 
+### Favicon: 
 - The site has a favicon.
 
 ![Favicon](docs/features/favicon.png)
 
-  Home Page: 
+### Home Page: 
 
-  - When the user first visits the site this is the view they see.
+  - When the user first visits the site this is the screen they see.
 
   ![Home Page](docs/features/home-page.png)
   
-  How to Play Modal:
+### How to Play Modal:
   - When the user clicks on the 'How to Play' button a modal appears. 
   - The modal has details of how to play the quiz. 
 
     ![Home Page](docs/features/how-to-play-modal.png)
 
-Select Game Options:
+### Select Game Options:
 
 - The user can select a difficulty level, category and number of questions using the dropdown menus.
 
-    
+#### Difficulty Dropdown menu
     ![Difficulty Level Dropdown](docs/features/select-difficulty-dropdown.png)
 
-    ![Category Dropdown](docs/features/select-category-dropdown.png)
+#### Categories Dropdown menu
 
-    ![Number Of Questions Dropdown](docs/features/select-number-of-questions-dropdown.png)
+![Category Dropdown](docs/features/select-category-dropdown.png)
 
-Start game:
+#### Number of Questions Dropdown menu
 
-- When all options have been select the 'Start Quiz' button appears
+![Number Of Questions Dropdown](docs/features/select-number-of-questions-dropdown.png)
+
+### Start game:
+
+- When all dropdown menus have been select the 'Start Quiz' button appears
 
 ![Start Quiz Button](docs/features/start-quiz.png)
 
+### Playing the Game:
 
-Playing the Game:
+#### Question and Answers: 
+- Once the user starts the quiz a page is displayed showing the question and 4 possible answers.
 
-- Question and Answers
 ![Question and Answers](docs/features/question-and-answers.png)
 
-- Select Answer
+#### Select Answer: 
+- When the user clicks on an answer the radio button turns yellow. The user can then submit their answer by pressing the 'Submit Answer' button.
+
 ![Selected Answer](docs/features/selected-answer.png)
 
-- Correct Answer
+#### Correct Answer:
+- If the user answered the question correctly the background color of the body element turns lightgreen in colour. 
+- The 'Correct' counter also increments by one.
+- The user can press the 'Next >>' button to move to the next question.
+
 ![Correct Answer](docs/features/correct-answer.png)
 
-- Incorrect Answer
+#### Incorrect Answer:
+ 
+- If the user answered the question incorrectly the background color of the body element turns red in colour. The 'Incorrect' counter also increments by one.
+- The user can press the 'Next >>' button to move to the next question.
 ![Incorrect Answer](docs/features/incorrect-answer.png)
 
 
-End of Game:
+### End of Game:
 
 - The game finishes when the user has answered all questions.
 - The end of game message displayed depends on the score the user gets
-- The user has the ability to start another quiz when the gane is over by clicking the 'Play Again' button
 
 1. Score < 25%
 ![Score than 25%](docs/features/end-of-game-message-1.png)
@@ -227,6 +240,8 @@ End of Game:
 5. All question answered correctly 
 ![Perfect Score](docs/features/end-of-game-message-5.png)
 
+- The user has the ability to start another quiz when the game is over by clicking the 'Play Again' button. This brings tehm back to the 'Home' page screen.
+
 ## Features Video
 
 Download the features video and watch for site walkthrough
@@ -236,6 +251,10 @@ Download the features video and watch for site walkthrough
 ## Features to be Implemented
 
 # Technologies used
+- Add a backend and authentication so that users can register for the site, log in and log out of the site. 
+- Add a leaderboard so that users can keep track of their scores.
+- Add a recommendation system so that users can receive feedback on areas and topics that they can improve most in.
+- Add a head to head option so that players can play against friends.
 
 ## Languages
 
@@ -343,7 +362,7 @@ The attached pdf contains the CSS code that was tested and the results.
 
 ### Lighthouse
 
-Google Chromes Developer Tools Lighhouse was used to test Perfromance, Accessibility, Best Practices and SEO.
+- Google Chromes Developer Tools Lighhouse was used to test Perfromance, Accessibility, Best Practices and SEO.
 
 - Desktop
 ![Lighthouse](docs/validation/lighthouse-results-desktop.png)
@@ -383,7 +402,7 @@ Reading through the Wave alerts information it states that "If visual label text
 
 ![Wave](docs/wave/wave-2.png)
 
-The default select options adequately present the purpose of the select menus, and their purpose is also covered in the instructions in the 'How to Play' modal, so i believe this the code meest teh requiremenst outlined by Wave above.
+The default select options adequately represent the purpose of the select menus, and their purpose is also covered in the instructions in the 'How to Play' modal, so I believe the code meets the requiremenst outlined by Wave above.
 
 # Deployment
 
