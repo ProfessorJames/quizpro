@@ -341,26 +341,39 @@ The attached pdf contains the CSS code that was tested and the results.
 
 ![JS Hint](docs/validation/jshint-results.png)
 
-7. Performance & Accessibility Best Practices
+### Lighthouse
+
+Google Chromes Developer Tools Lighhouse was used to test Perfromance, Accessibility, Best Practices and SEO.
+
+- Desktop
+![Lighthouse](docs/validation/lighthouse-results-desktop.png)
+
+- Mobile
+![Lighthouse](docs/validation/lighthouse-results-mobile.png)
 
 ## Bugs
 
-1. Category list of options - when dynamically generating the dropdown list of category options these were too long and going off the page.
+1. Category list of options:
+- When dynamically generating the dropdown list of category options these appeared to be too long and going off the page on mobile screens using Chrome Developer tools.
 
-TODO. FIX
+- Solution: This appears to be a 'ghost' error. The dropdown menu when deployed and tested on actual mobile devices is working fine.
 
-2. Questions and Answers not displaying some characters correctly, such as commas' and appostrophes.
-   Used 'innerHTMl' to display text instead of 'textContent' to solve issue.
+2. Questions and Answers text:
+- The Questions and Answer text was not displaying some characters correctly, such as commas' and appostrophes.
+   
+- Solution: Used 'innerHTMl' to display text instead of 'textContent' to solve issue.
 
-3. When a user submits a question the getSubmittedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. Also correct counter doesn't increment.
+3. getSubmittedAnswer function:
+- When a user submits a question the getSubmittedAnswer function is not correctly returning the text of the answer to be used for comparison. This is causing a correctly selected answer to be marked as incorrect. Also correct counter doesn't increment.
 
-TODO. FIX.
+- Solution: Code was refactored to address error and ensure that the function is working as expected.
+
 
 ## Improvements / Unfixed-Bugs
 
 1. Handling of asynchronous requests: Could possibly use thenables instead of async/await functions to retrieve information from API. This should reduce time for First Contentful Paint. Otherwise, performance stats are quite good as per Lighthoue reports so maybe this is not an issue.
 
-2. Could possibly refactor answerCorrect and answerIncoorect into one function as these functions do similar things.
+2. Could possibly refactor answerCorrect and answerIncorrect into one function as these functions do similar things.
 
 3. Accessibility stats: Lighthouse and Wave reports are showing that 'Select elements do not have associated label elements.'
 
