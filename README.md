@@ -314,6 +314,11 @@ Testing was essential to ensure the website functions correctly and meets the de
 | As a user, I want to know my score at the end of the quiz                                              | The end of game message tells the user how many questions they answered correctly.                                                                                     | Pass        |
 | As a user, I want to receive feedback at the end of the quiz                                           | The end of game message tells the user how they did overall and offers encoutragement depending on their score.                                                       | Pass        |
 
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
 
 2. Content
 
@@ -332,6 +337,12 @@ Testing was essential to ensure the website functions correctly and meets the de
 - Tested the website on various devices and screen sizes to ensure a consistent and user-friendly experience across platforms.
 
 - Browser Compatibility: Verified that the website functions correctly on different web browsers (Chrome, Edge & Firefox) to ensure cross-browser compatibility.
+
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
 
 ## Automated Testing
 
@@ -366,6 +377,12 @@ The attached pdf contains the CSS code that was tested and the results.
 
 - Mobile
 ![Lighthouse](docs/validation/lighthouse-results-mobile.png)
+
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
 
 ## Bugs
 
@@ -404,6 +421,12 @@ The default select options adequately represent the purpose of the select menus,
 4. Unavailable quizzes:
   While testing the site we noted that some combinations of selected questions are unavailable from the API. Try and catch blocks have been used within the code to manage these scenarios. The user is prompted to try a different combination and try again. 
 
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
+
 # Deployment
 
 ## Deploying Project 
@@ -437,6 +460,12 @@ Follow the below steps to clone the repository to your local machine.
  `cd /path/to/your/desired/directory`
 - Type the following command, replacing `<repository-url>` with the URL you copied earlier:
  `git clone <repository-url>`
+
+# Credits
+
+For guidance, advice, motivation, and inspiration:
+
+[Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") has been incredibly supportive, helping me learn and develop while also presenting me with challenging opportunities. I'm grateful for his guidance, and I look forward to continuing to learn under his mentorship. Thanks Simen.
 
 \
 &nbsp;
