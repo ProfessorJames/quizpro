@@ -98,7 +98,7 @@ You can find more information about Bootstrap breakpoints in their official docu
 
 ### Wireframes
 The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-365/powerpoint)
-The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-3Iconswericons)
+
 
 <details>
  <summary>Desktop</summary>
@@ -158,7 +158,7 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 - The site is fully responsive and has been tested using a number of screen sizes.
 
 Favicon: 
-- The site has a favicon
+- The site has a favicon.
 
 ![Favicon](docs/features/favicon.png)
 
@@ -210,7 +210,7 @@ Playing the Game:
 End of Game:
 
 - The game finishes when the user has answered all questions.
-- The end of game mesaage displayed depends on the score the user gets
+- The end of game message displayed depends on the score the user gets
 - The user has the ability to start another quiz when the gane is over by clicking the 'Play Again' button
 
 1. Score < 25%
@@ -252,9 +252,15 @@ Download the features video and watch for site walkthrough
 
 ## Tools
 
+- [Microsoft Powerpoint](https://www.microsoft.com/en-ie/microsoft-365/powerpoint 'Mocrosfot Powerpoint')
 - [Visual Studio Code](https://code.visualstudio.com/ 'Visual Studio Code')
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [GitHub Pages](https://pages.github.com/)
+- [favicon.io](https://favicon.io// 'Favicon Generator')
 - [W3C HTML Validation Service](https://validator.w3.org/ 'W3C HTML')
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ 'W3C CSS')
+- [JSHint](https://jshint.com/ 'JS Hint')
 - [WAVE](https://wave.webaim.org/ 'WAVE')
 - [Coolors](https://coolors.co/ 'Coolors')
 - [AmIResponsive](https://ui.dev/amiresponsive/ 'AmIResponsive')
@@ -311,17 +317,29 @@ Testing was essential to ensure the website functions correctly and meets the de
 
 - Browser Compatibility: Verified that the website functions correctly on different web browsers (Chrome, Edge & Firefox) to ensure cross-browser compatibility.
 
-6. Validation
+## Automated Testing
 
-- Each line of code been meticulously reviewed. Below are the results of validation testing completed.
+### W3C Markup Validation Service
+- No errors or warnings showing for HTML (index.html) validator results from W3C Markup Validation Service.
 
-(i) HTML (index.html) validator results
+[Quiz Pro W3C Markup Validation Service
+results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fprofessorjames.github.io%2Fquizpro%2F/ 'Quiz Pro W3C Markup Validation Service')
 
-![HTML Validator](docs/validation/w3-html-validator-results.png)
+![W3C Markup Validation Service](docs/validation/w3-html-validator-results.png)
 
-(ii) CSS (style.css) validator results
 
-![CSS Validator](docs/validation/CSS-validate.png)
+### W3C CSS Validation Service
+- No errors or warnings showing for CSS (style.css) validator results from W3C CSS Validation Service.
+
+![CSS Validator](docs/validation/w3-css-validator-results.png)
+
+The attached pdf contains the CSS code that was tested and the results.
+[CSS Validator](docs/validation/w3-css-validator-results-for-style.css-%20(css-level-3+svg).pdf)
+
+
+(iii) JavaScript (script.js) validator results
+
+![JS Hint](docs/validation/jshint-results.png)
 
 7. Performance & Accessibility Best Practices
 

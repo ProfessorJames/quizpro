@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jshint": "^2.13.6"
+  }
+}

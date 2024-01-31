@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 /**Content
  * 1. DOM elements are declared in this section
  * 2. Variables are declared in this section
@@ -70,12 +72,6 @@ async function getCategoryData(url, categoryArray) {
   categoryArray.push(catData);
   return catData;
 }
-
-/**
- * Shuffles the elements of an array in a random order.
- * @param {Array} arr - The array to be shuffled.
- * @returns {Array} - A new array with elements shuffled randomly.
- */
 
 /**
  * Converts a list of questions to a different format with answers shuffled randomly.
@@ -454,9 +450,9 @@ const displayEndOfGameMessage = (scoresObj, questionArray) => {
               
   }
 
-  return message
+  return message;
 
-}
+};
 
 // 4. Event Handler functions are defined in this section
 
@@ -588,4 +584,4 @@ nextBtn.addEventListener('click', handleNext);
 
 submitBtn.addEventListener('click', handleSubmit);
 
-})
+});
