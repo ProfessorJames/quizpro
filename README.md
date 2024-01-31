@@ -179,7 +179,7 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 - The user can select a difficulty level, category and number of questions using the dropdown menus.
 
 #### Difficulty Dropdown menu
-    ![Difficulty Level Dropdown](docs/features/select-difficulty-dropdown.png)
+![Difficulty Level Dropdown](docs/features/select-difficulty-dropdown.png)
 
 #### Categories Dropdown menu
 
@@ -251,11 +251,12 @@ Download the features video and watch for site walkthrough
 
 ## Features to be Implemented
 
-# Technologies used
 - Add a backend and authentication so that users can register for the site, log in and log out of the site. 
 - Add a leaderboard so that users can keep track of their scores.
 - Add a recommendation system so that users can receive feedback on areas and topics that they can improve most in.
 - Add a head to head option so that players can play against friends.
+
+# Technologies used
 
 ## Languages
 
@@ -318,20 +319,15 @@ Testing was essential to ensure the website functions correctly and meets the de
 
 - Text Content: Reviewed all text content for accuracy, grammar, and spelling.
 
-- Icons: Ensured that icons correctly and display as intended.
+- Icons: Ensured that icons load correctly and display as intended.
 
-3. Functionality
-
-- 
-- 
-
-4. Responsive Design
+3. Responsive Design
 
 - Mobile Devices: Tested the website on various mobile devices (e.g., Iphone SE, smartphones and tablets) to ensure that it is responsive and adapts well to different screen sizes.
 
 - Desktop: Tested the website on large screen sizes to ensure that it is responsive and adapts well to different screen sizes.
 
-5. Cross-Device Testing
+4. Cross-Device Testing
 
 - Tested the website on various devices and screen sizes to ensure a consistent and user-friendly experience across platforms.
 
@@ -404,6 +400,9 @@ Reading through the Wave alerts information it states that "If visual label text
 ![Wave](docs/wave/wave-2.png)
 
 The default select options adequately represent the purpose of the select menus, and their purpose is also covered in the instructions in the 'How to Play' modal, so I believe the code meets the requiremenst outlined by Wave above.
+
+4. Unavailable quizzes:
+  While testing the site we noted that some combinations of selected questions are unavailable from the API. Try and catch blocks have been used within the code to manage these scenarios. The user is prompted to try a different combination and try again. 
 
 # Deployment
 
