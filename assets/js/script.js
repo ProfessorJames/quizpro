@@ -65,12 +65,27 @@ const config = {
  * @param {Array} categoryArray - The array to which the category data will be added.
  * @returns {Promise<object>} - A Promise that resolves to the retrieved category data.
  */
+// async function getCategoryData(url, categoryArray) {
+//   const response = await fetch(url);
+//   const data = await response.json();
+//   const catData = await data.trivia_categories;
+//   categoryArray.push(catData);
+//   return catData;
+// }
 async function getCategoryData(url, categoryArray) {
-  const response = await fetch(url);
-  const data = await response.json();
-  const catData = await data.trivia_categories;
-  categoryArray.push(catData);
-  return catData;
+  try {
+    const response = await fetch(url);
+    if(!response.ok){
+      throw new Error(`Error fetching data from ${url}, status: ${response.status}`)
+    }
+    const data = await response.json();
+    const catData = await data.trivia_categories;
+    categoryArray.push(catData);
+    return catData;
+  } catch (error) {
+    alert('Something went wrong fetching the category data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
+    console.error('An error occurred retireving teh category data from the API:', error)
+  }
 }
 
 /**
@@ -249,11 +264,22 @@ const displayAnswers = (unorderedListRef, currentAnswers) => {
  * @returns {Promise<Array>} - A Promise that resolves to an array of quiz questions in the desired format.
  */
 async function getQuizData(URL, arr) {
-  const response = await fetch(URL);
-  const data = await response.json();
-  const questions = convertQuestions(data.results);
-  arr.push(questions);
-  return questions;
+  try{
+    const response = await fetch(URL);
+
+    if(!response.ok){
+      throw new Error(`Error fetching data from ${URL}, status: ${response.status}`)
+    }
+
+    const data = await response.json();
+    const questions = convertQuestions(data.results);
+    arr.push(questions);
+    return questions;
+
+  } catch (error) {
+    alert('Something went wrong fetching the quiz data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
+    console.error('An error occurred:', error)
+  }
 }
 
 /**

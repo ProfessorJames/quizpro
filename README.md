@@ -224,7 +224,8 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 ### End of Game:
 
 - The game finishes when the user has answered all questions.
-- The end of game message displayed depends on the score the user gets
+- The end of game message tells user how many questions they answered correctly and offers encoragement.
+- The end of game message displayed depends on the score the user gets 
 
 1. Score < 25%
 ![Score than 25%](docs/features/end-of-game-message-1.png)
@@ -240,7 +241,7 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 5. All question answered correctly 
 ![Perfect Score](docs/features/end-of-game-message-5.png)
 
-- The user has the ability to start another quiz when the game is over by clicking the 'Play Again' button. This brings tehm back to the 'Home' page screen.
+- The user has the ability to start another quiz when the game is over by clicking the 'Play Again' button. This brings them back to the 'Home' page screen.
 
 ## Features Video
 
@@ -321,8 +322,8 @@ Testing was essential to ensure the website functions correctly and meets the de
 
 3. Functionality
 
--
--
+- 
+- 
 
 4. Responsive Design
 
