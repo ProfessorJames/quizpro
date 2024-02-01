@@ -372,13 +372,13 @@ The attached pdf contains the CSS code that was tested and the results.
 
 ### Lighthouse
 
-- Google Chromes Developer Tools Lighhouse was used to test Perfromance, Accessibility, Best Practices and SEO.
+- Google Chromes Developer Tools Lighhouse was used to test Performance, Accessibility, Best Practices and SEO.
 
 - Desktop
-![Lighthouse](docs/validation/lighthouse-results-desktop.png)
+![Lighthouse](docs/lighthouse/lighthouse-results-desktop.png)
 
 - Mobile
-![Lighthouse](docs/validation/lighthouse-results-mobile.png)
+![Lighthouse](docs/lighthouse/lighthouse-results-mobile.png)
 
 \
 &nbsp;
