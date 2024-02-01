@@ -404,7 +404,7 @@ The attached pdf contains the CSS code that was tested and the results.
 - Solution: Code was refactored to address error and ensure that the function is working as expected.
 
 
-## Improvements / Unfixed-Bugs
+## Unfixed-Bugs
 
 1. Handling of asynchronous requests: Could possibly use thenables instead of async/await functions to retrieve information from API. This should reduce time for First Contentful Paint. Otherwise, performance stats are quite good as per Lighthoue reports so maybe this is not an issue.
 
