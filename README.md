@@ -224,7 +224,7 @@ The wireframes were created using [Microsoft Powerpoint](https://www.microsoft.c
 ### End of Game:
 
 - The game finishes when the user has answered all questions.
-- The end of game message tells user how many questions they answered correctly and offers encoragement.
+- The end of game message tells user how many questions they answered correctly and offers encouragement.
 - The end of game message displayed depends on the score the user gets 
 
 1. Score < 25%
@@ -255,8 +255,8 @@ Download the features video and watch for site walkthrough
 - Add a leaderboard so that users can keep track of their scores.
 - Add a recommendation system so that users can receive feedback on areas and topics that they can improve most in.
 - Add a head to head option so that players can play against friends.
-- Make own API rather than relying on a third party API provider
-- Add more questions to own quiz database to address issues when existing API.
+- Make own API rather than relying on a third party API provider.
+- Add more questions to own quiz database to address issues with existing API.
 
 # Technologies used
 
