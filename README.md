@@ -421,7 +421,7 @@ Reading through the Wave alerts information it states that "If visual label text
 The default select options adequately represent the purpose of the select menus, and their purpose is also covered in the instructions in the 'How to Play' modal, so I believe the code meets the requiremenst outlined by Wave above.
 
 4. Unavailable quizzes:
-  While testing the site we noted that some combinations of selected questions are unavailable from the API. For example, if a player selects 'Hard', 'Entertainment: Cartoons & Animation' and more than 15 questions this wiil throw an error. The reason being there are not more than 15 questions of this type in the Open Trivi DB API. Try and catch blocks have been used within the code to manage these scenarios. The user is prompted to try a different combination and try again. This approach was chosen rather than reducing the number of questions a player can select.
+  While testing the site we noted that some combinations of selected questions are unavailable from the API. For example, if a player selects 'Hard', 'Entertainment: Cartoons & Animation' and more than 15 questions this will throw an error, as there are not more than 15 questions of this type in the Open Trivia DB API. Try and catch blocks have been used within the code to manage these scenarios. The user is prompted to try a different combination and try again. This approach was chosen rather than reducing the number of questions a player can select so as not to reduce the playability of the game.
 
 \
 &nbsp;
