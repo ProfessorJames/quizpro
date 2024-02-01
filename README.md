@@ -30,7 +30,7 @@ Users are able to generate quizzes with different difficult levels, topics and  
   - [Tools](#tools)
 - [Testing](#testing)
   - [Bugs](#bugs)
-  - [Improvements / Unfixed-Bugs](#unfixed-bugs)
+  - [Unfixed-Bugs](#unfixed-Bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
