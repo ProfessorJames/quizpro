@@ -1,3 +1,4 @@
+/* jshint esversion: 11*/
 /**Content
  * 1. DOM elements are declared in this section
  * 2. Variables are declared in this section
@@ -67,15 +68,15 @@ async function getCategoryData(url, categoryArray) {
   try {
     const response = await fetch(url);
     if(!response.ok){
-      throw new Error(`Error fetching data from ${url}, status: ${response.status}`)
+      throw new Error(`Error fetching data from ${url}, status: ${response.status}`);
     }
     const data = await response.json();
     const catData = await data.trivia_categories;
     categoryArray.push(catData);
     return catData;
   } catch (error) {
-    alert('Something went wrong fetching the category data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
-    console.error('An error occurred retireving the category data from the API:', error)
+    alert('Something went wrong fetching the category data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.');
+    console.error('An error occurred retireving the category data from the API:', error);
   }
 }
 
@@ -259,7 +260,7 @@ async function getQuizData(URL, arr) {
     const response = await fetch(URL);
 
     if(!response.ok){
-      throw new Error(`Error fetching data from ${URL}, status: ${response.status}`)
+      throw new Error(`Error fetching data from ${URL}, status: ${response.status}`);
     }
 
     const data = await response.json();
@@ -268,8 +269,8 @@ async function getQuizData(URL, arr) {
     return questions;
 
   } catch (error) {
-    alert('Something went wrong fetching the quiz data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
-    console.error('An error occurred:', error)
+    alert('Something went wrong fetching the quiz data from the API. Please reload the page and try again. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.');
+    console.error('An error occurred:', error);
   }
 }
 
@@ -290,10 +291,9 @@ function loadQuiz() {
 
    displayAnswers(answersList, currentQuizData.answers);
   } catch (error) {
-      alert('It seems the quiz you selected is currently unavailable. Please try again using a different combination of difficulty level, category and number of questions. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.')
-      console.error('An error occurred retrieving the category data from the API:', error)
+      alert('It seems the quiz you selected is currently unavailable. Please try again using a different combination of difficulty level, category and number of questions. If the error persists please try again later as the API may be temporarily down. Apologies for any inconvenience.');
+      console.error('An error occurred retrieving the category data from the API:', error);
       window.location.reload();
-    
   }
 }
 

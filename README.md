@@ -30,7 +30,7 @@ Users are able to generate quizzes with different difficult levels, topics and  
   - [Tools](#tools)
 - [Testing](#testing)
   - [Bugs](#bugs)
-  - [Unfixed-Bugs](#unfixed-bugs)
+  - [Improvements / Unfixed-Bugs](#unfixed-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -255,6 +255,8 @@ Download the features video and watch for site walkthrough
 - Add a leaderboard so that users can keep track of their scores.
 - Add a recommendation system so that users can receive feedback on areas and topics that they can improve most in.
 - Add a head to head option so that players can play against friends.
+- Make own API rather than relying on a third party API provider
+- Add more questions to own quiz database to address issues when existing API.
 
 # Technologies used
 
@@ -419,7 +421,7 @@ Reading through the Wave alerts information it states that "If visual label text
 The default select options adequately represent the purpose of the select menus, and their purpose is also covered in the instructions in the 'How to Play' modal, so I believe the code meets the requiremenst outlined by Wave above.
 
 4. Unavailable quizzes:
-  While testing the site we noted that some combinations of selected questions are unavailable from the API. Try and catch blocks have been used within the code to manage these scenarios. The user is prompted to try a different combination and try again. 
+  While testing the site we noted that some combinations of selected questions are unavailable from the API. For example, if a player selects 'Hard', 'Entertainment: Cartoons & Animation' and more than 15 questions this wiil throw an error. The reason being there are not more than 15 questions of this type in the Open Trivi DB API. Try and catch blocks have been used within the code to manage these scenarios. The user is prompted to try a different combination and try again. This approach was chosen rather than reducing the number of questions a player can select.
 
 \
 &nbsp;
